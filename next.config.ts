@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  images: {
+    domains: ["localhost"], // Add your Strapi host here (or production domain)
+  },
 };
 
 export default nextConfig;

@@ -1,0 +1,138 @@
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import Section from "../Section";
+import Icon, { CalendarIcon, UserIcon, ArrowRightIcon } from "../icons/icons";
+import Button, { ReadMore } from "../Button/Button";
+import { fetchAPI, getMediaUrl } from "../../lib/api";
+import Typography from "../Typography/Typography";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "../../../components/ui/card";
+import { useEffect, useState } from "react";
+export default function Blogs() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetchAPI(
+      "articles?populate=*&pagination[limit]=6&sort=publishedAt:desc"
+    ).then((data) => setPosts(data));
+  }, []);
+  return (
+    <Section mode="light">
+      <div className="grid grid-cols-12 gap-6 items-center">
+        <div className="col-span-12 lg:col-span-8">
+          <Typography
+            title="Latest Insights"
+            headingLevel="h2"
+            size="xl"
+            color="primary"
+            LineHeading
+            subtitle="Latest news, tips, and insights on health, wellness, and regenerative medicine."
+          />
+        </div>
+
+        <div className="col-span-12 lg:col-span-4 flex justify-start lg:justify-end">
+          <Link href="/blog">
+            <Button icon>View All</Button>
+          </Link>
+        </div>
+      </div>
+      <div className="flex w-full min-w-0">
+        <Swiper
+          modules={[Pagination]}
+          slidesPerView={3}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="pb-10 h-full mb-2"
+        >
+          {posts?.map((post) => {
+            const imageUrl = getMediaUrl(post?.cover);
+            return (
+              <SwiperSlide key={post?.id} className="flex p-1">
+                <Card
+                  key={post.id}
+                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5"
+                  itemScope
+                  itemType="https://schema.org/BlogPosting"
+                >
+                  {post.cover && (
+                    <div className="relative w-full">
+                      <img
+                        src={imageUrl}
+                        alt={post?.title}
+                        width={post?.cover.width}
+                        height={post?.cover.height}
+                      />
+                    </div>
+                  )}
+
+                  <CardContent className="p-5 flex flex-col h-full gap-3">
+                    <div className="flex items-center md:divide-x divide-black/10  text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
+                      <div className="w-auto pr-3 flex items-center gap-2">
+                        <UserIcon aria-label="UserIcon" />
+                        {post?.author?.name || "VieCells"}
+                      </div>
+                      <div className="flex-1 px-3 flex items-center gap-2">
+                        <CalendarIcon
+                          size={16}
+                          role="img"
+                          aria-label="Open calendar"
+                        />
+
+                        <time
+                          dateTime={post.publishedAt}
+                          itemProp="datePublished"
+                        >
+                          {new Date(post.publishedAt).toLocaleDateString(
+                            "en-US",
+                            {
+                              year: "numeric",
+                              month: "short",
+                              day: "numeric",
+                            }
+                          )}
+                        </time>
+                      </div>
+                    </div>
+
+                    {post.category && (
+                      <span className="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-2 w-fit">
+                        {post.category}
+                      </span>
+                    )}
+                    <CardTitle className="text-lime-900 leading-normal">
+                      {post.title}
+                    </CardTitle>
+                    <CardDescription className="text-neutral-500">
+                      {post?.description || post.excerpt}
+                    </CardDescription>
+
+                    <div className="mt-auto">
+                      <ReadMore href={`/blog/${post.slug}`} showArrow />
+                    </div>
+                  </CardContent>
+
+                  <meta itemProp="image" content={post.image} />
+                  <meta
+                    itemProp="author"
+                    content={post?.author?.name || "VieCells"}
+                  />
+                </Card>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+    </Section>
+  );
+}
