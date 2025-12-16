@@ -10,7 +10,7 @@ export default async function ServiceDetailsPage({ params }) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
   const services = await fetchAPI(
-    `services?filters[slug][$eq]=${id}&populate=*`
+    `services?filters[slug][$eq]=${id}`
   );
   const service = services?.[0];
   const pageTitle = service?.Title;
@@ -52,9 +52,9 @@ export default async function ServiceDetailsPage({ params }) {
               )}
             </div>
           </div>
-          <div className="col-span-12 md:col-span-3 gap-6">
+          <div className="grid col-span-12 md:col-span-3 gap-4">
             <div
-              className="p-6 lg:p-8 bg-[#EEEEDD] rounded-2xl mb-3"
+              className="p-6 lg:p-8 bg-[#EEEEDD] rounded-2xl"
               data-aos="fade-in"
             >
               <div className="text-[1.25rem] leading-none text-lime-900 font-['Roboto_Condensed'] font-semibold mb-4">
@@ -63,7 +63,7 @@ export default async function ServiceDetailsPage({ params }) {
                   : "Uncategorized"}
               </div>
               <div className="">
-                <ul className="flex flex-col w-full space-y-2 text-[14px]">
+                <ul className="flex flex-col w-full space-y-2 text-[14px] gap-1">
                   {updatedLinkPages?.map((tag) => {
                     const isActive = id === tag?.slug;
                     return (
@@ -88,7 +88,7 @@ export default async function ServiceDetailsPage({ params }) {
               </div>
             </div>
             <div
-              className="p-6 lg:p-8 bg-[#EEEEDD] rounded-2xl mb-3 grid gap-5"
+              className="p-6 lg:p-8 bg-[#EEEEDD] rounded-2xl grid gap-3 text-center"
               data-aos="fade-in"
             >
               <div className="self-stretch text-center justify-start text-lime-900 text-2xl font-semibold font-['Roboto_Condensed'] leading-7">
@@ -98,18 +98,18 @@ export default async function ServiceDetailsPage({ params }) {
                 Take the First Step Toward Better Health with a Free
                 Consultation
               </div>
-              <div className="flex flex-col justify-start items-center gap-2.5">
-                <div className="self-stretch justify-start text-neutral-500 text-xs font-normal font-['Roboto'] leading-5">
+           
+                <div className="text-xs font-normal font-['Roboto'] leading-5 text-lime-900">
                   Take the first step towards better health with a complimentary
                   consultation with our specialists. Discuss your needs, explore
                   treatment options, and learn how our advanced facilities can
                   help you.
                 </div>
-              </div>
+           
 
               <div className="flex flex-col justify-center items-center gap-2.5">
                 <Link href="/contact-us">
-                  <Button icon size="md">
+                  <Button icon size="sm">
                     Book Now!
                   </Button>
                 </Link>

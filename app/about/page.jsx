@@ -119,8 +119,7 @@ export default async function About() {
           <div className="col-span-12 md:col-span-6">
             <div
               className="inline-flex flex-col justify-start items-start gap-5"
-              data-aos="fade-up"
-              data-aos-delay={100}
+             
             >
               <div className="text-xl font-medium font-['Roboto_Condensed'] text-lime-900 leading-5 italic">
                 Specialist in Regenerative Medicine

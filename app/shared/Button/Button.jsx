@@ -94,7 +94,6 @@ export const ReadMore = ({
       <span>{text}</span>
       {showArrow && (
         <span className="rotate-0 transition-all duration-200 group-hover:-rotate-45">
-          {" "}
           <ArrowRightIcon />
         </span>
       )}

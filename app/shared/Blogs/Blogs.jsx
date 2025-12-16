@@ -19,7 +19,7 @@ export default function Blogs() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     fetchAPI(
-      "articles?populate=*&pagination[limit]=6&sort=publishedAt:desc"
+      "articles?pagination[limit]=6&sort=publishedAt:desc"
     ).then((data) => setPosts(data));
   }, []);
   return (

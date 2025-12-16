@@ -9,12 +9,12 @@ export default async function BlogDetailsPage({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
   const posts = await fetchAPI(
-    `articles?filters[slug][$eq]=${slug}&populate=*`
+    `articles?filters[slug][$eq]=${slug}`
   );
   const post = posts?.[0];
 
   const recentPostsData = await fetchAPI(
-    `articles?sort[0]=publishedAt:desc&pagination[limit]=3&filters[slug][$ne]=${slug}&populate=*`
+    `articles?sort[0]=publishedAt:desc&pagination[limit]=3&filters[slug][$ne]=${slug}`
   );
   const recentPosts = recentPostsData || [];
   return (

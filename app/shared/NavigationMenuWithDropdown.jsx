@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,7 +13,7 @@ import { fetchAPI } from "../lib/api";
 function useMenuData() {
   const [menuData, setMenuData] = useState([]);
   useEffect(() => {
-    fetchAPI("header?populate=*")
+    fetchAPI("header")
       .then((data) => {
         if (data?.Navigation?.length) {
           setMenuData(data.Navigation);
@@ -21,61 +22,188 @@ function useMenuData() {
       .catch((err) => console.error("Menu API fetch error:", err));
   }, []);
   return menuData;
- 
 }
 
 export default function MobileRichNavigationMenu() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  document.body.classList.toggle("overflow-hidden", isOpen);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [active, setActive] = useState(0);
   const menuData = useMenuData();
   return (
     <div>
-      <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
-        <span className="sr-only">Open menu</span>
-        {isOpen ? "✕" : "☰"}
-      </button>
-      {isOpen && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-white z-50 p-4 overflow-auto md:hidden">
-          <button className="mb-4 p-2" onClick={() => setIsOpen(false)}>
-            Close ✕
-          </button>
+      <div className="lg:hidden">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="focus:outline-none"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+      </div>
 
-          <nav className="space-y-4">
-            <div>
-              <ul className="flex flex-col gap-3">
-                {menuData.map((item,index) => {
-                  const hasChildren =
-                    Array.isArray(item.children) && item.children.length > 0;
-                  console.log(hasChildren);
-                  return (
-                    <li key={index} className="font-['Roboto_Condensed']">
-                      {hasChildren ? (
-                        <div className="flex items-center justify-between">
-                          <a href={`${item.url}`}>{item.label}</a>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200"
+      {isOpen && (
+        <>
+          <div className="absolute top-0 left-0 w-[290px] h-screen bg-white z-50 p-4 overflow-auto md:hidden">
+            <nav className="space-y-4">
+              <div>
+                <ul className="flex flex-col">
+                  {menuData.map((item, levelIndex) => {
+                    const hasChildren =
+                      Array.isArray(item.children) && item.children.length > 0;
+                    return (
+                      <li
+                        key={levelIndex}
+                        className="font-['Roboto_Condensed'] text-sm"
+                      >
+                        {hasChildren ? (
+                          <>
+                            <div
+                              className="flex items-center justify-between px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                              onClick={() => setDropdownOpen(!dropdownOpen)}
+                            >
+                              <a href={`${item.url}`}>{item.label}</a>
+                              <svg
+                                className={`w-4 h-4 transition-transform ${
+                                  dropdownOpen ? "rotate-180" : ""
+                                }`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
+                              </svg>
+                            </div>
+                            <AnimatePresence>
+                              {dropdownOpen && (
+                                <motion.div
+                                  initial={{ height: 0 }}
+                                  animate={{ height: "auto" }}
+                                  exit={{ height: 0 }}
+                                  className="overflow-hidden"
+                                >
+                                  <ul className=" pt-1  space-y-1 text-sm">
+                                    {item?.children?.map((subMenu, index) => {
+                                      return (
+                                        <li
+                                          key={index}
+                                          id={index}
+                                          className="px-2"
+                                        >
+                                          <div
+                                            className="flex items-center justify-between "
+                                            onClick={() =>
+                                              setActive(
+                                                active === index ? null : index
+                                              )
+                                            }
+                                          >
+                                            <Link
+                                              href={subMenu?.url}
+                                              className="pl-6 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                                            >
+                                              {subMenu?.title}
+                                            </Link>
+                                            <svg
+                                              className={`w-4 h-4 transition-transform ${
+                                                active === index
+                                                  ? "rotate-90"
+                                                  : ""
+                                              }`}
+                                              aria-hidden="true"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              width="24"
+                                              height="24"
+                                              fill="none"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="m9 5 7 7-7 7"
+                                              ></path>
+                                            </svg>
+                                          </div>
+                                          <AnimatePresence>
+                                            {active === index &&
+                                              subMenu.children?.map(
+                                                (childItem, index) => {
+                                                  return (
+                                                    <motion.div
+                                                      key={index}
+                                                      initial={{ height: 0 }}
+                                                      animate={{
+                                                        height: "auto",
+                                                      }}
+                                                      exit={{ height: 0 }}
+                                                      className="overflow-hidden"
+                                                    >
+                                                      <Link
+                                                        href={childItem?.url}
+                                                        className="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                                                      >
+                                                        {childItem?.label}
+                                                      </Link>
+                                                    </motion.div>
+                                                  );
+                                                }
+                                              )}
+                                          </AnimatePresence>
+                                        </li>
+                                      );
+                                    })}
+                                  </ul>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </>
+                        ) : (
+                          <Link
+                            className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                            href={`${item.url}`}
                           >
-                            <path d="m6 9 6 6 6-6"></path>
-                          </svg>
-                        </div>
-                      ) : (
-                        <Link href={`${item.url}`}>{item.label}</Link>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </nav>
-        </div>
+                            {item.label}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div
+            className="hs-overlay-backdrop transition duration fixed inset-0 bg-gray-900/50 dark:bg-neutral-900/80 h-screen lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          ></div>
+        </>
       )}
 
       <div className="hidden lg:block">
@@ -90,7 +218,7 @@ function RichNavigationMenu() {
   return (
     <NavigationMenu className="z-20  text-lime-900">
       <NavigationMenuList>
-        {menuData?.map((item,i) => {
+        {menuData?.map((item, i) => {
           const hasChildren =
             Array.isArray(item.children) && item.children.length > 0;
           return (

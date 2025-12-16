@@ -36,12 +36,13 @@ const tabContent = [
   },
 ];
 export default async function PatientCarePage() {
-  const data = await fetchAPI("patient-care", "Content.Image");
+  const data = await fetchAPI("patient-care", "Content.Image", );
   const title = data?.Title || "Patient Care";
   //const htmlContent = data?.Content || data?.description || null;
   const seo = data.Seo?.find((b) => b.__component === "shared.seo");
+  console.log(data,'seo')
   return (
-    <div>
+    <>
       <PageHeaderSetter title="Patient Care" breadcrumbLast="Patient Care" />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
@@ -89,7 +90,7 @@ export default async function PatientCarePage() {
       </SectionBlock>
       <WorkProcess />
       <Faqs />
-    </div>
+    </>
   );
 }
 

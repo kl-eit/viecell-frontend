@@ -33,7 +33,7 @@ export default function SideBarHelp({className}) {
       </div>
       <div className="flex flex-col justify-center items-center gap-2.5">
         <Link href="/contact-us">
-          <Button icon>Contact Us</Button>
+          <Button icon size="sm">Contact Us</Button>
         </Link>
       </div>
     </div>

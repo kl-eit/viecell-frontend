@@ -16,7 +16,7 @@ export default function Testimonial() {
   useEffect(() => {
     const getTestimonials = async () => {
       try {
-        const data = await fetchAPI("testimonials?populate=*");
+        const data = await fetchAPI("testimonials");
         setTestimonials(data);
       } catch (error) {
         console.error("Failed to fetch testimonials:", error);

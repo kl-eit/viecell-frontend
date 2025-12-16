@@ -21,15 +21,15 @@ export default function PageHeader({ title = null, breadcrumbLast = null }) {
       : "Home");
 
   return (
-    <div className="p-7 grid gap-5  lg:flex lg:justify-center lg:items-center lg:gap-72 text-center">
+    <div className="p-7 grid gap-5  lg:flex lg:justify-center lg:items-center lg:gap-72 text-center relative z-2">
       <div className="container">
         <h1 className="text-[1.75rem] lg:text-[2.625rem] leading-none text-lime-900 font-['Roboto_Condensed'] font-semibold mb-4">
           {finalTitle}
         </h1>
 
         {!isHomePage && (
-          <nav className="flex justify-center" aria-label="Breadcrumb">
-            <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+          <nav className="px-6 py-1.5 bg-lime-900 rounded-[100px] inline-flex flex-col justify-center items-center gap-2.5 text-white" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-1 rtl:space-x-reverse ">
               <li>
                 <Link href="/">Home</Link>
               </li>
