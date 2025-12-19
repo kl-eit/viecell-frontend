@@ -27,7 +27,6 @@ export default async function ServiceDetailsPage({ params }) {
     : null;
 const PageCategories = service.CategoryPages.slug
 const LinkCategories = await fetchAPI(`service-categories?filters[slug]=${PageCategories}`);
-console.log(LinkCategories,'ServicesCategories')
 
   return (
     <div>
@@ -58,7 +57,7 @@ console.log(LinkCategories,'ServicesCategories')
               )}
             </div>
           </div>
-          <div className="grid col-span-12 md:col-span-3 gap-4">
+          <div className="flex flex-col col-span-12 md:col-span-3 gap-4">
             <div
               className="p-6 lg:p-8 bg-[#EEEEDD] rounded-2xl"
               data-aos="fade-in"

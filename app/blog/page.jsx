@@ -12,7 +12,6 @@ import {
 } from "../../components/ui/card";
 export default async function BlogPage() {
   const posts = await fetchAPI("articles");
-console.log(posts,'posts')
   return (
     <>
       <PageHeaderSetter title="Blog" />

@@ -1,7 +1,6 @@
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
 import { fetchAPI, getMediaUrl } from "../lib/api";
-import BlocksRendererClient from "../shared/BlocksRendererClient";
 import WorkProcess from "../shared/WorkProcess/WorkProcess";
 import Typography, {
   TextDescription,

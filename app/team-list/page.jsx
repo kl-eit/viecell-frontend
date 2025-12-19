@@ -1,5 +1,4 @@
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
-import TeamMember from "../shared/Team/TeamMember";
 import SectionBlock from "../shared/Section";
 import { fetchAPI, getMediaUrl } from "../lib/api";
 import Testimonial from "../shared/Testimonial/Testimonial";
@@ -15,8 +14,7 @@ import {
 export default async function TeamListPage() {
   const teamData = await fetchAPI("team-member", "teams.Profile");
   const pageTitle = teamData?.Title || "Our Specialist";
-  const { Title, Description, teams } = teamData;
-  console.log("Team List Page:", teamData);
+  const { Title, Description, teams=[] } = teamData || {};
   return (
     <div>
       <PageHeaderSetter title={pageTitle} breadcrumbLast="Our Specialist" />
@@ -24,7 +22,7 @@ export default async function TeamListPage() {
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-7">
             <Typography
-              title={Title}
+              title={teamData?.Title || ''}
               headingLevel="h2"
               size="xl"
               color="primary"
@@ -32,7 +30,7 @@ export default async function TeamListPage() {
             />
           </div>
           <div className="col-span-12 lg:col-span-5 flex justify-start lg:justify-end">
-            <TextDescription text={Description} />
+            <TextDescription text={teamData?.Description} />
           </div>
         </div>
 
@@ -72,11 +70,11 @@ export default async function TeamListPage() {
   );
 }
 
-export async function generateMetadata() {
-  const teamData = await fetchAPI("team-member");
-  return {
-    title: teamData?.Title || "Our Team | VieCell",
-    description:
-      teamData?.Description || "Meet our medical experts at VieCell.",
-  };
-}
+// export async function generateMetadata() {
+//   const teamData = await fetchAPI("team-member");
+//   return {
+//     title: teamData?.Title || "Our Team | VieCell",
+//     description:
+//       teamData?.Description || "Meet our medical experts at VieCell.",
+//   };
+// }

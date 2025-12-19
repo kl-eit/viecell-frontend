@@ -29,18 +29,18 @@ export default async function Page() {
 }
 export async function generateMetadata() {
   const seoData = await fetchAPI("privacy-policy");
-  const seo = seoData.Seo;
+  const seo = seoData?.Seo;
   return {
-    title: seo?.metaTitle || page.Title,
+    title: seo?.metaTitle || '',
     description: seo?.metaDescription || "Description not available",
     openGraph: {
-      title: seo?.metaTitle || page.Title,
+      title: seo?.metaTitle || '',
       description: seo?.metaDescription || "Description not available",
       type: "website",
     },
     twitter: {
       card: "summary",
-      title: seo?.metaTitle || page.Title,
+      title: seo?.metaTitle || '',
       description: seo?.metaDescription || "Description not available",
     },
   };

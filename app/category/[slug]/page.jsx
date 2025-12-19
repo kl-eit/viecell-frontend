@@ -8,7 +8,6 @@ export default async function DetailsPage({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
   const articles = await fetchAPI(`categories?filters[slug]=${slug}`,);
-  console.log(articles,'articles')
   return (
     <div>
       <PageHeaderSetter title={slug} />

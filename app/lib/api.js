@@ -1,5 +1,5 @@
 export const STRAPI_URL =
-  process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+  process.env.NEXT_PUBLIC_STRAPI_URL || "https://admin.viecells.com";
 
 export async function fetchAPI(endpoint, populate = "*") {
   try {
@@ -16,7 +16,7 @@ export async function fetchAPI(endpoint, populate = "*") {
     return json.data;  // Return just the data from the response
   } catch (error) {
     console.error(error);
-    return null;
+    return undefined;
   }
   
 }

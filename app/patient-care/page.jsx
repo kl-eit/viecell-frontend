@@ -1,7 +1,6 @@
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
 import { fetchAPI, getMediaUrl } from "../lib/api";
-import BlocksRendererClient from "../shared/BlocksRendererClient";
 import WorkProcess from "../shared/WorkProcess/WorkProcess";
 import Faqs from "../shared/Faq/Faq";
 import Typography, { TextDescription, TitleDescription } from "../shared/Typography/Typography";
@@ -39,8 +38,7 @@ export default async function PatientCarePage() {
   const data = await fetchAPI("patient-care", "Content.Image", );
   const title = data?.Title || "Patient Care";
   //const htmlContent = data?.Content || data?.description || null;
-  const seo = data.Seo?.find((b) => b.__component === "shared.seo");
-  console.log(data,'seo')
+  const seo = data?.Seo?.find((b) => b.__component === "shared.seo");
   return (
     <>
       <PageHeaderSetter title="Patient Care" breadcrumbLast="Patient Care" />

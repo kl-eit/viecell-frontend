@@ -15,8 +15,6 @@ export default async function BlogDetailsPage({ params }) {
     `articles?sort[0]=publishedAt:desc&pagination[limit]=3&filters[slug][$ne]=${slug}`
   );
   const recentPosts = recentPostsData || [];
-  console.log(posts,'posts')
-   console.log(categories,'categories')
   return (
     <>
       <PageHeaderSetter title="Blog Details" breadcrumbLast="Blog Details" />

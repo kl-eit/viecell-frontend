@@ -3,7 +3,6 @@ import React, { useState } from "react";
 export default function PatientTabs({ tabs = [] }) {
   const [activeTab, setActiveTab] = useState(tabs?.[0]?.id || "");
   const activeTabData = tabs.find((tab) => tab.id === activeTab);
-  console.log("Active Tab Data:", activeTabData);
   return (
     <div className="grid grid-cols-12 gap-6 items-center">
       <div className="col-span-12 lg:col-span-6">

@@ -6,7 +6,7 @@ import Typography, {
 
 export default function BlocksRendererClient({
   content,
-  blocks = {},
+  // blocks = {},
   modifiers = {},
 }) {
   if (!content) return null;
@@ -116,14 +116,14 @@ export default function BlocksRendererClient({
   ---------------------------------*/
   const resolvedBlocks = { ...defaultRenderers };
 
-  if (blocks && typeof blocks === "object") {
-    Object.keys(blocks).forEach((key) => {
-      const val = blocks[key];
-      if (typeof val === "string" && namedRenderers[val]) {
-        resolvedBlocks[key] = namedRenderers[val];
-      }
-    });
-  }
+  // if (blocks && typeof blocks === "object") {
+  //   Object.keys(blocks).forEach((key) => {
+  //     const val = blocks[key];
+  //     if (typeof val === "string" && namedRenderers[val]) {
+  //       resolvedBlocks[key] = namedRenderers[val];
+  //     }
+  //   });
+  // }
 
   /* --------------------------------
      Resolve Custom Modifiers

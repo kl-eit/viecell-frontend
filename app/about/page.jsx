@@ -37,8 +37,7 @@ const tabContent = [
 ];
 export default async function About() {
   const AboutData = await fetchAPI("about");
-  const seo = AboutData.blocks?.find((b) => b.__component === "shared.seo");
-  console.log(AboutData, "AboutData");
+  //const seo = AboutData?.blocks?.find((b) => b.__component === "shared.seo");
   return (
     <div>
       <PageHeaderSetter title="About Us" />
@@ -296,7 +295,7 @@ export default async function About() {
 
 export async function generateMetadata() {
   const AboutData = await fetchAPI("about");
-  const seo = AboutData.blocks?.find((b) => b.__component === "shared.seo");
+  const seo = AboutData?.blocks?.find((b) => b.__component === "shared.seo");
   return {
     title: seo?.metaTitle || "About Us | VieCell",
     description:

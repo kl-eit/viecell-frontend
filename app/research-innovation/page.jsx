@@ -41,7 +41,6 @@ export default async function ResearchInnovationPage() {
   const title = researchData?.Title || "Research & Innovation";
   const htmlContent =
     researchData?.Content || researchData?.description || null;
-  console.log("Research & Innovation Page:", researchData);
 
   return (
     <div>
