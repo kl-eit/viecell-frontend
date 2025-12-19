@@ -1,27 +1,22 @@
-import Link from "next/link";
-import { fetchAPI, getMediaUrl } from "../lib/api";
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
-import SectionBlock from "../shared/Section";
-import { ReadMore } from "../shared/Button/Button";
-import { CalendarIcon, UserIcon } from "../shared/icons/icons";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardTitle,
-} from "../../components/ui/card";
-export default async function BlogPage() {
-  const posts = await fetchAPI("articles");
-console.log(posts,'posts')
+import { Card, CardContent, CardDescription, CardTitle } from "../../../components/ui/card";
+import { PageHeaderSetter } from "../../lib/PageHeaderContext";
+import { fetchAPI } from "../../lib/api";
+import { ReadMore } from "../../shared/Button/Button";
+import SectionBlock from "../../shared/Section";
+import { UserIcon } from "../../shared/icons/icons";
+export default async function DetailsPage({ params }) {
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
+  const articles = await fetchAPI(`categories?filters[slug]=${slug}`,);
+  console.log(articles,'articles')
   return (
-    <>
-      <PageHeaderSetter title="Blog" />
+    <div>
+      <PageHeaderSetter title={slug} />
       <SectionBlock>
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
-          {posts?.map((post) => (
+          {articles[0]?.articles?.map((post) => (
             <div key={post?.id}>
               <Card
-               
                 className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5"
                 itemScope
                 itemType="https://schema.org/BlogPosting"
@@ -36,34 +31,12 @@ console.log(posts,'posts')
                     />
                   </div>
                 )}
-
                 <CardContent className="p-5 flex flex-col h-full gap-3">
                   <div className="flex items-center md:divide-x divide-black/10  text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
                     <div className="w-auto pr-3 flex items-center gap-2">
                       <UserIcon aria-label="UserIcon" />
                       {post?.author?.name || "VieCells"}
                     </div>
-                    {/* <div className="flex-1 px-3 flex items-center gap-2">
-                      <CalendarIcon
-                        size={16}
-                        role="img"
-                        aria-label="Open calendar"
-                      />
-
-                      <time
-                        dateTime={post?.publishedAt}
-                        itemProp="datePublished"
-                      >
-                        {new Date(post?.publishedAt).toLocaleDateString(
-                          "en-US",
-                          {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                          }
-                        )}
-                      </time>
-                    </div> */}
                   </div>
 
                   {/* {post?.blog_categories && (
@@ -93,6 +66,6 @@ console.log(posts,'posts')
           ))}
         </div>
       </SectionBlock>
-    </>
+    </div>
   );
 }

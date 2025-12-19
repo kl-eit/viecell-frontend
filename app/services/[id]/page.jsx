@@ -6,12 +6,12 @@ import SectionBlock from "../../shared/Section";
 import Button from "../../shared/Button/Button";
 import Link from "next/link";
 import SideBarHelp from "../../shared/SideBarHelp/SideBarHelp";
+import Testimonials from "../Testimonial";
+import Blogs from "../../shared/Blogs/Blogs";
 export default async function ServiceDetailsPage({ params }) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
-  const services = await fetchAPI(
-    `services?filters[slug][$eq]=${id}`
-  );
+  const services = await fetchAPI(`services?filters[slug][$eq]=${id}`);
   const service = services?.[0];
   const pageTitle = service?.Title;
   const newLink = {
@@ -19,10 +19,16 @@ export default async function ServiceDetailsPage({ params }) {
     Title: service?.Title,
     slug: id,
   };
-  const updatedLinkPages = service?.link_pages
-    ? [...service?.link_pages, newLink]
-    : [newLink];
-  console.log("Service Details Page:", service);
+  const testimonialCategory = service?.testimonial_category?.slug;
+  const testimonial = testimonialCategory
+    ? await fetchAPI(
+        `testimonial-categories?filters[slug]=${testimonialCategory}`
+      )
+    : null;
+const PageCategories = service.CategoryPages.slug
+const LinkCategories = await fetchAPI(`service-categories?filters[slug]=${PageCategories}`);
+console.log(LinkCategories,'ServicesCategories')
+
   return (
     <div>
       <PageHeaderSetter title={pageTitle} breadcrumbLast={service?.title} />
@@ -64,10 +70,10 @@ export default async function ServiceDetailsPage({ params }) {
               </div>
               <div className="">
                 <ul className="flex flex-col w-full space-y-2 text-[14px] gap-1">
-                  {updatedLinkPages?.map((tag) => {
+                  {LinkCategories[0]?.services?.map((tag, index) => {
                     const isActive = id === tag?.slug;
                     return (
-                      <li key={tag?.id} className="mb-2 w-full">
+                      <li key={index} className="mb-2 w-full">
                         <Link
                           href={`/services/${tag?.slug}`}
                           className={`flex w-full px-3 rounded-lg py-2 ${
@@ -98,14 +104,13 @@ export default async function ServiceDetailsPage({ params }) {
                 Take the First Step Toward Better Health with a Free
                 Consultation
               </div>
-           
-                <div className="text-xs font-normal font-['Roboto'] leading-5 text-lime-900">
-                  Take the first step towards better health with a complimentary
-                  consultation with our specialists. Discuss your needs, explore
-                  treatment options, and learn how our advanced facilities can
-                  help you.
-                </div>
-           
+
+              <div className="text-xs font-normal font-['Roboto'] leading-5 text-lime-900">
+                Take the first step towards better health with a complimentary
+                consultation with our specialists. Discuss your needs, explore
+                treatment options, and learn how our advanced facilities can
+                help you.
+              </div>
 
               <div className="flex flex-col justify-center items-center gap-2.5">
                 <Link href="/contact-us">
@@ -119,6 +124,11 @@ export default async function ServiceDetailsPage({ params }) {
           </div>
         </div>
       </SectionBlock>
+      {testimonialCategory && 
+      <>
+      <Testimonials testimonials={testimonial} />
+       <Blogs /></>}
+    
     </div>
   );
 }

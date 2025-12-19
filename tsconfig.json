@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/page.jsx", "app/shared/Header.jsx", "app/layout.jsx", "app/shared/Footer.jsx", "components/ui/card-hover-effect.jsx"  ],
+, "app/page.jsx", "app/shared/Header.jsx", "app/layout.jsx", "app/shared/Footer.jsx", "components/ui/card-hover-effect.jsx", "components/ui/phone-input.tsx"  ],
   "exclude": ["node_modules"]
 }

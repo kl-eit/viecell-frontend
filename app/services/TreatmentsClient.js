@@ -14,9 +14,8 @@ function extractPlainText(blocks) {
       }
       return "";
     })
-    .join(" ");
+    .join("");
 }
-
 // Helper to truncate text
 function truncateText(text, maxLength = 100) {
   if (text.length <= maxLength) return text;
@@ -32,22 +31,18 @@ export default function TreatmentsClient({ services }) {
       const filtered = services.filter(
         (service) =>
           service.service_category &&
-          service.service_category.Name.toLowerCase() ===
-            categoryParam.toLowerCase()
+          service.service_category.slug.toLowerCase() === categoryParam.toLowerCase()
       );
       setFilteredServices(filtered);
     } else {
       setFilteredServices(services);
     }
   }, [categoryParam, services]); 
-
-
   useEffect(() => {
     if (filteredServices.length === 0 && categoryParam) {
-      router.push("/services");
+       router.push("/services");
     }
   }, [filteredServices, categoryParam, router]);
-
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4">

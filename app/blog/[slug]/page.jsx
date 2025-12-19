@@ -8,18 +8,18 @@ import Link from "next/link";
 export default async function BlogDetailsPage({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
-  const posts = await fetchAPI(
-    `articles?filters[slug][$eq]=${slug}`
-  );
+  const posts = await fetchAPI(`articles?filters[slug][$eq]=${slug}`);
+  const categories = await fetchAPI(`categories`);
   const post = posts?.[0];
-
   const recentPostsData = await fetchAPI(
     `articles?sort[0]=publishedAt:desc&pagination[limit]=3&filters[slug][$ne]=${slug}`
   );
   const recentPosts = recentPostsData || [];
+  console.log(posts,'posts')
+   console.log(categories,'categories')
   return (
     <>
-  <PageHeaderSetter title="Blog Details" breadcrumbLast="Blog Details" />
+      <PageHeaderSetter title="Blog Details" breadcrumbLast="Blog Details" />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-9">
@@ -79,18 +79,23 @@ export default async function BlogDetailsPage({ params }) {
                 <div className="prose prose-lg max-w-full text-lime-900 font-['Roboto']">
                   {post?.Body && <BlocksRenderer content={post.Body} />}
                 </div>
+                <div className="prose prose-lg max-w-full text-lime-900 font-['Roboto']">
+                  {post?.ckeditor && (
+                    <div dangerouslySetInnerHTML={{ __html: post.ckeditor }} />
+                  )}
+                </div>
               </div>
             </article>
           </div>
-          <div className="col-span-12 md:col-span-3">
+          <div className="col-span-12 md:col-span-3 flex flex-col gap-4">
             <div className="grid gap-6 p-6 bg-[#F4F8F4] rounded-2xl">
               <div className="block text-lime-900 text-lg font-semibold  leading-6">
                 Recent Posts
               </div>
 
-              <div className="recentPosts">
+              <div className="recentPosts flex flex-col gap-3">
                 {recentPosts.map((post) => (
-                  <div key={post.id} className="mb-8 grid grid-cols-12 gap-6">
+                  <div key={post.id} className="grid grid-cols-12 gap-4">
                     {post?.cover && (
                       <div className="mb-4 overflow-hidden rounded-lg col-span-12 md:col-span-4">
                         <img
@@ -112,15 +117,9 @@ export default async function BlogDetailsPage({ params }) {
                         />
                       </Link>
                       <div className="flex items-center text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
-                        <CalendarIcon
-                          size={16}
-                          role="img"
-                          aria-label="Open calendar"
-                        />
                         <time
                           dateTime={post?.publishedAt}
                           itemProp="datePublished"
-                          className="ml-2"
                         >
                           {new Date(post?.publishedAt).toLocaleDateString(
                             "en-US",
@@ -136,6 +135,28 @@ export default async function BlogDetailsPage({ params }) {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="grid gap-6 p-6 bg-[#F4F8F4] rounded-2xl">
+               <div className="block text-lime-900 text-lg font-semibold  leading-6">
+                  Categories
+                </div>
+              <ul className="flex flex-col w-full space-y-2 text-[14px] gap-1">
+               {categories?.map((cat)=>{
+              return(
+                   <li key={cat?.id} className="mb-2 w-full">
+                   <Link
+                          href={`/category/${cat?.slug}`}
+                          className={`flex w-full px-3 rounded-lg py-2 bg-white text-lime-800`}
+                        >
+                          {cat?.name}
+                          {/* <span className="icon-arrow-right ms-auto">
+                            <ArrowRightIcon size={12} />
+                          </span> */}
+                        </Link>
+                 </li>
+              )
+               })}
+              </ul>
             </div>
           </div>
         </div>

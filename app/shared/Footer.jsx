@@ -17,12 +17,14 @@ export default function Footer() {
     {
       title: "Treatments",
       links: [
-        { title: "Eye Disorders", href: "/services?category=Eye Disorders" },
+        { title: "Eye Disorders", href: "/services?category=eye-disorders" },
         { title: "Infertility", href: "/services?category=Infertility" },
-        { title: "Orthopedic Conditions", href: "/services?category=Orthopedic Conditions" },
-        { title: "Neuro Disorders", href: "/services?category=Neuro Disorders" },
-        { title: "Organ Related", href: "/services?category=Organ Related" },
-        { title: "Skin Injuries", href: "/services?category=Skin Injuries" },
+        { title: "Orthopedic Conditions", href: "/services?category=orthopedic-conditions" },
+        { title: "Neuro Disorders", href: "/services?category=neuro-disorders" },
+        { title: "Organ Related", href: "/services?category=organ-related" },
+        { title: "Skin Injuries", href: "/services?category=skin-injuries" },
+          { title: "IV Drip Therapy", href: "/services?category=iv-drip-therapy" },
+           { title: "Science", href: "/services?category=science" },
       ],
     },
     {

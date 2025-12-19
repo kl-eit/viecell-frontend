@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 export default function IntroSlider({ Banner }) {
  const slideRefs = useRef([]);
+
   const animateSlide = (index) => {
     const slide = slideRefs.current[index];
     if (!slide) return;
