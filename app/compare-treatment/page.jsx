@@ -5,7 +5,7 @@ import SectionBlock from "../shared/Section";
 import Testimonial from "../shared/Testimonial/Testimonial";
 import Typography, { TextDescription } from "../shared/Typography/Typography";
 import FilterTabs from "../shared/FilterTabs/FilterTabs";
-export default async function Page() {
+export default async function page() {
   return (
     <div>
       <PageHeaderSetter
