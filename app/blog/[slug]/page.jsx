@@ -5,6 +5,15 @@ import { CalendarIcon, UserIcon } from "../../shared/icons/icons";
 import Typography from "../../shared/Typography/Typography";
 import SectionBlock from "../../shared/Section";
 import Link from "next/link";
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
+  const posts = await fetchAPI(`articles?filters[slug][$eq]=${slug}`);
+  const post = posts?.[0];
+  return {
+    title: post?.title || 'Blog Post',
+  };
+}
 export default async function BlogDetailsPage({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
@@ -15,6 +24,7 @@ export default async function BlogDetailsPage({ params }) {
     `articles?sort[0]=publishedAt:desc&pagination[limit]=3&filters[slug][$ne]=${slug}`
   );
   const recentPosts = recentPostsData || [];
+  console.log(posts,'categories')
   return (
     <>
       <PageHeaderSetter title="Blog Details" breadcrumbLast="Blog Details" />
@@ -32,19 +42,21 @@ export default async function BlogDetailsPage({ params }) {
                     className="w-full"
                   />
                 )}
-              </div>
-              <div className="flex gap-3 mb-2">
-                {post?.categories?.map((category) => (
+                   <div className="flex gap-3 mb-2 absolute bottom-2 px-4">
+                {post?.blog_categories?.map((category) =>{ 
+                  return(
                   <div key={category.id}>
                     <Link
-                      className="text-xs text-lime-900 font-['Roboto_Condensed'] uppercase bg-lime-100 px-2 py-2 rounded-md"
+                      className="text-xs text-lime-900 font-['Roboto_Condensed'] bg-lime-100 px-3 py-1 rounded-2xl"
                       href={`/category/${category?.slug}`}
                     >
                       {category?.name}
                     </Link>
                   </div>
-                ))}
+                )})}
               </div>
+              </div>
+           
               <div className="flex flex-col h-full gap-4">
                 <Typography
                   title={post?.title}
@@ -135,25 +147,25 @@ export default async function BlogDetailsPage({ params }) {
               </div>
             </div>
             <div className="grid gap-6 p-6 bg-[#F4F8F4] rounded-2xl">
-               <div className="block text-lime-900 text-lg font-semibold  leading-6">
-                  Categories
-                </div>
+              <div className="block text-lime-900 text-lg font-semibold  leading-6">
+                Categories
+              </div>
               <ul className="flex flex-col w-full space-y-2 text-[14px] gap-1">
-               {categories?.map((cat)=>{
-              return(
-                   <li key={cat?.id} className="mb-2 w-full">
-                   <Link
-                          href={`/category/${cat?.slug}`}
-                          className={`flex w-full px-3 rounded-lg py-2 bg-white text-lime-800`}
-                        >
-                          {cat?.name}
-                          {/* <span className="icon-arrow-right ms-auto">
+                {categories?.map((cat) => {
+                  return (
+                    <li key={cat?.id} className="mb-2 w-full">
+                      <Link
+                        href={`/category/${cat?.slug}`}
+                        className={`flex w-full px-3 rounded-lg py-2 bg-white text-lime-800`}
+                      >
+                        {cat?.name}
+                        {/* <span className="icon-arrow-right ms-auto">
                             <ArrowRightIcon size={12} />
                           </span> */}
-                        </Link>
-                 </li>
-              )
-               })}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

@@ -1,3 +1,9 @@
+import { FacebookIcon } from './FacebookIcon';
+import { TwitterIcon } from './TwitterIcon'; 
+import { InstagramIcon } from './InstagramIcon'; 
+import { LinkedinIcon } from './LinkedinIcon';
+import { whatsappIcon } from './whatsappIcon';  
+  
 export const CalendarIcon = ({
   size = 14,
   width,
@@ -201,7 +207,6 @@ export const QuoteIcon = ({
     />
   </svg>
 );
-
 /* Registry for dynamic icons */
 const registry = {
   calendar: CalendarIcon,
@@ -210,12 +215,15 @@ const registry = {
   search: SearchIcon,
   close: CloseIcon,
   quote: QuoteIcon,
+  facebook: FacebookIcon,
+  twitter: TwitterIcon,
+  Instagram: InstagramIcon,
+  Linkedin: LinkedinIcon,
+  whatsapp: whatsappIcon, 
 };
-
-/* Dynamic Icon component */
 const Icon = ({ name, size, width, height, ...props }) => {
   const Comp = registry[name];
-  if (!Comp) return null;
+  if (!Comp) return <span>Icon not found</span>;
   return <Comp size={size} width={width} height={height} {...props} />;
 };
 

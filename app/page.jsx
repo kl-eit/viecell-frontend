@@ -8,6 +8,7 @@ import Blogs from "./shared/Blogs/Blogs";
 import { fetchAPI, getMediaUrl } from "./lib/api";
 import Testimonial from "./shared/Testimonial/Testimonial";
 import TeamMemberSection from "./shared/Team/TeamMember";
+import FilterTabs from "./shared/FilterTabs/FilterTabs";
 import SectionBlock from "./shared/Section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Button, { ReadMore } from "./shared/Button/Button";
@@ -205,15 +206,18 @@ export default async function Home() {
               From booking your trip to guiding your post-procedure rehab, our
               global team ensures a smooth, stress-free experience.
             </TextDescription>
-            <Button icon={true}>Book Free Virtual Consultation</Button>
+            <Button icon={true} href="/appointment-booking">Book Free Virtual Consultation</Button>
           </div>
           <div>
             <img className="w-full rounded-[20px]" src="/CTA-banner.png" />
           </div>
         </div>
       </SectionBlock>
-
       <SectionBlock data-aos="fade-up" data-aos-delay={100}>
+          <FilterTabs />
+      </SectionBlock>
+     
+      {/* <SectionBlock data-aos="fade-up" data-aos-delay={100}>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 md:col-span-6">
             <Typography
@@ -241,11 +245,10 @@ export default async function Home() {
                   </div>
                   <ul className="py-3 flex flex-col space-y-3 w-full">
                     {[
-                      "Treatment Cost",
-                      "Access",
-                      "Waiting Time",
-                      "Support",
-                      "Technology",
+                      "Diseases Treated",
+                      "Cost Range USD",
+                      "Cost Per Day",
+                      "Delivery Methods",
                     ].map((item, i, arr) => (
                       <li
                         key={i}
@@ -273,7 +276,6 @@ export default async function Home() {
                       "Restricted",
                       "3–6 months",
                       "Local only",
-                      "Advanced",
                     ].map((item, i, arr) => (
                       <li
                         key={i}
@@ -297,11 +299,10 @@ export default async function Home() {
                   </div>
                   <ul className="py-3 flex flex-col space-y-3 w-full">
                     {[
-                      "  $$",
-                      " Available under ethics & research-based practice",
-                      "  1–2 weeks",
-                      " Full international patient care",
-                      "Adva  Advanced + Personalizednced",
+                      "Liver Failure, Kidney Failure, Neurological, Heart Failure, Orthopedic",
+                      "10000-15000",
+                      "1786",
+                      "Intravenous, Intrathecal, Local Injection, Trans-arterial",
                     ].map((item, i, arr) => (
                       <li
                         key={i}
@@ -343,10 +344,11 @@ export default async function Home() {
         >
           Experience world-class quality at globally affordable costs
           <div className="inline-flex items-center gap-2 text-[#647252] underline leading-6">
-            Compare Treatment Options <ArrowRightIcon />
+           <Link href="/compare-treatment">Compare Treatment Options <ArrowRightIcon /></Link>
+            
           </div>
         </div>
-      </SectionBlock>
+</SectionBlock> */}
 
       <SectionBlock noSpacing data-aos="fade-up" data-aos-delay={100}>
         <div className="flex flex-col md:flex-row gap-14 p-5 lg:p-10 bg-[#F4F8F4] rounded-4xl">

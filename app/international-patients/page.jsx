@@ -145,7 +145,7 @@ export default async function InternationalPatientsPage() {
               From booking your trip to guiding your post-procedure rehab, our
               global team ensures a smooth, stress-free experience.
             </TextDescription>
-            <Button icon={true}>Book Free Virtual Consultation</Button>
+            <Button icon={true} href="/appointment-booking">Book Free Virtual Consultation</Button>
           </div>
           <div>
             <img className="w-full rounded-[20px]" src="/CTA-banner.png" />

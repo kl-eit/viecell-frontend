@@ -1,8 +1,5 @@
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
+import { notFound } from "next/navigation";
 export default async function Page() {
-  return (
-    <div>
-      <PageHeaderSetter title="Category" />
-    </div>
-  );
+    notFound();
+    return null;
 }

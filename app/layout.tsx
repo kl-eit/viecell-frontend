@@ -5,6 +5,7 @@ import AOSProvider from "./lib/AOSProvider";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 import { PageHeaderProvider } from "./lib/PageHeaderContext";
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700"],
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
   title: "VieCell | Stem Cell Therapy Hospital Surat, Gujarat, India",
   description:
     "VieCell Institute of Regenerative Medicine, Surat, Gujarat offers quality healthcare services at an affordable price and the vision is to provide stem cell based therapy to those suffering from degenerative disorders around the world.",
+  icons: {
+   icon: "/favicon.png",
+  apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

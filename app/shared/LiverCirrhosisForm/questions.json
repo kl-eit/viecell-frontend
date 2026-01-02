@@ -1,0 +1,46 @@
+[
+  {
+    "id": "chronic_alcohol",
+    "question": "Has the individual had chronic alcohol use?",
+    "type": "radio",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": "symptoms",
+    "question": "Do you notice any of the following symptoms?",
+    "type": "checkbox",
+    "options": [
+    "Fatigue",
+   "Yellowing of the skin or eyes (Jaundice)",
+   "Abdominal pain or discomfort",
+   "Swelling in the abdomen or legs",
+   "Unexplained weight loss",
+   "Nausea or vomiting",
+   "Loss of appetite",
+   "Dark urine",
+   "Pale-colored stool",
+   "Itchy skin"
+    ]
+  },
+  {
+    "id": "metabolic_risk",
+    "question": "What type of liver cirrhosis do you think you have?",
+    "type": "checkbox",
+    "options": [
+     "Alcoholic Cirrhosis",
+      "Non-Alcoholic Cirrhosis"
+    ]
+  },
+  {
+    "id": "other_conditions",
+    "question": "Other conditions?",
+    "type": "checkbox",
+    "options": [
+      "Lifestyle / Metabolic Disorder (MASLD/NAFLD)",
+      "Virus Induced (Chronic Viral Hepatitis)",
+      "Autoimmune",
+      "Genetic / Inherited",
+      "Drugs & Toxins (DILI)"
+    ]
+  }
+]

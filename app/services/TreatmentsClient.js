@@ -40,7 +40,10 @@ export default function TreatmentsClient({ services }) {
   }, [categoryParam, services]); 
   useEffect(() => {
     if (filteredServices.length === 0 && categoryParam) {
-       router.push("/services");
+      setTimeout(() => {
+          router.push("/services");
+      }, 1000);
+     
     }
   }, [filteredServices, categoryParam, router]);
   return (

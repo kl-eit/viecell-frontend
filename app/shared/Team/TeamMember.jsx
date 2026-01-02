@@ -44,7 +44,7 @@ export default function TeamMemberSection() {
           />
         </div>
         <div className="col-span-12 lg:col-span-5 flex justify-start lg:justify-end">
-          <Link href={"/"}>
+          <Link href={"/team-list"}>
             <Button variant="primary" icon={true}>
               Meet Our Medical Experts
             </Button>

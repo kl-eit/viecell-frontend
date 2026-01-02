@@ -6,7 +6,6 @@ function page() {
   return (
     <>
       <PageHeaderSetter title="Contact Us" />
-
       <SectionBlock>
         <div className="grid grid-cols-1 lg:grid-cols-[476px_1fr] gap-7 ">
           <div className="px-10 py-10 bg-lime-50 rounded-[30px] inline-flex flex-col justify-start items-start gap-7 ">

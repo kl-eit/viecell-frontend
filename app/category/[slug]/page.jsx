@@ -8,9 +8,11 @@ export default async function DetailsPage({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
   const articles = await fetchAPI(`categories?filters[slug]=${slug}`,);
+  console.log(articles,'articles')
   return (
     <div>
       <PageHeaderSetter title={slug} />
+      
       <SectionBlock>
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
           {articles[0]?.articles?.map((post) => (

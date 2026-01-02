@@ -25,8 +25,12 @@ export default async function ServiceDetailsPage({ params }) {
         `testimonial-categories?filters[slug]=${testimonialCategory}`
       )
     : null;
-const PageCategories = service.CategoryPages.slug
-const LinkCategories = await fetchAPI(`service-categories?filters[slug]=${PageCategories}`);
+  const PageCategories = service?.CategoryPages?.slug;
+  const LinkCategories = await fetchAPI(
+    `service-categories?filters[slug]=${PageCategories}`
+  );
+  const Faqs = await fetchAPI(`services?filters[slug][$eq]=${id}`, "Faqs.faqs");
+  console.log("faq", Faqs);
 
   return (
     <div>
@@ -123,11 +127,12 @@ const LinkCategories = await fetchAPI(`service-categories?filters[slug]=${PageCa
           </div>
         </div>
       </SectionBlock>
-      {testimonialCategory && 
-      <>
-      <Testimonials testimonials={testimonial} />
-       <Blogs /></>}
-    
+      {testimonialCategory && (
+        <>
+          <Testimonials testimonials={testimonial} />
+          <Blogs />
+        </>
+      )}
     </div>
   );
 }

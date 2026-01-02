@@ -64,7 +64,7 @@ export default function MobileRichNavigationMenu() {
 
       {isOpen && (
         <>
-          <div className="absolute top-0 left-0 w-[290px] h-screen bg-white z-50 p-4 overflow-auto md:hidden">
+          <div className="absolute top-full left-0 w-full h-screen bg-white z-50 p-4 overflow-auto md:hidden">
             <nav className="space-y-4">
               <div>
                 <ul className="flex flex-col">
@@ -199,10 +199,10 @@ export default function MobileRichNavigationMenu() {
               </div>
             </nav>
           </div>
-          <div
+          {/* <div
             className="hs-overlay-backdrop transition duration fixed inset-0 bg-gray-900/50 dark:bg-neutral-900/80 h-screen lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
-          ></div>
+          ></div> */}
         </>
       )}
 
