@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import Section from "../Section";
 import Icon, { CalendarIcon, UserIcon, ArrowRightIcon } from "../icons/icons";
-import Button, { ReadMore } from "../Button/Button";
+import Button, { ReadMore } from "../../component/Button/Button";
 import { fetchAPI, getMediaUrl } from "../../lib/api";
 import Typography from "../Typography/Typography";
 import Link from "next/link";

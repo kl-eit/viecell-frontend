@@ -1,8 +1,8 @@
-import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import IntroSlider from "./shared/IntroSlider/IntroSlider";
+import ThemeCard from "./component/card/card";
 import Faqs from "./shared/Faq/Faq";
 import Blogs from "./shared/Blogs/Blogs";
 import { fetchAPI, getMediaUrl } from "./lib/api";
@@ -10,8 +10,9 @@ import Testimonial from "./shared/Testimonial/Testimonial";
 import TeamMemberSection from "./shared/Team/TeamMember";
 import FilterTabs from "./shared/FilterTabs/FilterTabs";
 import SectionBlock from "./shared/Section";
+import CTASection from "./component/CTASection/CTASection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Button, { ReadMore } from "./shared/Button/Button";
+import Button, { ReadMore } from "./component/Button/Button";
 import Typography, {
   TextDescription,
   TypographyList,
@@ -25,60 +26,50 @@ export default async function Home() {
   const TreatmentData = TreatmentsData?.Treatment || [];
   const features = [
     {
-      icon: "/Regenerative-therapies.svg",
-      title: "Regenerative Therapies",
-      desc: "Advanced treatments that help repair tissues, reduce.",
+      icon: "/International-Standards.svg",
+      title: "International Standards",
+      desc: "Viecell follows globally recognized medical and data-handling standards to ensure safety, accuracy, and consistency across care.",
     },
     {
-      icon: "/International-Patients.svg",
-      title: "International Patients",
-      desc: "Focused solutions for liver regeneration, infertility support, and neurological.",
+      icon: "/Expert-Led-Care.svg",
+      title: "Expert-Led Care",
+      desc: "Every treatment pathway is guided by experienced doctors and specialists with proven clinical backgrounds.",
     },
     {
-      icon: "/Expert-Doctors.svg",
-      title: "Expert Doctors",
-      desc: "Compassionate, tailored treatment plans backed by modern diagnostics.",
+      icon: "/Global-Patient-Base.svg",
+      title: "Global Patient Base",
+      desc: "Patients from over 20 countries trust Viecell for transparent processes, reliable outcomes, and continuity of care.",
     },
   ];
 
   return (
     <div>
       <IntroSlider Banner={Banner} />
-      <div
-        className="pt-2.5 
-    bg-linear-to-b from-[#F3F5EC] to-[#FFFFFF]
-    border-t border-black/10"
-      >
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3  lg:divide-x divide-black/10 mt-6 gap-6 space-x-2">
-            {features.map((item, i) => (
-              <div
-                key={i}
-                className="flex self-stretch justify-start items-start gap-5 pr-2"
-                data-aos="fade-up"
-                data-aos-delay={i * 100}
-              >
-                <Image
-                  src={item.icon}
-                  width={30}
-                  height={30}
-                  alt={item.title}
-                />
-
-                <div className="flex flex-col justify-center items-start gap-1.5">
-                  <div className="text-lime-900 text-xl font-semibold leading-5">
-                    {item.title}
-                  </div>
-
-                  <div className="text-neutral-500 text-[14px] leading-[120%]">
-                    {item.desc}
-                  </div>
-                </div>
-              </div>
-            ))}
+      <SectionBlock className="text-lime-900">
+        <div className="text-center flex flex-col gap-2">
+          <Typography
+            title="Trusted Worldwide. Proven Clinically."
+            headingLevel="h2"
+            size="lg"
+            color="primary"
+            align="center"
+            className="text-lime-900! "
+          />
+          <div className="max-w-[500px] mx-auto">
+            <TextDescription
+              className="text-lime-900! leading-normal!"
+              align="center"
+              text="Backed by international standards, experienced clinicians, and patients across the globe."
+            />
           </div>
         </div>
-      </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7.5 space-x-2">
+          {features.map((item, i) => (
+            <ThemeCard key={i} item={item} />
+          ))}
+        </div>
+      </SectionBlock>
       <SectionBlock>
         <div className="flex flex-col justify-start items-center gap-7">
           <div className="grid grid-cols-12 gap-6 items-center flex-col md:flex-row justify-between">
@@ -206,7 +197,9 @@ export default async function Home() {
               From booking your trip to guiding your post-procedure rehab, our
               global team ensures a smooth, stress-free experience.
             </TextDescription>
-            <Button icon={true} href="/appointment-booking">Book Free Virtual Consultation</Button>
+            <Button icon={true} href="/appointment-booking">
+              Book Free Virtual Consultation
+            </Button>
           </div>
           <div>
             <img className="w-full rounded-[20px]" src="/CTA-banner.png" />
@@ -214,9 +207,9 @@ export default async function Home() {
         </div>
       </SectionBlock>
       <SectionBlock data-aos="fade-up" data-aos-delay={100}>
-          <FilterTabs />
+        <FilterTabs />
       </SectionBlock>
-     
+
       {/* <SectionBlock data-aos="fade-up" data-aos-delay={100}>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 md:col-span-6">
@@ -471,6 +464,7 @@ export default async function Home() {
       <Faqs />
       <Testimonial />
       <Blogs />
+      <CTASection />
     </div>
   );
 }

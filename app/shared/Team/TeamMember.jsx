@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../../components/ui/card";
-import Button from "../Button/Button";
+import Button from "../../component/Button/Button";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -31,7 +31,7 @@ export default function TeamMemberSection() {
   const { Title, Description, teams } = teamData;
 
   return (
-    <SectionBlock className="bg-linear-to-l from-lime-200 via-stone-100 to-lime-100">
+    <SectionBlock rounded className="bg-linear-to-l from-lime-200 via-stone-100 to-lime-100">
       <div className="grid grid-cols-12 gap-6 items-center">
         <div className="col-span-12 lg:col-span-7">
           <Typography

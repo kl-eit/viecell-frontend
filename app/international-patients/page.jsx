@@ -6,7 +6,7 @@ import Typography, {
   TextDescription,
   TypographyList,
 } from "../shared/Typography/Typography";
-import Button from "../shared/Button/Button";
+import Button from "../component/Button/Button";
 import Testimonial from "../shared/Testimonial/Testimonial";
 
 export default async function InternationalPatientsPage() {

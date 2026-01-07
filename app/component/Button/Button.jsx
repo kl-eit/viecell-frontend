@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRightIcon } from "../icons/icons";
+import { ArrowRightIcon } from "../../shared/icons/icons";
 
 const baseClasses =
   "btn fw-500 rounded-[100px] cursor-pointer group relative inline-flex ";

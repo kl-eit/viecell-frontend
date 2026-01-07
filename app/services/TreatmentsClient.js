@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ReadMore } from "../shared/Button/Button";
+import { ReadMore } from "../component/Button/Button";
 import { getMediaUrl } from "../lib/api";
 import { CardDescription } from "../../components/ui/card";
 function extractPlainText(blocks) {

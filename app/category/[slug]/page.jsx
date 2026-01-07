@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardTitle } from "../../../components/ui/card";
 import { PageHeaderSetter } from "../../lib/PageHeaderContext";
 import { fetchAPI } from "../../lib/api";
-import { ReadMore } from "../../shared/Button/Button";
+import { ReadMore } from "../../component/Button/Button";
 import SectionBlock from "../../shared/Section";
 import { UserIcon } from "../../shared/icons/icons";
 export default async function DetailsPage({ params }) {

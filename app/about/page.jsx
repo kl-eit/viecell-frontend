@@ -9,7 +9,7 @@ import Typography, {
   TypographyList,
 } from "../shared/Typography/Typography";
 import Blogs from "../shared/Blogs/Blogs";
-import Button from "../shared/Button/Button";
+import Button from "../component/Button/Button";
 import AnimatedCounter from "./AnimatedCounter";
 
 const tabContent = [
@@ -95,7 +95,7 @@ export default async function About() {
           />
         </div>
       </SectionBlock>
-      <SectionBlock className="bg-[#F7F8EA]">
+      <SectionBlock className="bg-[#F7F8EA]" rounded>
         <div>
           <Typography
             title="Our Happy Clients & Achievements"
@@ -193,7 +193,7 @@ export default async function About() {
           />
         </div>
       </SectionBlock>
-      <SectionBlock className="bg-[#F7F8EA]">
+      <SectionBlock className="bg-[#F7F8EA]" rounded>
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="w-full lg:w-[50%]">
             <div className="self-stretch flex flex-col justify-start items-start gap-3">

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { fetchAPI, getMediaUrl } from "../lib/api";
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
-import { ReadMore } from "../shared/Button/Button";
+import { ReadMore } from "../component/Button/Button";
 import { CalendarIcon, UserIcon } from "../shared/icons/icons";
 import {
   Card,

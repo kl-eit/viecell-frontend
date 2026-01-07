@@ -1,6 +1,6 @@
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import Blogs from "../shared/Blogs/Blogs";
-import Button from "../shared/Button/Button";
+import Button from "../component/Button/Button";
 import SectionBlock from "../shared/Section";
 import Testimonial from "../shared/Testimonial/Testimonial";
 import Typography, { TextDescription } from "../shared/Typography/Typography";

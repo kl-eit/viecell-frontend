@@ -70,7 +70,7 @@ export default function MobileRichNavigationMenu() {
                 <ul className="flex flex-col">
                   {menuData.map((item, levelIndex) => {
                     const hasChildren =
-                      Array.isArray(item.children) && item.children.length > 0;
+                      Array.isArray(item?.children) && item?.children?.length > 0;
                     return (
                       <li
                         key={levelIndex}
@@ -82,7 +82,7 @@ export default function MobileRichNavigationMenu() {
                               className="flex items-center justify-between px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
                               onClick={() => setDropdownOpen(!dropdownOpen)}
                             >
-                              <a href={`${item.url}`}>{item.label}</a>
+                              <a href={`${item?.url}`}>{item?.label}</a>
                               <svg
                                 className={`w-4 h-4 transition-transform ${
                                   dropdownOpen ? "rotate-180" : ""
@@ -187,9 +187,9 @@ export default function MobileRichNavigationMenu() {
                         ) : (
                           <Link
                             className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
-                            href={`${item.url}`}
+                            href={`${item?.url}`}
                           >
-                            {item.label}
+                            {item?.label}
                           </Link>
                         )}
                       </li>
@@ -220,7 +220,7 @@ function RichNavigationMenu() {
       <NavigationMenuList>
         {menuData?.map((item, i) => {
           const hasChildren =
-            Array.isArray(item.children) && item.children.length > 0;
+            Array.isArray(item?.children) && item?.children?.length > 0;
           return (
             <NavigationMenuItem key={i}>
               {hasChildren ? (
@@ -247,11 +247,11 @@ function RichNavigationMenu() {
                 </React.Fragment>
               ) : (
                 <Link
-                  key={item.id}
-                  href={`/${item.url}`}
-                  className="px-3 font-['Roboto_Condensed']"
+                  key={item?.id}
+                  href={`/${item?.url}`}
+                  className="px-2"
                 >
-                  {item.label}
+                  {item?.label}
                 </Link>
               )}
             </NavigationMenuItem>

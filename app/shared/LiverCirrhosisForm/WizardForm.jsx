@@ -4,7 +4,6 @@ import questions from "./questions.json";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field, FieldLabel } from "@/components/ui/field";
-import Button from "../Button/Button";
 export default function WizardForm() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});

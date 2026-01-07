@@ -3,7 +3,7 @@ import { TwitterIcon } from './TwitterIcon';
 import { InstagramIcon } from './InstagramIcon'; 
 import { LinkedinIcon } from './LinkedinIcon';
 import { whatsappIcon } from './whatsappIcon';  
-  
+  import { PhoneIcon } from './PhoneIcon';  
 export const CalendarIcon = ({
   size = 14,
   width,
@@ -220,6 +220,7 @@ const registry = {
   Instagram: InstagramIcon,
   Linkedin: LinkedinIcon,
   whatsapp: whatsappIcon, 
+  Phone: PhoneIcon, 
 };
 const Icon = ({ name, size, width, height, ...props }) => {
   const Comp = registry[name];

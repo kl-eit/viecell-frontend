@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description:
     "VieCell Institute of Regenerative Medicine, Surat, Gujarat offers quality healthcare services at an affordable price and the vision is to provide stem cell based therapy to those suffering from degenerative disorders around the world.",
   icons: {
-   icon: "/favicon.png",
-  apple: "/apple-touch-icon.png",
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -36,9 +36,12 @@ export default function RootLayout({
       <body className={`${roboto.variable} ${robotoCondensed.variable}`}>
         <PageHeaderProvider>
           <AOSProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
+            <main className="lg:p-6 p-4">
+              <Header />
+              {children}
+             
+              <Footer />
+            </main>
           </AOSProvider>
         </PageHeaderProvider>
       </body>

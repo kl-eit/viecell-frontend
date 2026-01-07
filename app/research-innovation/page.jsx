@@ -5,7 +5,7 @@ import Typography, {
   TextDescription,
   TypographyList,
 } from "../shared/Typography/Typography";
-import Button from "../shared/Button/Button";
+import Button from "../component/Button/Button";
 const tabContent = [
   {
     id: "upload",

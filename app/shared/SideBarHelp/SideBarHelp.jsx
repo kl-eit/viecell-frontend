@@ -1,4 +1,4 @@
-import Button, { ReadMore } from "../Button/Button";
+import Button from "../../component/Button/Button";
 import Link from "next/link";
 export default function SideBarHelp({className}) {
   return (

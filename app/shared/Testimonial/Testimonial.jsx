@@ -6,7 +6,7 @@ import Typography, { TextDescription } from "../Typography/Typography";
 import { QuoteIcon } from "../icons/icons";
 import { fetchAPI, getMediaUrl } from "@/app/lib/api";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 export default function Testimonial() {
@@ -49,6 +49,7 @@ useEffect(() => {
   return (
     <SectionBlock
       mode="light"
+      rounded
       className=" bg-lime-50/50 bg-[url('/Testimonial-bg.png')] bg-cover bg-center"
     >
       <div className="flex flex-col justify-center items-center gap-3">
@@ -68,15 +69,16 @@ useEffect(() => {
       <div className="flex w-full min-w-0">
         <div className="w-full min-w-0">
           <Swiper
-            modules={[Pagination, Autoplay]}
+            modules={[Pagination, Autoplay,Navigation]}
             slidesPerView={1}
             spaceBetween={20}
-            pagination={{ clickable: true }}
+          
             autoplay={{ delay: 5000 }}
             breakpoints={{
               640: { slidesPerView: 1 },
               1024: { slidesPerView: 2 },
             }}
+            pagination={{ clickable: true, dynamicBullets: true }}
             className="h-full"
           >
             {testimonials.map((t) => (

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Button from "../shared/Button/Button";
-import { PhoneInput } from "../../components/ui/phone-input";
+import Button from "../component/Button/Button";
+// import { PhoneInput } from "../../components/ui/phone-input";
 export default function GetInTouchForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -116,7 +116,7 @@ export default function GetInTouchForm() {
 
      
       <div>
-        <PhoneInput
+        {/* <PhoneInput
           type="tel"
           name="phone"
           placeholder="Phone Number"
@@ -125,7 +125,7 @@ export default function GetInTouchForm() {
           className={`w-full border px-3.5   bg-white rounded-lg focus:outline-none ${
             errors.phone ? "border-red-500 focus:ring-red-300" : "border-gray-300 focus:ring-lime-300"
           }`}
-        />
+        /> */}
          
         {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
       </div>

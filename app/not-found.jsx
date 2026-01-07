@@ -1,5 +1,5 @@
 import { PageHeaderSetter } from "./lib/PageHeaderContext";
-import Button from "./shared/Button/Button";
+import Button from "./component/Button/Button";
 export default function NotFound() {
   return (
     <div>

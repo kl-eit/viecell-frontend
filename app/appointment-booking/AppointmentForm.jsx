@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Button from "../shared/Button/Button";
+import Button from "../component/Button/Button";
 
 export default function AppointmentForm() {
   const [formData, setFormData] = useState({

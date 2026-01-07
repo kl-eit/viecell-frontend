@@ -1,0 +1,60 @@
+import Button from "../Button/Button";
+import SectionBlock from "../../shared/Section";
+export default function CTASection({CTAdata}) {
+  const fallback = [
+    {
+      label: "Take the first step",
+      titleSmall: "Take the first step toward Liver Regeneration",
+      titleBig:
+        "Understanding your condition is the first step. Viecell helps you explore personalized regenerative solutions based on your medical profile.",
+      buttons: [
+        {
+          text: "Book Consultation",
+          variant: "primary",
+          href: null,
+         
+        },
+        {
+          text: "Talk to a Regenerative Specialist",
+          variant: "outline-primary",
+          href: "/appointment-booking",
+         
+        },
+      ],
+    },
+  ];
+console.log(CTAdata?.length,'CTAdata')
+const data = Array.isArray(CTAdata) && CTAdata?.length ? CTAdata : fallback;
+ const section = data[0];
+console.log(CTAdata,'CTAData')
+  return (
+    <SectionBlock
+      className="bg-[linear-gradient(270deg,#F3F5EC_0%,#FFFFFF_49.77%,#F3F5EC_100%)] text-lime-900"
+      noSpacing
+      rounded
+    >
+      <div className="flex flex-col gap-20 mx-auto">
+        <div className="max-w-6xl">
+          <div className="flex-1 py-14 inline-flex flex-col justify-center items-center gap-10">
+            <h3 className=" text-2xl font-medium leading-normal">
+              {section?.titleSmall}
+            </h3>
+            <div className="text-4xl text-center">{section?.titleBig}</div>
+            <div className="gap-2.5 grid grid-cols-1 md:grid-cols-2">
+              {section?.buttons.map((btn, bi) => (
+                <Button
+                  key={bi}
+                  variant={btn?.variant}
+                  href={btn?.href}
+                  className="justify-center"
+                >
+                  {btn?.text}
+                </Button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </SectionBlock>
+  );
+}
