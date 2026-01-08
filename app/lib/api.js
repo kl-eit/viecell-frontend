@@ -10,7 +10,10 @@ export async function fetchAPI(endpoint, populate = "*") {
       populateQuery = buildPopulateQuery(populate);
     }
     const url = `${STRAPI_URL}/api/${endpoint}${hasQuery ? "&" : "?"}populate=${populate}`;
-    const res = await fetch(url);
+     const res = await fetch(url, {
+      cache: "no-store",           // Disable Next.js cache
+      next: { revalidate: 0 },     // Extra safety for App Router
+    });
     if (!res.ok) throw new Error(`Failed to fetch ${url}, status: ${res.status}`);
     const json = await res.json();
     return json.data;  // Return just the data from the response

@@ -1,5 +1,5 @@
 "use client";
-import SectionBlock from "../../shared/Section";
+import SectionBlock from "../../../shared/Section";
 export default function ServiceCardSection({
   fetureData,
   align = "center",
@@ -52,7 +52,7 @@ export default function ServiceCardSection({
             return (
               <div
                 key={i}
-                className="p-10 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col justify-start items-start gap-4"
+                className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col justify-start items-start gap-4"
               >
                 {card?.title && (
                   <h3 className="text-2xl font-normal font-['Roboto_Condensed']">

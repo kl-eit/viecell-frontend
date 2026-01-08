@@ -36,7 +36,7 @@ export default function RootLayout({
       <body className={`${roboto.variable} ${robotoCondensed.variable}`}>
         <PageHeaderProvider>
           <AOSProvider>
-            <main className="lg:p-6 p-4">
+            <main className="p-4">
               <Header />
               {children}
              

@@ -197,7 +197,7 @@ export default function Footer() {
             <hr className="border-t border-[#979832]/30" />
           </div>
           <div className="text-center flex flex-col ">
-            <img className="mx-auto" src="/footer-logo.png" alt="logo" />
+            <img className="mx-auto max-w-[140px]" src="/footer-logo.png" alt="logo" />
           </div>
           <div>
             <hr className="border-t border-[#979832]/30" />
@@ -209,7 +209,7 @@ export default function Footer() {
               </div>
               <a
                 href="tel:+91 90012 90028"
-                className="text-lime-900 text-5xl font-normal font-['Roboto_Condensed'] leading-none"
+                className="text-lime-900 text-4xl font-normal font-['Roboto_Condensed'] leading-none"
               >
                 +91 90012 90028
               </a>
@@ -219,7 +219,7 @@ export default function Footer() {
                 Reach out us via mail
               </div>
               <a
-                className="text-lime-900 text-5xl font-normal font-['Roboto_Condensed'] leading-none"
+                className="text-lime-900 text-4xl font-normal font-['Roboto_Condensed'] leading-none"
                 href="mailto:contact@viecells.com"
               >
                 contact@viecells.com

@@ -1,0 +1,220 @@
+{
+  "pageData": {
+    "hero": {
+      "title": "Autoimmune Diseases",
+      "description": "<p class=\"mb-3\"><b>When your body starts fighting itself.</b> Autoimmune diseases occur when the immune system mistakenly attacks healthy tissues instead of protecting the body from infections. </p><p class=\"mb-3\">This leads to chronic inflammation, tissue damage, and progressive organ dysfunction.</p>",
+      "imageSrc": "/Liver-Cirrhosis-intro.png",
+      "reverse": true
+    },
+    "sections": [
+      {
+        "key": "intro",
+        "data": {
+          "description": "<p>If you’ve been feeling constantly tired, dealing with pain, swelling, rashes, stiffness, or unexplained symptoms — and no one has given you a clear answer — you’re not alone.</p><p>Autoimmune diseases are often invisible, confusing, and slow to diagnose. Many people live with symptoms for years before understanding what’s happening inside their body.</p>"
+        }
+      },
+      {
+        "key": "cards",
+        "data": {
+          "headingSmall": "What is an Autoimmune Disease?",
+          "titleBig": "<div>Your immune system’s job is simple:</div><div>Protect you from infections.</div><br/><div>But in Autoimmune Disease, something goes wrong.</div>",
+          "cardslabel": "",
+          "cards": [
+            {
+              "title": "Instead of attacking germs, the immune system:",
+              "description": "<ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Mistakes <b>your own body</b> as a threat</li><li>Attacks healthy tissues</li><li>Never fully “switches off”</li></ul>"
+            },
+            {
+              "title": "This leads to:",
+              "description": "<ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Long-lasting inflammation</li><li>Pain and swelling</li><li>Damage to organs over time</li></ul>"
+            }
+          ],
+          "note1": "",
+          "titleBig2": "<div>In simple words:</div><div>Your body is fighting the wrong battle — and hurting itself.</div>"
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "Why does this happen?",
+          "contentHTML": "<div><p class=\"mb-2\">The exact cause isn’t always clear, but autoimmune diseases are often linked to:</p><ul class=\"list-disc list-inside ml-2.5\"><li>Genetics (family history)</li><li>Infections</li><li>Hormonal changes</li><li>Stress</li><li>Lifestyle and environmental triggers</li></ul></div>",
+          "messageHTML": "Once triggered, the immune system gets stuck in attack mode.",
+          "reverse": false,
+          "align": "left",
+          "sliderImages": [
+            "/Liver-Cirrhosis-intro.png",
+            "/Liver-Cirrhosis-intro.png"
+          ]
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "What does Autoimmune Disease feel like?",
+          "contentHTML": "<div><p>People experience different symptoms, but common ones include:</p><ul class=\"list-disc list-inside ml-2.5\"><li>Extreme fatigue (even after rest)</li><li>Joint pain or morning stiffness</li><li>Swelling in hands, knees, or feet</li><li>Skin rashes or sensitivity to sunlight</li><li>Digestive issues</li><li>Brain fog or low energy</li><li>Symptoms that come and go in flares</li></ul></div>",
+          "messageHTML": "<p>Many patients say:</p> <b>I don’t look sick, but I don’t feel normal.</b>",
+          "reverse": true,
+          "align": "left",
+          "sliderImages": [
+            "/Liver-Cirrhosis-intro.png"
+          ]
+        }
+      },
+      {
+        "key": "cards",
+        "data": {
+          "headingSmall": "Different Autoimmune Diseases, Same Root Problem",
+          "titleBig": "<div>Autoimmune diseases can affect different parts of the body, but the underlying issue is similar.</div>",
+          "cardslabel": "",
+          "cards": [
+            {
+              "title": "Joint-focused",
+              "description": "<div>Rheumatoid Arthritis (RA)<br/> Pain, stiffness, joint damage</div>"
+            },
+            {
+              "title": "Multi-organ",
+              "description": "<div>Systemic Lupus Erythematosus (SLE)<br/> Skin, joints, kidneys, blood, lungs</div>"
+            },
+            {
+              "title": "Skin & Organ Hardening",
+              "description": "<div>Scleroderma<br/> Tight skin, breathing problems, digestion issues</div>"
+            }
+          ],
+          "note1": "Some people also develop autoimmune conditions that affect the <b>liver, lungs, kidneys, or nerves.</b>",
+          "titleBig2": "<div>Autoimmune diseases can affect different parts of the body, but the underlying issue is similar.</div>"
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "How Autoimmune Diseases are diagnosed?",
+          "contentHTML": "<div><p class=\"text-md font-medium mb-2\">Clinical History</p><ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Genetics (family history)</li><li>Infections</li><li>Hormonal changes</li><li>Stress</li><li>Lifestyle and environmental triggers</li></ul><p class=\"text-md font-medium mb-2\">Organ Assessment</p><ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Urine tests (lupus nephritis)</li><li>Lung function tests (scleroderma)</li><li>Liver enzymes and imaging</li></ul><p class=\"text-md font-medium mb-2\">Physical Examination</p><ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Joint swelling or deformity</li><li>Skin rashes or tightening</li><li>Organ enlargement or tenderness</li></ul><p class=\"text-md font-medium mb-2\">Blood Reports</p><ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Screening: ANA (≈90% sensitivity)</li><li>Autoantibody panels: anti-dsDNA, Sm, RNP, Scl-70, Jo-1</li><li>Disease-specific:<ul class=\"list-disc list-inside ml-4.5 mb-2\"><li>RF / Anti-CCP (RA)</li><li>Complement levels C3/C4 (SLE)</li><li>ESR / CRP (Inflammation markers)</li></ul></li></ul></div>",
+          "reverse": false,
+          "align": "left"
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "How are Autoimmune Diseases usually treated?",
+          "contentHTML": "<div><p class=\"text-md font-medium mb-2\">This option is often explored by people who:</p><ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Steroids</li><li>Immune-suppressing medicines</li><li>Advanced injections (biologics)</li></ul><p class=\"text-md font-medium mb-2\">These treatments can:</p><ul class=\"list-disc list-inside ml-2.5\"><li>Reduce symptoms</li><li>Control flares</li></ul></div>",
+          "messageHTML": "<p class=\"text-md font-medium\">But they often:</p><ul class=\"list-disc list-inside ml-2.5\"><li>Don’t fix the root cause</li><li>Need long-term use</li><li>Increase infection risk</li><li>Don’t repair damaged tissues</li></ul>",
+          "reverse": true,
+          "align": "left"
+        }
+      },
+      {
+        "key": "cards",
+        "data": {
+          "headingSmall": "Helping the Immune System Re-Balance",
+          "titleBig": "<div>Instead of only suppressing the immune system, modern regenerative science focuses on:</div>",
+          "cards": [
+            { "title": "", "description": "Teaching the immune system to <b>calm down</b>" },
+            { "title": "", "description": "Reducing harmful inflammation" },
+            { "title": "", "description": "Supporting natural tissue repair" }
+          ],
+          "note1": "This approach does <b>not replace standard treatment</b> — it works alongside it.",
+          "reverse": false,
+          "align": "center",
+          "fetureLogo": false
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "How Regenerative therapy may help",
+          "contentHTML": "<div><p class=\"text-md font-medium mb-2\">Regenerative therapies like stem cells and exosomes may:</p><ul class=\"list-disc list-inside ml-2.5 mb-2.5\"><li>Reduce immune overreaction</li><li>Help the body recognize what is “self” again</li><li>Protect organs from further damage</li><li>Reduce dependency on high-dose steroids over time</li></ul><p class=\"text-md font-medium mb-2\">Patients often notice:</p><ul class=\"list-disc list-inside ml-2.5\"><li>Fewer flares</li><li>Less fatigue</li><li>Improved quality of life</li><li>Better control with fewer medicines</li></ul></div>",
+          "reverse": false,
+          "align": "right"
+        }
+      },
+      {
+        "key": "cards",
+        "data": {
+          "headingSmall": "How Viecell Supports Autoimmune Patients",
+          "titleBig": "<div>At Viecell, we focus on immune balance and organ protection, not just symptom control.</div>",
+          "cardslabel": "Our approach includes:",
+          "cards": [
+            { "title": "", "description": "Deep understanding of autoimmune diseases" },
+            { "title": "", "description": "Special expertise in <b>liver-related</b> and <b>systemic autoimmunity</b>" },
+            { "title": "", "description": "Regenerative therapies designed to support immune reset" },
+            { "title": "", "description": "Collaboration with rheumatology and immunology specialists" },
+            { "title": "", "description": "Care for international patients seeking advanced options" }
+          ],
+          "titleBig2": "<div>Our goal is to help patients live with fewer flares, fewer drugs, and better daily function.</div>",
+          "reverse": true,
+          "align": "left",
+          "fetureLogo": true
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "Who usually considers this approach?",
+          "contentHTML": "<div><p class=\"text-md font-medium mb-2\">This option is often explored by people who:</p><ul class=\"list-disc list-inside ml-2.5\"><li>Have ongoing symptoms despite treatment</li><li>Depend on steroids long-term</li><li>Have organ involvement (lungs, kidneys, liver)</li><li>Want long-term control, not just short-term relief</li></ul></div>",
+          "messageHTML": "It is not for everyone and requires careful medical evaluation.",
+          "reverse": false,
+          "align": "right"
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "Living with Autoimmune Disease: What helps",
+          "contentHTML": "<div><p class=\"text-md font-medium mb-2\">Small daily choices matter:</p><ul class=\"list-disc list-inside ml-2.5\"><li>Listening to early flare signals</li><li>Managing stress and sleep</li><li>Anti-inflammatory nutrition</li><li>Vaccination and infection awareness</li><li>Close care-team collaboration</li></ul></div>",
+          "reverse": true,
+          "align": "center"
+        }
+      }
+    ]
+  },
+ "faqs": [
+    {
+      "id": 1,
+      "question": "What exactly is an autoimmune disease?",
+      "answer": "An autoimmune disease happens when the immune system, which normally protects you from infections, mistakenly attacks your own body. This can cause ongoing inflammation and symptoms that come and go over time."
+    },
+    {
+      "id": 2,
+      "question": "Why do autoimmune diseases take so long to diagnose?",
+     "answer": "data coming soon"
+    },
+    {
+      "id": 3,
+      "question": "Is autoimmune disease curable?",
+      "answer": "data coming soon"
+    },
+    {
+      "id": 4,
+      "question": "Why do symptoms come and go?",
+      "answer": "data coming soon"
+    },  {
+      "id": 5,
+      "question": "Can stress or lifestyle affect autoimmune disease?",
+      "answer": "data coming soon"
+    },  {
+      "id": 6,
+      "question": "Will I need to take medications for life?",
+      "answer": "data coming soon"
+    },  {
+      "id":7,
+      "question": "Are immune-suppressing medicines dangerous?",
+      "answer": "data coming soon"
+    },  {
+      "id":8,
+      "question": "What is regenerative therapy in autoimmune disease?",
+      "answer": "data coming soon"
+    }
+  ],
+  "CTAData": [
+    {
+      "label": "Take the first step",
+      "titleSmall": "Take the first step toward Liver Regeneration",
+      "titleBig": "Understanding your condition is the first step. <br/> Viecell helps you explore personalized regenerative solutions based on your medical profile.",
+      "buttons": [
+        { "text": "Book Consultation", "variant": "primary", "href": null },
+        { "text": "Talk to a Regenerative Specialist", "variant": "outline-primary", "href": "/appointment-booking" }
+      ]
+    }
+  ]
+}
