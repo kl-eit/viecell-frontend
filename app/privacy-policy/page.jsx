@@ -1,6 +1,7 @@
 import { fetchAPI } from "../lib/api";
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import BlocksRendererClient from "../shared/BlocksRendererClient";
+import HeroSection from "../shared/HeroSection/HeroSection";
 import SectionBlock from "../shared/Section";
 export default async function Page() {
   const PageData = await fetchAPI("privacy-policy");
@@ -8,7 +9,13 @@ export default async function Page() {
   const htmlContent = PageData?.body || "";
   return (
     <div>
-      <PageHeaderSetter title={title} breadcrumbLast={title} />
+     
+          <HeroSection
+                    title={title}
+                    description="This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You."
+                   // imageSrc={pageData?.hero?.imageSrc}
+                    // reverse={pageData?.hero?.reverse}
+                  />
       <SectionBlock>
         {/* <Typography title={title} headingLevel="h2" size="xl" color="primary" /> */}
 

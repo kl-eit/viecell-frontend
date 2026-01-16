@@ -1,0 +1,184 @@
+{
+  "pageData": {
+    "hero": {
+      "title": "Liver Cirrhosis",
+      "description": "<p class=\"mb-3\">Liver Cirrhosis is a progressive condition where <b>healthy liver tissue is replaced with scar tissue,</b> leading to reduced liver function. </p><p class=\"mb-3\">This scarring prevents the <b>liver from functioning properly — affecting digestion, detoxification, and overall health.</b></p>",
+      "imageSrc": "/liver-cirrhosis/hero.png",
+      "reverse": true
+    },
+    "sections": [
+      {
+        "key": "intro",
+        "data": {
+          "lable":"Why Understanding the Cause is Important",
+          "description": "<p class=\"mb-3\">Cirrhosis usually develops slowly over time, and in many cases, early intervention can help slow progression and improve liver function.</p><p>The liver is one of the few organs in the body capable of regeneration — and this is where regenerative medicine plays a role.</p>"
+        }
+      },
+
+      {
+        "key": "feature",
+        "data": {
+          "title": "What actually happens in Liver Cirrhosis?",
+          "contentHTML": "<div><ul class=\"list-disc list-inside ml-2.5\"><li>Ongoing damage causes inflammation in liver cells</li><li>The body repairs this damage by forming scar tissue</li><li>Over time, scar tissue replaces healthy liver cells</li><li>Blood flow through the liver becomes restricted</li><li>Liver functions start to decline</li></ul></div>",
+          "messageHTML": "<b>Cirrhosis does not happen overnight.</b> Many patients remain unaware until symptoms become noticeable.",
+          "reverse": false,
+          "align": "left",
+          "sliderImages": [
+            "/liver-cirrhosis/Liver-Cirrhosis-Progression.png"
+          
+          ]
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "Common causes of Liver Cirrhosis",
+          "contentHTML": "<div><ul class=\"list-disc list-inside ml-2.5\"><li>Long-term alcohol consumption</li><li>Fatty liver disease (related to lifestyle or metabolism)</li><li>Chronic viral infections (Hepatitis B or C)</li><li>Long-standing liver inflammation</li><li>Certain genetic or autoimmune conditions</li></ul></div>",
+          "messageHTML": "Different causes may require different treatment strategies.",
+          "reverse": true,
+          "align": "left",
+          "sliderImages": [
+            "/liver-cirrhosis/hero.png"
+
+          ]
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "How is Liver Cirrhosis usually managed?",
+          "contentHTML": "<div><p class=\"text-md font-medium mb-2\">Traditional medical care focuses on:</p><ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Managing symptoms</li><li>Slowing disease progression</li><li>Preventing complications</li><li>In severe cases, liver transplantation</li></ul></div>",
+         "messageHTML":"<p class=\"text-md font-medium mb-2\">Limitations:</p>Conventional treatments often do not restore damaged liver tissue — they mainly prevent further damage.",
+          "reverse": false,
+          "align": "left"
+        }
+      },
+      {
+        "key": "cards",
+        "data": {
+          "headingSmall": "Viecell’s Regenerative Approach",
+          "titleBig": "<div>Viecell’s Regenerative Therapy for Liver Health Viecell focuses on supporting the liver’s natural regenerative capacity through advanced cellular and regenerative therapies.</div>",
+          "cardslabel": "What the approach aims to do:",
+          "cards": [
+            {
+              "title": "",
+              "description": "Enhance overall metabolic & immune balance"
+            },
+            {
+              "title": "",
+              "description": "Support repair of damaged liver tissue"
+            },
+            {
+              "title": "",
+              "description": "Reduce inflammation and fibrosis progression"
+            },
+            {
+              "title": "",
+              "description": "Improve liver function and circulation"
+            }
+          ],
+           "note1": "These therapies are designed to <b>complement</b>, not replace, standard medical care.",
+          "titleBig2": "",
+          "reverse": true,
+          "align": "left",
+          "fetureLogo": true,
+          "gridCols":4
+        }
+      },
+      {
+        "key": "feature",
+        "data": {
+          "title": "Who Is This Therapy Suitable For?",
+          "contentHTML": "<div><ul class=\"list-disc list-inside ml-2.5\"><li>Patients with early to moderate cirrhosis</li><li>Individuals with fatty liver–related cirrhosis</li><li>Patients not eligible for immediate transplant</li><li>Those seeking supportive regenerative options</li></ul></div>",
+          "messageHTML": "* Detailed medical evaluation is required to determine suitability.",
+          "reverse": true,
+          "align": "right"
+        }
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "id": 1,
+      "question": "What exactly is an autoimmune disease?",
+      "answer": "An autoimmune disease happens when the immune system, which normally protects you from infections, mistakenly attacks your own body. This can cause ongoing inflammation and symptoms that come and go over time."
+    },
+    {
+      "id": 2,
+      "question": "Why do autoimmune diseases take so long to diagnose?",
+      "answer": "data coming soon"
+    },
+    {
+      "id": 3,
+      "question": "Is autoimmune disease curable?",
+      "answer": "data coming soon"
+    },
+    {
+      "id": 4,
+      "question": "Why do symptoms come and go?",
+      "answer": "data coming soon"
+    },
+    {
+      "id": 5,
+      "question": "Can stress or lifestyle affect autoimmune disease?",
+      "answer": "data coming soon"
+    },
+    {
+      "id": 6,
+      "question": "Will I need to take medications for life?",
+      "answer": "data coming soon"
+    },
+    {
+      "id": 7,
+      "question": "Are immune-suppressing medicines dangerous?",
+      "answer": "data coming soon"
+    },
+    {
+      "id": 8,
+      "question": "What is regenerative therapy in autoimmune disease?",
+      "answer": "data coming soon"
+    }
+  ],
+  "testimonials": [
+    {
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "testimonial": "data coming soon",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "id": 4,
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    }
+  ],
+  "CTAData": [
+    {
+      "label": "Take the first step",
+      "titleSmall": "Take the first step toward Liver Regeneration",
+      "titleBig": "Understanding your condition is the first step. Viecell helps you explore personalized regenerative solutions based on your medical profile.",
+      "buttons": [
+        {
+          "text": "Book Consultation",
+          "variant": "primary",
+          "href": null
+        },
+        {
+          "text": "Talk to a Regenerative Specialist",
+          "variant": "outline-primary",
+          "href": "/appointment-booking"
+        }
+      ]
+    }
+  ]
+}

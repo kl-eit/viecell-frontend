@@ -70,7 +70,8 @@ export default function MobileRichNavigationMenu() {
                 <ul className="flex flex-col">
                   {menuData.map((item, levelIndex) => {
                     const hasChildren =
-                      Array.isArray(item?.children) && item?.children?.length > 0;
+                      Array.isArray(item?.children) &&
+                      item?.children?.length > 0;
                     return (
                       <li
                         key={levelIndex}
@@ -221,11 +222,12 @@ function RichNavigationMenu() {
         {menuData?.map((item, i) => {
           const hasChildren =
             Array.isArray(item?.children) && item?.children?.length > 0;
+          const isSecondLast = i === menuData.length - 2;
           return (
             <NavigationMenuItem key={i}>
               {hasChildren ? (
                 <React.Fragment key={item.id}>
-                  <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="font-medium">{item.label}</NavigationMenuTrigger>
                   <NavigationMenuContent className="px-0 py-1">
                     <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 p-4 w-5xl bg-white mt-2">
                       {item?.children.map((submenu, index) => (
@@ -246,11 +248,7 @@ function RichNavigationMenu() {
                   </NavigationMenuContent>
                 </React.Fragment>
               ) : (
-                <Link
-                  key={item?.id}
-                  href={`/${item?.url}`}
-                  className="px-2"
-                >
+                <Link key={item?.id} href={`/${item?.url}`} className="px-2 font-medium text-sm">
                   {item?.label}
                 </Link>
               )}

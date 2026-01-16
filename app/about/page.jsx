@@ -11,6 +11,7 @@ import Typography, {
 import Blogs from "../shared/Blogs/Blogs";
 import Button from "../component/Button/Button";
 import AnimatedCounter from "./AnimatedCounter";
+import HeroSection from "../shared/HeroSection/HeroSection";
 
 const tabContent = [
   {
@@ -44,6 +45,12 @@ export default async function About() {
       <div
       // dangerouslySetInnerHTML={{ __html: AboutData?.AboutSection?.Content }}
       />
+       <HeroSection
+              title="About Us"
+              description="We work with patients who are seeking options beyond symptom management—while ensuring transparency about what regenerative therapy can and cannot do."
+             // imageSrc={pageData?.hero?.imageSrc}
+              // reverse={pageData?.hero?.reverse}
+            />
       <SectionBlock className="relative">
         <div className="grid grid-cols-12 lg:gap-15 gap-6 items-center">
           <div className="col-span-12 md:col-span-5">

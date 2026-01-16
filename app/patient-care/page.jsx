@@ -3,8 +3,12 @@ import SectionBlock from "../shared/Section";
 import { fetchAPI, getMediaUrl } from "../lib/api";
 import WorkProcess from "../shared/WorkProcess/WorkProcess";
 import Faqs from "../shared/Faq/Faq";
-import Typography, { TextDescription, TitleDescription } from "../shared/Typography/Typography";
+import Typography, {
+  TextDescription,
+  TitleDescription,
+} from "../shared/Typography/Typography";
 import PatientTabs from "../shared/PatientTabs";
+import HeroSection from "../shared/HeroSection/HeroSection";
 const tabContent = [
   {
     id: "upload",
@@ -35,13 +39,21 @@ const tabContent = [
   },
 ];
 export default async function PatientCarePage() {
-  const data = await fetchAPI("patient-care", "Content.Image", );
+  const data = await fetchAPI("patient-care", "Content.Image");
   const title = data?.Title || "Patient Care";
   //const htmlContent = data?.Content || data?.description || null;
   const seo = data?.Seo?.find((b) => b.__component === "shared.seo");
   return (
     <>
       <PageHeaderSetter title="Patient Care" breadcrumbLast="Patient Care" />
+      <HeroSection
+        title="Patient Care"
+        description="
+Secure Online Medical Record Submission
+Safely upload your medical records for specialist review before your consultation, ensuring accurate, personalized care."
+        // imageSrc={pageData?.hero?.imageSrc}
+        // reverse={pageData?.hero?.reverse}
+      />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-4">

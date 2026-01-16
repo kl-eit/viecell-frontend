@@ -1,22 +1,34 @@
 "use client";
-
-import { motion, useScroll, useVelocity, useTransform } from "framer-motion";
-import { cn } from "@/lib/utils"; // shadcn helper
-
-export default function ScrollVelocityText({ text, className }) {
-  const { scrollY } = useScroll();
-  const velocity = useVelocity(scrollY);
-  const x = useTransform(velocity, [-1500, 1500], [-60, 60], { clamp: false });
-  const opacity = useTransform(velocity, [-800, 0, 800], [0.5, 1, 0.5]);
-
+import { motion } from "framer-motion";
+export default function ScrollVelocityText({
+  text = "Repair  Regenerate  Rejuvenate",
+  speed = 15,
+}) {
   return (
-    <div className="overflow-hidden w-full py-8 lg:py-15">
-      <motion.h2
-        style={{ x, opacity }}
-        className={cn("text-lime-100 text-9xl font-semibold font-['Roboto_Condensed'] uppercase whitespace-nowrap", className)}
+    <div className="w-full overflow-hidden py-8  flex justify-center">
+      <motion.div
+        className="flex w-max whitespace-nowrap text-lime-100 text-9xl font-semibold font-['Roboto_Condensed'] uppercase"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          repeat: Infinity,
+          duration: speed,
+          ease: "linear"
+        }}
       >
-        {text}
-      </motion.h2>
+        <span>{text}</span>
+        <span>{text}</span>
+        <span>{text}</span>
+        <span>{text}</span>
+      </motion.div>
+      {/* <marquee
+        behavior="scroll"
+        direction="left"
+        scrollamount="10"
+        loop="infinite"
+        className=" whitespace-nowrap text-lime-100 text-9xl font-semibold font-['Roboto_Condensed'] uppercase"
+      >
+       <span>{text}</span><span>{text}</span><span>{text}</span>  <span>{text}</span><span>{text}</span><span>{text}</span>
+      </marquee> */}
     </div>
   );
 }

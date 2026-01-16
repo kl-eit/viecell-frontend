@@ -3,21 +3,22 @@
     "hero": {
       "title": "Autoimmune Diseases",
       "description": "<p class=\"mb-3\"><b>When your body starts fighting itself.</b> Autoimmune diseases occur when the immune system mistakenly attacks healthy tissues instead of protecting the body from infections. </p><p class=\"mb-3\">This leads to chronic inflammation, tissue damage, and progressive organ dysfunction.</p>",
-      "imageSrc": "/Liver-Cirrhosis-intro.png",
+      "imageSrc": "/autoimmune-diseases/hero.png",
       "reverse": true
     },
     "sections": [
       {
         "key": "intro",
         "data": {
-          "description": "<p>If you’ve been feeling constantly tired, dealing with pain, swelling, rashes, stiffness, or unexplained symptoms — and no one has given you a clear answer — you’re not alone.</p><p>Autoimmune diseases are often invisible, confusing, and slow to diagnose. Many people live with symptoms for years before understanding what’s happening inside their body.</p>"
+           "lable":"Why Understanding the Cause is Important",
+          "description": "<p class=\"mb-2\">If you’ve been feeling constantly tired, dealing with pain, swelling, rashes, stiffness, or unexplained symptoms — and no one has given you a clear answer — you’re not alone.</p><p>Autoimmune diseases are often invisible, confusing, and slow to diagnose. Many people live with symptoms for years before understanding what’s happening inside their body.</p>"
         }
       },
       {
         "key": "cards",
         "data": {
           "headingSmall": "What is an Autoimmune Disease?",
-          "titleBig": "<div>Your immune system’s job is simple:</div><div>Protect you from infections.</div><br/><div>But in Autoimmune Disease, something goes wrong.</div>",
+          "titleBig": "<div>Your immune system’s job is simple:</div><div>Protect you from infections.</div><div>But in Autoimmune Disease, something goes wrong.</div>",
           "cardslabel": "",
           "cards": [
             {
@@ -42,8 +43,8 @@
           "reverse": false,
           "align": "left",
           "sliderImages": [
-            "/Liver-Cirrhosis-intro.png",
-            "/Liver-Cirrhosis-intro.png"
+            "/autoimmune-diseases/Why-does.png",
+              "/autoimmune-diseases/Why-does.png"
           ]
         }
       },
@@ -56,7 +57,14 @@
           "reverse": true,
           "align": "left",
           "sliderImages": [
-            "/Liver-Cirrhosis-intro.png"
+            "/autoimmune-diseases/Autoimmune-Disease.png",
+            "/autoimmune-diseases/Autoimmune-Disease-2.png",
+            "/autoimmune-diseases/Autoimmune-Disease-3.png",
+            "/autoimmune-diseases/Autoimmune-Disease-4.png",
+            "/autoimmune-diseases/Autoimmune-Disease-5.png",
+            "/autoimmune-diseases/Autoimmune-Disease-6.png",
+            "/autoimmune-diseases/Autoimmune-Disease-7.png",
+            "/autoimmune-diseases/Autoimmune-Disease-8.png"
           ]
         }
       },
@@ -109,9 +117,18 @@
           "headingSmall": "Helping the Immune System Re-Balance",
           "titleBig": "<div>Instead of only suppressing the immune system, modern regenerative science focuses on:</div>",
           "cards": [
-            { "title": "", "description": "Teaching the immune system to <b>calm down</b>" },
-            { "title": "", "description": "Reducing harmful inflammation" },
-            { "title": "", "description": "Supporting natural tissue repair" }
+            {
+              "title": "",
+              "description": "Teaching the immune system to <b>calm down</b>"
+            },
+            {
+              "title": "",
+              "description": "Reducing harmful inflammation"
+            },
+            {
+              "title": "",
+              "description": "Supporting natural tissue repair"
+            }
           ],
           "note1": "This approach does <b>not replace standard treatment</b> — it works alongside it.",
           "reverse": false,
@@ -135,11 +152,26 @@
           "titleBig": "<div>At Viecell, we focus on immune balance and organ protection, not just symptom control.</div>",
           "cardslabel": "Our approach includes:",
           "cards": [
-            { "title": "", "description": "Deep understanding of autoimmune diseases" },
-            { "title": "", "description": "Special expertise in <b>liver-related</b> and <b>systemic autoimmunity</b>" },
-            { "title": "", "description": "Regenerative therapies designed to support immune reset" },
-            { "title": "", "description": "Collaboration with rheumatology and immunology specialists" },
-            { "title": "", "description": "Care for international patients seeking advanced options" }
+            {
+              "title": "",
+              "description": "Deep understanding of autoimmune diseases"
+            },
+            {
+              "title": "",
+              "description": "Special expertise in <b>liver-related</b> and <b>systemic autoimmunity</b>"
+            },
+            {
+              "title": "",
+              "description": "Regenerative therapies designed to support immune reset"
+            },
+            {
+              "title": "",
+              "description": "Collaboration with rheumatology and immunology specialists"
+            },
+            {
+              "title": "",
+              "description": "Care for international patients seeking advanced options"
+            }
           ],
           "titleBig2": "<div>Our goal is to help patients live with fewer flares, fewer drugs, and better daily function.</div>",
           "reverse": true,
@@ -165,10 +197,18 @@
           "reverse": true,
           "align": "center"
         }
+      },
+      {
+        "key": "contactdata",
+        "data": {
+          "title": "",
+          "contentHTML": "",
+          "align": "center"
+        }
       }
     ]
   },
- "faqs": [
+  "faqs": [
     {
       "id": 1,
       "question": "What exactly is an autoimmune disease?",
@@ -177,7 +217,7 @@
     {
       "id": 2,
       "question": "Why do autoimmune diseases take so long to diagnose?",
-     "answer": "data coming soon"
+      "answer": "data coming soon"
     },
     {
       "id": 3,
@@ -188,22 +228,49 @@
       "id": 4,
       "question": "Why do symptoms come and go?",
       "answer": "data coming soon"
-    },  {
+    },
+    {
       "id": 5,
       "question": "Can stress or lifestyle affect autoimmune disease?",
       "answer": "data coming soon"
-    },  {
+    },
+    {
       "id": 6,
       "question": "Will I need to take medications for life?",
       "answer": "data coming soon"
-    },  {
-      "id":7,
+    },
+    {
+      "id": 7,
       "question": "Are immune-suppressing medicines dangerous?",
       "answer": "data coming soon"
-    },  {
-      "id":8,
+    },
+    {
+      "id": 8,
       "question": "What is regenerative therapy in autoimmune disease?",
       "answer": "data coming soon"
+    }
+  ],
+  "testimonials": [
+    {
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "testimonial": "data coming soon",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "id": 4,
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
     }
   ],
   "CTAData": [
@@ -212,8 +279,16 @@
       "titleSmall": "Take the first step toward Liver Regeneration",
       "titleBig": "Understanding your condition is the first step. <br/> Viecell helps you explore personalized regenerative solutions based on your medical profile.",
       "buttons": [
-        { "text": "Book Consultation", "variant": "primary", "href": null },
-        { "text": "Talk to a Regenerative Specialist", "variant": "outline-primary", "href": "/appointment-booking" }
+        {
+          "text": "Book Consultation",
+          "variant": "primary",
+          "href": null
+        },
+        {
+          "text": "Talk to a Regenerative Specialist",
+          "variant": "outline-primary",
+          "href": "/appointment-booking"
+        }
       ]
     }
   ]

@@ -5,6 +5,7 @@ import { CalendarIcon, UserIcon } from "../../shared/icons/icons";
 import Typography from "../../shared/Typography/Typography";
 import SectionBlock from "../../shared/Section";
 import Link from "next/link";
+import HeroSection from "../../shared/HeroSection/HeroSection";
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
@@ -28,6 +29,12 @@ export default async function BlogDetailsPage({ params }) {
   return (
     <>
       <PageHeaderSetter title="Blog Details" breadcrumbLast="Blog Details" />
+          <HeroSection
+                    title={"Blog Details"}
+                    description="This article is written to help patients and caregivers better understand medical conditions, available treatment options, and emerging regenerative approaches. The information shared here is educational in nature and designed to support informed decision-making—not to replace professional medical advice."
+                    // imageSrc={pageData?.hero?.imageSrc}
+                    // reverse={pageData?.hero?.reverse}
+                  />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-9">

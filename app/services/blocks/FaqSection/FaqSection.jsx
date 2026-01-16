@@ -1,20 +1,19 @@
 "use client";
-import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
+import { useState, useRef } from "react";
 import SectionBlock from "../../../shared/Section";
-import Typography, {
-} from "../../../shared/Typography/Typography";
-import { motion } from "framer-motion";
+import Typography from "../../../shared/Typography/Typography";
 export default function FaqSection({ faqsData }) {
   const [openIndex, setOpenIndex] = useState(0);
   const toggleIndex = (index) => {
-    if (index !== openIndex) setOpenIndex(index);
+    setOpenIndex(openIndex === index ? null : index);
   };
-  console.log(faqsData, "FaqSection");
+  const contentRefs = useRef([]);
   return (
     <SectionBlock>
-      <div className="max-w-4xl  mx-auto ">
+      <div className="max-w-4xl mx-auto">
         <div className="flex flex-col gap-10">
-          <div className="">
+          <div>
             <Typography
               title="Frequently Asked Questions"
               headingLevel="h2"
@@ -24,58 +23,38 @@ export default function FaqSection({ faqsData }) {
             />
           </div>
           <div>
-            {faqsData?.map((item, index) => (
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: "auto" }}
-                exit={{ height: 0 }}
-                key={item.id}
-                className={`overflow-hidden border-b border-neutral-400/50 flex flex-col transition-colors duration-300 ${
-                  openIndex === index ? "" : ""
-                }`}
-              >
-                <button
-                  onClick={() => toggleIndex(index)}
-                  className="w-full py-6 flex justify-between items-center gap-4 cursor-pointer"
-                >
-                  <div className="flex-1 text-lime-900 text-xl font-['Roboto'] text-left">
-                    {item.question}
-                  </div>
-                  <div className="w-5 h-5 flex justify-center items-center transition-transform duration-300">
-                    <svg
-                      className={`transform ${
-                        openIndex === index ? "rotate-180" : "rotate-0"
-                      }`}
-                      width="14"
-                      height="8"
-                      viewBox="0 0 14 8"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1 7L7 1L13 7"
-                        stroke="#4F5D64"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </button>
-
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === index
-                      ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="pr-14 pb-8 text-lime-900 text-base font-normal font-['Roboto'] leading-6">
-                    {item?.answer}
+            {faqsData?.map((item, index) => {
+              const isOpen = openIndex === index;
+              const height = contentRefs.current[index]?.scrollHeight ?? 0;
+              return (
+                <div key={index} className="border-b border-[#E9EAEB] py-6">
+                  <button
+                    onClick={() => toggleIndex(index)}
+                    className="w-full flex justify-between items-center gap-4 select-none cursor-pointer"
+                    id={`faq-question-${index}`}
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex-1 text-lime-900 lg:text-lg text-md font-['Roboto'] text-left">
+                      {item.question}
+                    </div>
+                    <div className="w-5 h-5 flex items-center justify-center transition-transform duration-300">
+                      {isOpen ? <Minus /> : <Plus />}
+                    </div>
+                  </button>
+                  <div
+                    ref={(el) => (contentRefs.current[index] = el)}
+                    style={{ height: isOpen ? `${height}px` : "0px" }}
+                    className="overflow-hidden transition-[height] duration-300 ease-in-out"
+                    role="region"
+                    aria-labelledby={`faq-question-${index}`}
+                  >
+                    <div className="pr-14 pt-2 pb-6 text-lime-900 text-base font-normal font-['Roboto'] leading-normal">
+                      {item.answer}
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

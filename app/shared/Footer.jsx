@@ -6,15 +6,7 @@ import Button from "../component/Button/Button";
 import Icon from "./icons/icons";
 export default function Footer() {
   const footerData = [
-    {
-      title: "Research & Innovation",
-      links: [
-        { title: "Ongoing Research Clinical Trials", href: "#" },
-        { title: "Scientific Publication", href: "#" },
-        { title: "Technology & Methods", href: "#" },
-        { title: "International Collaborations", href: "#" },
-      ],
-    },
+
     {
       title: "Treatments",
       links: [
@@ -37,13 +29,31 @@ export default function Footer() {
         { title: "Science", href: "/services?category=science" },
       ],
     },
-    {
-      title: "Media & Blog",
+        {
+      title: "Deceases",
       links: [
+        { title: "Autoimmune", href: "#" },
+        { title: "Infertility", href: "#" },
+        { title: "Knee OA", href: "#" },
+        { title: "Liver Cirrhosis", href: "#" },
+        { title: <>Optical Atrophy & Retinal<br /> Degenerative Disease</>, href: "#" },
+        { title: "SNHL", href: "#" },
+        { title: "Sports Injury", href: "#" },
+        { title: "Type 1 Diabetes", href: "#" },
+
+      ],
+    },
+    {
+      title: "Important Links",
+      links: [
+        { title: "Patient Care", href: "/patient-care" },
+        { title: "International Patients", href: "/international-patients" },
+        { title: "Client Stories", href: "#" },
+        { title: "About", href: "/about" },
         { title: "News & Events", href: "#" },
-        { title: "Blog Articles", href: "/blog" },
+        { title: "Blogs", href: "/blog" },
         { title: "Press Coverage", href: "#" },
-        { title: "Health Awareness Videos", href: "#" },
+        { title: "Contact", href: "/contact-us" },
       ],
     },
   ];
@@ -119,7 +129,7 @@ export default function Footer() {
       <div className="clear">&nbsp;</div>
       <footer className="bg-[#F3F5EC] pt-15 pb-10 rounded-[30px]">
         <div className="container flex flex-col lg:gap-10 gap-5">
-          <div className="grid grid-cols-[70%_30%] gap-5">
+          <div className="grid lg:grid-cols-[70%_30%] gap-5">
             <div className="">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
                 {footerData.map((col, index) => (
@@ -150,8 +160,8 @@ export default function Footer() {
             </div>
             <div>
               <div className="flex flex-col gap-5">
-                <div className="p-6 relative bg-white rounded-[10px] flex justify-start items-center gap-5 overflow-hidden">
-                  <span className="text-lime-900 text-xl font-medium font-['Roboto'] leading-8">
+                <a href="tel:+91 9001290028" className="p-5 relative bg-white rounded-[10px] flex justify-start items-center gap-5 overflow-hidden">
+                  <span className="text-lime-900 lg:text-xl text-md font-medium font-['Roboto'] leading-8">
                     Book a Virtual Consultation
                   </span>
                   <Icon
@@ -159,17 +169,17 @@ export default function Footer() {
                     size={24}
                     className="text-lime-900 ms-auto"
                   />
-                </div>
-                <div className="p-6 relative bg-green-500 rounded-[10px] flex justify-start items-center gap-5 overflow-hidden">
-                  <span className="text-white text-xl font-medium font-['Roboto'] leading-8">
+                </a>
+                <a href="https://wa.me/9001290028" className="p-5 relative bg-green-500 rounded-[10px] flex justify-start items-center gap-5 overflow-hidden">
+                  <span className="text-white lg:text-xl text-md font-medium font-['Roboto'] leading-8">
                     Talk to Our Specialists on WhatsApp
                     <Icon
                       name="whatsapp"
                       size={24}
-                      className="w-24 h-24 right-0 top-0 absolute text-white/20"
+                      className="w-24 h-24 -right-1 -top-3 absolute text-white/20"
                     />
                   </span>
-                </div>
+                </a>
                 {socilaMedia && (
                   <div className="flex items-center gap-3 mt-2">
                     <ul className="flex flex-wrap gap-4 justify-center md:justify-end list-none p-0 m-0">
@@ -209,7 +219,7 @@ export default function Footer() {
               </div>
               <a
                 href="tel:+91 90012 90028"
-                className="text-lime-900 text-4xl font-normal font-['Roboto_Condensed'] leading-none"
+                className="text-lime-900 lg:text-4xl text-2xl font-normal font-['Roboto_Condensed'] leading-none"
               >
                 +91 90012 90028
               </a>
@@ -219,7 +229,7 @@ export default function Footer() {
                 Reach out us via mail
               </div>
               <a
-                className="text-lime-900 text-4xl font-normal font-['Roboto_Condensed'] leading-none"
+                className="text-lime-900 lg:text-4xl text-2xl font-normal font-['Roboto_Condensed'] leading-none"
                 href="mailto:contact@viecells.com"
               >
                 contact@viecells.com

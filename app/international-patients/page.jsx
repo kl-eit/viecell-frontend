@@ -8,6 +8,7 @@ import Typography, {
 } from "../shared/Typography/Typography";
 import Button from "../component/Button/Button";
 import Testimonial from "../shared/Testimonial/Testimonial";
+import HeroSection from "../shared/HeroSection/HeroSection";
 
 export default async function InternationalPatientsPage() {
   const data = await fetchAPI("international-patient");
@@ -48,6 +49,12 @@ export default async function InternationalPatientsPage() {
   return (
     <div>
       <PageHeaderSetter title={title} breadcrumbLast="For International Patients" />
+              <HeroSection
+                                title="For International Patients"
+                                description="Viecells welcomes patients from around the world seeking advanced medical and regenerative care."
+                               // imageSrc={pageData?.hero?.imageSrc}
+                                // reverse={pageData?.hero?.reverse}
+                              />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-6 gap-3">

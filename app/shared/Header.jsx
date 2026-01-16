@@ -20,7 +20,7 @@ export default function Header() {
       <div className="relative container mx-auto">
       <header
        className={`px-2 py-4 z-20 w-full ${
-    isHome ? "absolute left-0" : "relative left-0"
+    isHome ? "absolute left-0" : "absolute  left-0"
   } ${isService ? "isService absolute!" : "isService not"}`}
       >
         <div className="bg-white/60 rounded-[100px] backdrop-blur-[50px] px-5 py-2.5 ">
@@ -34,8 +34,7 @@ export default function Header() {
             <RichNavigationMenu />
 
             <div className="flex items-center gap-3 max-lg:hidden lg:gap-4">
-            
-              <span aria-hidden="true" className="h-8 w-px bg-black/10"></span>
+              {/* <span aria-hidden="true" className="h-8 w-px bg-black/10"></span> */}
               <Button variant="primary" size="sm" href="appointment-booking">
                 Book Appointment
               </Button>
@@ -45,7 +44,7 @@ export default function Header() {
       </header>
 
       
-      {!isService && <PageHeader />} 
+      {/* {!isService && <PageHeader />}  */}
     </div>
     </div>
   );

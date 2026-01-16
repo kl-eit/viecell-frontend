@@ -5,6 +5,7 @@ import AOSProvider from "./lib/AOSProvider";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 import { PageHeaderProvider } from "./lib/PageHeaderContext";
+import ScrollVelocityText from "./shared/ScrollVelocityText/ScrollVelocityText";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -39,7 +40,7 @@ export default function RootLayout({
             <main className="p-4">
               <Header />
               {children}
-             
+              <ScrollVelocityText text="Repair  Regenerate  Rejuvenate" />
               <Footer />
             </main>
           </AOSProvider>

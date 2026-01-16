@@ -6,6 +6,7 @@ import Typography, {
   TypographyList,
 } from "../shared/Typography/Typography";
 import Button from "../component/Button/Button";
+import HeroSection from "../shared/HeroSection/HeroSection";
 const tabContent = [
   {
     id: "upload",
@@ -44,7 +45,13 @@ export default async function ResearchInnovationPage() {
 
   return (
     <div>
-      <PageHeaderSetter title={title} breadcrumbLast="Research & Innovation" />
+    
+            <HeroSection
+                    title="Research & Innovation"
+                    description="At Viecell Institute, research is the foundation of every breakthrough. From stem-cell innovation to cutting-edge therapeutic models, our teams work to transform scientific discovery into real-world medical impact."
+                   // imageSrc={pageData?.hero?.imageSrc}
+                    // reverse={pageData?.hero?.reverse}
+                  />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 md:col-span-6 gap-3">

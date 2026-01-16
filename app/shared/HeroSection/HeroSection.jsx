@@ -1,4 +1,4 @@
-export default function InnerHeroSection({
+export default function HeroSection({
   title,
   description,
   imageSrc,
@@ -23,11 +23,11 @@ export default function InnerHeroSection({
             />
           </div>
           {imageSrc && (
-            <div className="max-w-[592px]">
+            <div className="max-w-[592px] text-center">
               <img
                 src={imageSrc}
                 alt={title}
-                className="w-full"
+               
               />
             </div>
           )}

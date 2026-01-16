@@ -10,11 +10,18 @@ import {
   CardDescription,
   CardTitle,
 } from "../../components/ui/card";
+import HeroSection from "../shared/HeroSection/HeroSection";
 export default async function BlogPage() {
   const posts = await fetchAPI("articles");
   return (
     <>
       <PageHeaderSetter title="Blog" />
+          <HeroSection
+              title="Our Blog"
+              description="Explore expert-written articles covering medical conditions, treatment approaches, patient education, and the evolving science of regenerative therapy. Our goal is to provide clear, reliable information to help you better understand your health and make informed decisions—without hype or unnecessary medical jargon."
+              // imageSrc={pageData?.hero?.imageSrc}
+              // reverse={pageData?.hero?.reverse}
+            />
       <SectionBlock>
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
           {posts?.map((post) => (

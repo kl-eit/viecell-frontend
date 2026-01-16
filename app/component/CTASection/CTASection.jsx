@@ -34,10 +34,10 @@ const data = Array.isArray(CTAdata) && CTAdata?.length ? CTAdata : fallback;
       <div className="flex flex-col gap-20 mx-auto">
         <div className="max-w-6xl">
           <div className="flex-1 py-14 inline-flex flex-col justify-center items-center gap-8">
-            <h3 className=" text-lg font-medium leading-normal">
+            <h3 className=" lg:text-lg text-md font-medium leading-normal">
               {section?.titleSmall}
             </h3>
-            <div className="text-4xl text-center" dangerouslySetInnerHTML={{ __html: section?.titleBig || "" }}/>
+            <div className="lg:text-3xl text-xl text-center" dangerouslySetInnerHTML={{ __html: section?.titleBig || "" }}/>
             <div className="gap-2.5 grid grid-cols-1 md:grid-cols-2">
               {section?.buttons.map((btn, bi) => (
                 <Button

@@ -2,9 +2,12 @@
 import SectionBlock from "../../../shared/Section";
 import Typography from "../../../shared/Typography/Typography";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, EffectFade, Navigation } from "swiper/modules";
+import {Pagination, EffectFade, Navigation } from "swiper/modules";
+let sectionCount = 0;
 export default function ServiceFetureSection({ fetureData, reverse = false }) {
   const data = fetureData;
+    sectionCount += 1;
+     const paginationClass = `sliderImages-pagination-${sectionCount}`;
   return (
     <SectionBlock>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-25 items-center text-lime-900">
@@ -15,7 +18,7 @@ export default function ServiceFetureSection({ fetureData, reverse = false }) {
               : "order-2 lg:order-1 max-w-[600px]"
           }
         >
-          <div className="aspect-square w-full flex flex-col justify-center items-center bg-[linear-gradient(360deg,#F7F9EF_0%,#E5F0CA_100%)] p-6 rounded-xl">
+          <div className="aspect-square w-full flex flex-col justify-center items-center bg-[linear-gradient(360deg,#F7F9EF_0%,#E5F0CA_100%)] rounded-xl overflow-hidden relative">
             {!data?.sliderImages?.length ? (
               <div>No Image Found</div>
             ) : data.sliderImages.length === 1 ? (
@@ -23,15 +26,13 @@ export default function ServiceFetureSection({ fetureData, reverse = false }) {
                 <img
                   src={data.sliderImages[0]}
                   alt="Slide"
-                  className="w-full"
                 />
               </div>
             ) : (
               <div className="flex w-full min-w-0 my-auto">
                 <Swiper
-                  modules={[Pagination, Autoplay, EffectFade, Navigation]}
-                  autoplay={{ delay: 4000, disableOnInteraction: false }}
-                  pagination={{ el: ".custom-pagination", clickable: true }}
+                  modules={[Pagination, EffectFade, Navigation]}
+                  pagination={{ el: `.${paginationClass}`, clickable: true }}
                   spaceBetween={20}
                   slidesPerView={1}
                   loop={data.sliderImages.length > 1}
@@ -41,7 +42,6 @@ export default function ServiceFetureSection({ fetureData, reverse = false }) {
                       <img
                         src={image}
                         alt={`Slide ${idx + 1}`}
-                        className="w-full"
                       />
                     </SwiperSlide>
                   ))}
@@ -49,7 +49,9 @@ export default function ServiceFetureSection({ fetureData, reverse = false }) {
               </div>
             )}
             {data?.sliderImages?.length > 1 && (
-              <div className="custom-pagination w-auto! flex items-center  gap-2! rounded-[100px]"></div>
+               <div className="absolute bottom-3! z-3">
+               <div className={`${paginationClass} w-auto! left-1/2 flex items-center gap-1.5 rounded-[100px] mt-3  bg-white/50! p-5 backdrop-blur-lg `}></div>
+               </div>
             )}
           </div>
         </div>
@@ -63,7 +65,7 @@ export default function ServiceFetureSection({ fetureData, reverse = false }) {
           <Typography
             title={data?.title}
             headingLevel="h3"
-            size="xl"
+            size="lg"
             color="primary"
             className="max-w-[480px] lg:text-4xl!"
           />
@@ -71,14 +73,6 @@ export default function ServiceFetureSection({ fetureData, reverse = false }) {
             className="w-full"
             dangerouslySetInnerHTML={{ __html: data?.contentHTML || "" }}
           />
-          {/* <div>
-            <p>{data?.label}</p>
-            <ul className="list-disc list-inside ml-2.5">
-              {data?.list?.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div> */}
           {data?.messageHTML && (
             <div className="p-5 bg-lime-50 rounded-[10px] inline-flex items-center gap-5">
               <div

@@ -5,20 +5,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade, Navigation } from "swiper/modules";
 import { getMediaUrl } from "../../lib/api";
 import Button from "../../component/Button/Button";
-
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 export default function IntroSlider({ Banner }) {
   const slideRefs = useRef([]);
   const animateSlide = (index) => {
     const slide = slideRefs.current[index];
     if (!slide) return;
   };
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     animateSlide(0);
   }, []);
   return (
     <div className="rounded-[30px] bg-[#F7F9EF] pt-30 pb-5 min-h-[calc(100vh-24px)] flex flex-col items-center justify-center">
-      
       <Swiper
         modules={[Pagination, Autoplay, EffectFade, Navigation]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -31,6 +30,7 @@ export default function IntroSlider({ Banner }) {
         fadeEffect={{ crossFade: true }}
         loop
         className="container my-auto"
+        onInit={() => setLoading(false)}
       >
         {Banner?.map((slide, index) => {
           const BannerImage = getMediaUrl(slide?.BannerImage);
@@ -63,7 +63,11 @@ export default function IntroSlider({ Banner }) {
                   </div>
                 </div>
                 <div className="lg:block hidden">
-                  <img src={BannerImage} alt={slide?.title} className="max-h-[550px]" />
+                  <img
+                    src={BannerImage}
+                    alt={slide?.title}
+                    className="max-h-[550px]"
+                  />
                 </div>
               </div>
             </SwiperSlide>

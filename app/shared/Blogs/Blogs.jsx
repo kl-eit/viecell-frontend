@@ -1,8 +1,8 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade, Navigation } from "swiper/modules";
 import Section from "../Section";
-import Icon, { CalendarIcon, UserIcon, ArrowRightIcon } from "../icons/icons";
+import Icon, { CalendarIcon, UserIcon } from "../icons/icons";
 import Button, { ReadMore } from "../../component/Button/Button";
 import { fetchAPI, getMediaUrl } from "../../lib/api";
 import Typography from "../Typography/Typography";
@@ -44,10 +44,10 @@ export default function Blogs() {
       </div>
       <div className="flex w-full min-w-0">
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay, EffectFade, Navigation]}
           slidesPerView={3}
           spaceBetween={20}
-          pagination={{ clickable: true }}
+          pagination={{ el: ".post-pagination", clickable: true }}
           breakpoints={{
             0: { slidesPerView: 1 },
             640: { slidesPerView: 2 },
@@ -62,8 +62,6 @@ export default function Blogs() {
                 <Card
                   key={post.id}
                   className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5"
-                  itemScope
-                  itemType="https://schema.org/BlogPosting"
                 >
                   {post.cover && (
                     <div className="relative w-full">
@@ -132,7 +130,12 @@ export default function Blogs() {
             );
           })}
         </Swiper>
+     
       </div>
+      <div className="flex items-center justify-center gap-4">
+         <div className="post-pagination"></div>
+      </div>
+        
     </Section>
   );
 }

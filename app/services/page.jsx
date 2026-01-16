@@ -1,5 +1,6 @@
 import { fetchAPI } from "../lib/api";
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
+import HeroSection from "../shared/HeroSection/HeroSection";
 import SectionBlock from "../shared/Section";
 import Typography, { TextDescription } from "../shared/Typography/Typography";
 import TreatmentsClient from "./TreatmentsClient"; // Client-side component
@@ -7,7 +8,16 @@ export default async function TreatmentsPage() {
   const services = await fetchAPI("services");
   return (
     <div>
-      <PageHeaderSetter title="Our Treatments" breadcrumbLast="Our Treatments" />
+      <PageHeaderSetter
+        title="Our Treatments"
+        breadcrumbLast="Our Treatments"
+      />
+      <HeroSection
+        title="Advanced Care. Personalized Approach."
+        description="At Viecells, our services are designed to support patients with chronic, degenerative, and complex medical conditions through a combination of conventional evaluation and advanced regenerative approaches."
+        // imageSrc={pageData?.hero?.imageSrc}
+        // reverse={pageData?.hero?.reverse}
+      />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center flex-col md:flex-row justify-between">
           <div className="col-span-12 lg:col-span-5">

@@ -11,18 +11,25 @@ import {
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
+import HeroSection from "../shared/HeroSection/HeroSection";
 export default async function TeamListPage() {
   const teamData = await fetchAPI("team-member", "teams.Profile");
   const pageTitle = teamData?.Title || "Our Specialist";
-  const { Title, Description, teams=[] } = teamData || {};
+  const { Title, Description, teams = [] } = teamData || {};
   return (
     <div>
       <PageHeaderSetter title={pageTitle} breadcrumbLast="Our Specialist" />
+      <HeroSection
+        title="Our Medical Experts"
+        description="The Viecells team brings together specialists from regenerative medicine, ophthalmology, neurology, and internal medicine."
+        // imageSrc={pageData?.hero?.imageSrc}
+        // reverse={pageData?.hero?.reverse}
+      />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-7">
             <Typography
-              title={teamData?.Title || ''}
+              title={teamData?.Title || ""}
               headingLevel="h2"
               size="xl"
               color="primary"

@@ -1,11 +1,17 @@
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
+import HeroSection from "../shared/HeroSection/HeroSection";
 import SectionBlock from "../shared/Section";
 import Typography from "../shared/Typography/Typography";
 import GetInTouchForm from "./GetInTouchForm";
 function page() {
   return (
     <>
-      <PageHeaderSetter title="Contact Us" />
+  
+       <HeroSection
+        title="Contact Us"
+        description="Have questions about your condition or treatment options? Our medical team is here to guide you with clear information, personalized support, and next steps tailored to your needs."
+        //imageSrc={pageData?.hero?.imageSrc}
+        // reverse={pageData?.hero?.reverse}
+      />
       <SectionBlock>
         <div className="grid grid-cols-1 lg:grid-cols-[476px_1fr] gap-7 ">
           <div className="px-10 py-10 bg-lime-50 rounded-[30px] inline-flex flex-col justify-start items-start gap-7 ">
@@ -26,9 +32,10 @@ function page() {
                   <img src="/Location-icon.svg" alt="Location icon" />
                 </div>
                 <div className="flex-1 justify-start text-neutral-500 font-normal font-['Roboto'] leading-6">
-                  VieCell Institute of Regenerative Medicine 501,<br/> Kalp Business
-                  Center, Opp. Lavanya Mall, <br/>Nr. Bank of Baroda, City Light
-                  Road, City Light,<br/> Surat-395007, Gujarat, India
+                  VieCell Institute of Regenerative Medicine 501,
+                  <br /> Kalp Business Center, Opp. Lavanya Mall, <br />
+                  Nr. Bank of Baroda, City Light Road, City Light,
+                  <br /> Surat-395007, Gujarat, India
                 </div>
               </div>
               <div className="inline-flex justify-start items-center gap-2.5">
@@ -67,7 +74,7 @@ function page() {
             ></iframe>
           </div>
         </div>
-         <div className="gap-14 p-5 lg:p-10 bg-[#F7F8EA] rounded-4xl text-center">
+        <div className="gap-14 p-5 lg:p-10 bg-[#F7F8EA] rounded-4xl text-center">
           <div className="max-w-[500px] mx-auto">
             <Typography
               title="Get In Touch"

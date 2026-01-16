@@ -4,6 +4,7 @@ export default function ServiceCardSection({
   fetureData,
   align = "center",
   fetureLogo = false,
+  
 }) {
   const data = fetureData;
   const alignClass = {
@@ -19,7 +20,7 @@ export default function ServiceCardSection({
       <div className="text-md font-medium">{data?.headingSmall}</div>
       <div
         className={
-          fetureLogo ? "flex items-center justify-center gap-12" : "text-center"
+          fetureLogo ? "flex items-center justify-center gap-10" : "text-center"
         }
       >
         {fetureLogo && (
@@ -36,7 +37,7 @@ export default function ServiceCardSection({
         )}
 
         <div
-          className="max-w-4xl text-4xl font-['Roboto_Condensed']  mx-auto"
+          className={`max-w-4xl lg:text-4xl text-xl font-['Roboto_Condensed']  ${fetureLogo ?"me-auto":"mx-auto"} `}
           dangerouslySetInnerHTML={{ __html: data?.titleBig }}
         />
       </div>
@@ -55,7 +56,7 @@ export default function ServiceCardSection({
                 className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col justify-start items-start gap-4"
               >
                 {card?.title && (
-                  <h3 className="text-2xl font-normal font-['Roboto_Condensed']">
+                  <h3 className="lg:text-2xl text-lg font-normal font-['Roboto_Condensed']">
                     {card?.title}
                   </h3>
                 )}
@@ -67,7 +68,7 @@ export default function ServiceCardSection({
       </div>
       <div className="text-md" dangerouslySetInnerHTML={{ __html: data?.note1 }}/>
       <div
-        className={`max-w-4xl text-4xl font-['Roboto_Condensed'] ${fetureLogo ? "":"mx-auto " }`}
+        className={`max-w-4xl lg:text-4xl text-xl font-['Roboto_Condensed'] ${fetureLogo ? "":"mx-auto " }`}
         dangerouslySetInnerHTML={{ __html: data?.titleBig2 }}
       />
     </SectionBlock>

@@ -5,6 +5,7 @@ import SectionBlock from "../shared/Section";
 import Testimonial from "../shared/Testimonial/Testimonial";
 import Typography, { TextDescription } from "../shared/Typography/Typography";
 import FilterTabs from "../shared/FilterTabs/FilterTabs";
+import HeroSection from "../shared/HeroSection/HeroSection";
 export async function generateMetadata() {
  // const seo = await getPageSEO("treatment-comparison"); // slug of the page
   return {
@@ -15,10 +16,13 @@ export async function generateMetadata() {
 export default async function page() {
   return (
     <div>
-      <PageHeaderSetter
-        title={"Treatment Comparison"}
-        breadcrumbLast="Treatment Comparison"
-      />
+  
+          <HeroSection
+                                title="Treatment Comparison"
+                                description="Quickly explore leading stem cell clinics and compare them with India by disease treatment, therapy type, technology, and clinical expertise."
+                               // imageSrc={pageData?.hero?.imageSrc}
+                                // reverse={pageData?.hero?.reverse}
+                              />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-5 gap-3">

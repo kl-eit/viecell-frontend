@@ -1,0 +1,210 @@
+{
+  "pageData": {
+    "hero": {
+      "title": "Sports Ligament Injuries",
+      "description": "<p class=\"mb-3\"><b>When joint stability is affected but not lost.</b> Partial ligament tears occur when some ligament fibers are damaged, while the ligament remains intact.</p><p class=\"mb-3\">With proper diagnosis, rehabilitation, and optimized healing support, most athletes can recover without surgery and return safely to sport.</p>",
+      "imageSrc": "/sports-injury/hero.png",
+      "reverse": true
+    },
+
+    "sections": [
+      {
+        "key": "intro",
+        "data": {
+          "lable": "Why Understanding the Injury Matters",
+          "description": "<p class=\"mb-2\">Sports ligament injuries are common, yet often misunderstood. Many athletes are told to rest or wait without fully understanding the injury or healing process.</p><p>A clear understanding of ligament healing helps prevent long-term weakness, instability, and repeat injuries.</p>"
+        }
+      },
+
+      {
+        "key": "cards",
+        "data": {
+          "headingSmall": "What Is a Partial Ligament Tear?",
+          "titleBig": "<div>A ligament’s job is simple:</div><div>Stabilize your joints during movement.</div><div>But in a partial ligament tear, something goes wrong.</div>",
+          "cards": [
+            {
+              "title": "In a partial ligament tear:",
+              "description": "<ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Some ligament fibers are torn</li><li>The ligament remains intact</li><li>Joint stability is usually preserved</li></ul>"
+            },
+            {
+              "title": "This can lead to:",
+              "description": "<ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Pain and swelling</li><li>Reduced joint confidence</li><li>Limited athletic performance</li></ul>"
+            }
+          ],
+          "titleBig2": "<div>In simple words:</div><div>The joint is stable, but healing quality determines recovery strength.</div>"
+        }
+      },
+
+      {
+        "key": "feature",
+        "data": {
+          "title": "Common Types of Sports Ligament Injuries",
+          "contentHTML": "<div><ul class=\"list-disc list-inside ml-2.5\"><li><b>Knee:</b> ACL, MCL (soccer, skiing)</li><li><b>Ankle:</b> ATFL, CFL (basketball, running)</li><li><b>Shoulder:</b> AC, CC ligaments (rugby, wrestling)</li></ul></div>",
+          "reverse": false,
+          "align": "left"
+        }
+      },
+
+      {
+        "key": "feature",
+        "data": {
+          "title": "How Partial Ligament Tears Are Diagnosed",
+          "contentHTML": "<div><p class=\"text-md font-medium mb-2\">3-Step Diagnosis</p><ul class=\"list-disc list-inside ml-2.5 mb-2\"><li>Injury history: twisting, pivoting, contact injury</li><li>Physical examination: ligament stress testing</li><li>Imaging: MRI (gold standard), ultrasound, X-ray</li></ul></div>",
+          "messageHTML": "Stability testing determines whether surgery is needed or conservative care is appropriate.",
+          "reverse": true,
+          "align": "left"
+        }
+      },
+
+      {
+        "key": "feature",
+        "data": {
+          "title": "Standard Non-Surgical Rehabilitation",
+          "contentHTML": "<div><p class=\"text-md font-medium mb-2\">Phase-Based Recovery</p><ul class=\"list-disc list-inside ml-2.5\"><li>Phase 1 (0–2 weeks): Protection, bracing, gentle ROM</li><li>Phase 2 (2–6 weeks): Strengthening, balance training</li><li>Phase 3 (6–12 weeks): Sport-specific movement</li></ul></div>",
+          "messageHTML": "Around 85% of Grade II ligament tears heal without surgery when rehab is followed correctly.",
+          "reverse": false,
+          "align": "left"
+        }
+      },
+
+      {
+        "key": "feature",
+        "data": {
+          "title": "When Is Surgery Considered?",
+          "contentHTML": "<div><ul class=\"list-disc list-inside ml-2.5\"><li>Persistent instability after rehabilitation</li><li>Elite pivoting athletes</li><li>Combined injuries (meniscus + ligament)</li></ul></div>",
+          "messageHTML": "Improving healing biology may reduce the need for surgical intervention.",
+          "reverse": true,
+          "align": "left"
+        }
+      },
+
+      {
+        "key": "cards",
+        "data": {
+          "headingSmall": "Why Healing Quality Matters",
+          "titleBig": "<div>Standard healing often forms scar tissue.</div><div>Better healing builds stronger ligaments.</div>",
+          "cards": [
+            {
+              "title": "",
+              "description": "Scar tissue is weaker and poorly aligned"
+            },
+            {
+              "title": "",
+              "description": "Re-injury risk can reach 20–30%"
+            },
+            {
+              "title": "",
+              "description": "Optimized healing improves strength and durability"
+            }
+          ],
+          "note1": "Healing quality directly affects long-term athletic performance."
+        }
+      },
+
+      {
+        "key": "feature",
+        "data": {
+          "title": "How Regenerative Therapy May Support Healing",
+          "contentHTML": "<div><ul class=\"list-disc list-inside ml-2.5\"><li>Supports healthy inflammation response</li><li>Improves collagen fiber alignment</li><li>Enhances ligament-to-bone healing</li></ul></div>",
+          "reverse": false,
+          "align": "right"
+        }
+      },
+
+      {
+        "key": "feature",
+        "data": {
+          "title": "Who Is an Ideal Candidate?",
+          "contentHTML": "<div><ul class=\"list-disc list-inside ml-2.5\"><li>MRI-confirmed Grade II ligament tear</li><li>Stable joint without gross laxity</li><li>4–8 weeks post-injury</li><li>Committed to rehabilitation</li></ul></div>",
+          "messageHTML": "Complete ruptures and unstable joints still require surgical evaluation.",
+          "reverse": true,
+          "align": "left"
+        }
+      },
+
+      {
+        "key": "feature",
+        "data": {
+          "title": "Expected Recovery Timeline",
+          "contentHTML": "<div><ul class=\"list-disc list-inside ml-2.5\"><li>Pain-free movement: 2–3 weeks (vs 4–6 weeks)</li><li>Return to sport: 8–12 weeks (vs 12–16 weeks)</li><li>Lower re-injury risk with proper healing</li></ul></div>",
+          "reverse": false,
+          "align": "left"
+        }
+      },
+
+      {
+        "key": "contactdata",
+        "data": {
+          "title": "",
+          "contentHTML": "",
+          "align": "center"
+        }
+      }
+    ]
+  },
+
+  "faqs": [
+    {
+      "id": 1,
+      "question": "Can partial ligament tears heal without surgery?",
+      "answer": "Yes. Most Grade II ligament tears heal successfully with proper rehabilitation and stability."
+    },
+    {
+      "id": 2,
+      "question": "How long does recovery usually take?",
+      "answer": "Return to sport typically occurs within 8–12 weeks depending on healing and rehab compliance."
+    },
+    {
+      "id": 3,
+      "question": "Is regenerative therapy WADA-compliant?",
+      "answer": "Yes. Autologous regenerative therapies are WADA-compliant."
+    },
+    {
+      "id": 4,
+      "question": "How many injections are usually required?",
+      "answer": "Most athletes require one to two treatment cycles."
+    }
+  ],
+"testimonials": [
+    {
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "testimonial": "data coming soon",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    },
+    {
+      "id": 4,
+      "testimonial": "The rheumatoid arthritis symptoms have reduced substantially. My mobility has improved and the inflammation markers are down.",
+      "name": "Mr. Prakash",
+      "condition": "Diagnosed with Autoimmune, now feeling more supported with Viecell"
+    }
+  ],
+  "CTAData": [
+    {
+      "label": "Start Your Recovery",
+      "titleSmall": "Take the first step toward stronger ligament healing",
+      "titleBig": "Understanding your injury is the first step. Viecells helps athletes explore personalized recovery strategies focused on healing quality and safe return to sport.",
+      "buttons": [
+        {
+          "text": "Book Sports Injury Consultation",
+          "variant": "primary",
+          "href": null
+        },
+        {
+          "text": "Talk to a Sports Specialist",
+          "variant": "outline-primary",
+          "href": "/appointment-booking"
+        }
+      ]
+    }
+  ]
+}
