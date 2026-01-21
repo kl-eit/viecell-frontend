@@ -1,3 +1,4 @@
+import CTASection from "../component/CTASection/CTASection";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import SectionBlock from "../shared/Section";
 import Typography from "../shared/Typography/Typography";
@@ -94,6 +95,7 @@ function page() {
           </div>
         </div>
       </SectionBlock>
+       <CTASection CTAdata />
     </>
   );
 }

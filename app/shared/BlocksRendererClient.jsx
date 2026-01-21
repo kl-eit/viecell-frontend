@@ -142,6 +142,7 @@ export default function BlocksRendererClient({
   /* --------------------------------
      Render Strapi Blocks
   ---------------------------------*/
+  if (!Array.isArray(content)) return null;
   return (
     <BlocksRenderer
       content={content}

@@ -6,6 +6,7 @@ import Typography from "../../shared/Typography/Typography";
 import SectionBlock from "../../shared/Section";
 import Link from "next/link";
 import HeroSection from "../../shared/HeroSection/HeroSection";
+import CTASection from "../../component/CTASection/CTASection";
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
@@ -178,6 +179,7 @@ export default async function BlogDetailsPage({ params }) {
           </div>
         </div>
       </SectionBlock>
+        <CTASection CTAdata />
     </>
   );
 }

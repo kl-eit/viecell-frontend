@@ -197,8 +197,8 @@ export default async function Home() {
               From booking your trip to guiding your post-procedure rehab, our
               global team ensures a smooth, stress-free experience.
             </TextDescription>
-            <Button icon={true} href="/appointment-booking">
-              Book Free Virtual Consultation
+            <Button icon={true} href="appointment-booking">
+             Book Appointment
             </Button>
           </div>
           <div>
@@ -382,7 +382,7 @@ export default async function Home() {
                 align="left"
                 className="capitalize leading-8 text-neutral-500"
               />
-              <Button>Plan Treatment Trip</Button>
+              <Button href="https://wa.me/9001290028">Plan Treatment Trip</Button>
             </div>
           </div>
         </div>

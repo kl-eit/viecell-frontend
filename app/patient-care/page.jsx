@@ -9,6 +9,7 @@ import Typography, {
 } from "../shared/Typography/Typography";
 import PatientTabs from "../shared/PatientTabs";
 import HeroSection from "../shared/HeroSection/HeroSection";
+import CTASection from "../component/CTASection/CTASection";
 const tabContent = [
   {
     id: "upload",
@@ -47,10 +48,8 @@ export default async function PatientCarePage() {
     <>
       <PageHeaderSetter title="Patient Care" breadcrumbLast="Patient Care" />
       <HeroSection
-        title="Patient Care"
-        description="
-Secure Online Medical Record Submission
-Safely upload your medical records for specialist review before your consultation, ensuring accurate, personalized care."
+        title="Dedicated Inpatient Care for International Patients"
+        description="Viecells provides seamless inpatient care for international patients, offering personalized treatment planning, advanced regenerative therapies, hospital coordination, and end-to-end support—so you can focus on healing with confidence and comfort, far from home."
         // imageSrc={pageData?.hero?.imageSrc}
         // reverse={pageData?.hero?.reverse}
       />
@@ -100,6 +99,7 @@ Safely upload your medical records for specialist review before your consultatio
       </SectionBlock>
       <WorkProcess />
       <Faqs />
+      <CTASection CTAdata />
     </>
   );
 }

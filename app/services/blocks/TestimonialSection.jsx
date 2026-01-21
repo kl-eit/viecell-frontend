@@ -6,9 +6,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-export default function TestimonialSection({ testimonialsData }) {
-
-  console.log(testimonialsData,'testimonialsData')
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { useState } from "react";
+export default function TestimonialSection({
+  testimonialsData,
+  ServicetestimonialsData,
+}) {
+  const diagnosisTexts = [
+    "Diagnosed with {condition}, now feeling more supported with Viecell",
+    "After a {condition} diagnosis, finding confidence with Viecell",
+    "Diagnosed with {condition}, now feeling more in control with Viecell",
+  ];
+  const [selectedText] = useState(() => {
+    return diagnosisTexts[Math.floor(Math.random() * diagnosisTexts.length)];
+  });
   return (
     <SectionBlock
       className="bg-[linear-gradient(180deg,#E5F0CA_0%,#F7F9EF_100%)] text-lime-900 text-center"
@@ -29,7 +40,7 @@ export default function TestimonialSection({ testimonialsData }) {
           <div className="block w-full">
             <Swiper
               modules={[Pagination, Autoplay, EffectFade, Navigation]}
-             // autoplay={{ delay: 4000, disableOnInteraction: false }}
+              // autoplay={{ delay: 4000, disableOnInteraction: false }}
               pagination={{ el: ".testimonials-pagination", clickable: true }}
               navigation={{
                 prevEl: ".custom-prev",
@@ -40,20 +51,20 @@ export default function TestimonialSection({ testimonialsData }) {
               slidesPerView={1}
               loop={testimonialsData?.length > 1}
             >
-              {testimonialsData?.map((item, idx) => (
+              {ServicetestimonialsData?.map((item, idx) => (
                 <SwiperSlide key={idx}>
                   <div className="flex flex-col gap-10 text-center items-center">
                     <div className="max-w-[800px] text-center lg:text-3xl text-xl font-normal font-['Roboto_Condensed'] text-lime-900 leading-1.2">
-                      The rheumatoid arthritis symptoms have reduced
-                      substantially. My mobility has improved and the
-                      inflammation markers are down.
+                      {item?.testimonial}
+                      {item?.Message && (
+                        <BlocksRenderer content={item?.Message} />
+                      )}
                     </div>
                     <div className="text-md font-medium">
-                      <span className="block">Mr. Prakash </span>
-                      <span>
-                        Diagnosed with Autoimmune, now feeling more supported
-                        with Viecell
-                      </span>
+                      <span className="block">{item?.Name}</span>
+                      <p>
+                        {selectedText.replace("{condition}", item?.Designation)}
+                      </p>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -82,7 +93,7 @@ export default function TestimonialSection({ testimonialsData }) {
             <div className="custom-next">
               <button
                 variant="white"
-                className="p-4 bg-white/60 rounded-[100px] cursor-pointer group relative w-14 h-14 inline-flex flex-col justify-center items-center gap-2.5 h-14"
+                className="p-4 bg-white/60 rounded-[100px] cursor-pointer group relative w-14 inline-flex flex-col justify-center items-center gap-2.5 h-14"
               >
                 <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
                   <path

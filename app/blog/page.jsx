@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import HeroSection from "../shared/HeroSection/HeroSection";
+import CTASection from "../component/CTASection/CTASection";
 export default async function BlogPage() {
   const posts = await fetchAPI("articles");
   return (
@@ -99,6 +100,7 @@ export default async function BlogPage() {
           ))}
         </div>
       </SectionBlock>
+       <CTASection CTAdata />
     </>
   );
 }

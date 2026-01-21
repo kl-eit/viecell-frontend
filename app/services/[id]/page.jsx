@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { fetchAPI, getMediaUrl } from "../../lib/api";
+import { fetchAPI, fetchAPINested } from "../../lib/api";
 import HeroSection from "../../shared/HeroSection/HeroSection";
 import CTASection from "../../component/CTASection/CTASection";
 import ServiceCardSection from "../blocks/ServiceCardSection/ServiceCardSection";
@@ -10,12 +10,24 @@ import ContentSection from "../blocks/ContentSection/ContentSection";
 import TestimonialSection from "../blocks/TestimonialSection";
 import StepForm from "../../shared/Step-Form/StepForm";
 import { Fragment } from "react";
+import BlocksRendererClient from "../../shared/BlocksRendererClient";
 export default async function ServiceDetailsPage({ params }) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
   const services = await fetchAPI(`services?filters[slug][$eq]=${id}`);
+  const servicesData = await fetchAPINested(
+    `services?filters[slug][$eq]=${id}`,
+    {
+      Hero: { populate: "*" },
+      Intro: { populate: "*" },
+      Faq: { populate: "*" },
+      components: {
+        populate: "*",
+      },
+    }
+  );
   const service = services?.[0];
-  const pageTitle = service?.Title;
+  const pageTitle = servicesData[0]?.Title;
   const newLink = {
     id: service?.id,
     Title: service?.Title,
@@ -31,7 +43,11 @@ export default async function ServiceDetailsPage({ params }) {
   const LinkCategories = await fetchAPI(
     `service-categories?filters[slug]=${PageCategories}`
   );
-  const Faqs = await fetchAPI(`services?filters[slug][$eq]=${id}`, "Faqs.faqs");
+const ServicetestimonialsData =
+  Array.isArray(testimonial) && testimonial.length > 0
+    ? testimonial[0]?.testimonials?.slice(0, 4)
+    : [];
+
   let jsonData = null;
   try {
     const filePath = path.join(process.cwd(), "public", "data", `${id}.json`);
@@ -42,39 +58,45 @@ export default async function ServiceDetailsPage({ params }) {
   }
   const CTAData = jsonData?.CTAData;
   const pageData = jsonData?.pageData;
-  const faqsData = jsonData?.faqs;
-  const testimonialsData = jsonData?.testimonials;
+  const faqsData = servicesData[0]?.Faq;
+  const heroData = {
+    title: servicesData[0]?.Hero?.Title,
+    banner: servicesData[0]?.Hero?.Banner?.url,
+    description: servicesData[0]?.Hero?.Content,
+  };
+  const intorData = {
+    label: servicesData[0]?.Intro?.label,
+    Content: servicesData[0]?.Intro?.Content,
+  };
   return (
     <div>
       <HeroSection
-        title={pageData?.hero?.title}
-        description={pageData?.hero?.description}
-        imageSrc={pageData?.hero?.imageSrc}
-        reverse={pageData?.hero?.reverse}
+        title={heroData?.title}
+        description={heroData?.description}
+        imageSrc={heroData?.banner}
+        reverse={heroData?.hero?.reverse}
       />
+      <div className="py-8 lg:py-15 text-lime-900 leading-1.2 container grid gap-7">
+        <div>
+          <span dangerouslySetInnerHTML={{ __html: intorData?.label || "" }} />
+        </div>
+        <div className="lg:text-3xl text-lg font-normal font-['Roboto_Condensed']">
+          <BlocksRendererClient content={intorData?.Content || ""} />
+        </div>
+      </div>
       <div>
-        {pageData.sections.map((section, i) => {
-          const d = section.data;
+        
+        {servicesData[0]?.components?.map((section, i) => {
+          const d = section;
           const componentRegistry = {
-            intro: (
-              <div className="py-8 lg:py-15 text-lime-900 leading-1.2 container grid gap-7">
-                <div>
-                  <span dangerouslySetInnerHTML={{ __html: d?.lable || "" }} />
-                </div>
-                <div
-                  className="lg:text-3xl text-lg font-normal font-['Roboto_Condensed']"
-                  dangerouslySetInnerHTML={{ __html: d?.description || "" }}
-                />
-              </div>
-            ),
-            feature: (
+            "shared.feature-block": (
               <ServiceFetureSection
-                fetureData={d}
-                reverse={d?.reverse}
-                align={d?.align}
+                fetureData={section}
+                reverse={i % 2 !== 1}
+                align={section?.Align}
               />
             ),
-            cards: (
+            "shared.support-and-resources": (
               <ServiceCardSection
                 fetureData={d}
                 reverse={d?.reverse}
@@ -82,14 +104,10 @@ export default async function ServiceDetailsPage({ params }) {
                 fetureLogo={d?.fetureLogo}
               />
             ),
-            contactdata:
-              d?.title || d?.contentHTML ? (
-                <ContentSection contactData={d} align={d?.align} />
-              ) : null,
           };
           return (
-            <Fragment key={i}>
-              {componentRegistry[section.key] || null}
+            <Fragment key={section.id || i}>
+              {componentRegistry[section.__component] || null}
               {id === "liver-cirrhosis" && i === 2 && <StepForm />}
             </Fragment>
           );
@@ -98,9 +116,11 @@ export default async function ServiceDetailsPage({ params }) {
       <div className="container mx-auto">
         <hr className="border-t border-[#979832]/30 opacity-40" />
       </div>
-      <TestimonialSection testimonialsData={testimonialsData} />
-      <FaqSection faqsData={faqsData} />
-      <CTASection CTAdata={CTAData} />
+      {ServicetestimonialsData?.length > 0 && (
+        <TestimonialSection ServicetestimonialsData={ServicetestimonialsData} />
+      )}
+      {faqsData?.length > 0 && <FaqSection faqsData={faqsData} />}
+      <CTASection CTAdata={CTAData} pageTitle={pageTitle} />
     </div>
   );
 }

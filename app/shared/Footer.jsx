@@ -7,30 +7,30 @@ import Icon from "./icons/icons";
 export default function Footer() {
   const footerData = [
 
-    {
+    // {
+    //   title: "Treatments",
+    //   links: [
+    //     { title: "Eye Disorders", href: "/services?category=eye-disorders" },
+    //     { title: "Infertility", href: "/services?category=Infertility" },
+    //     {
+    //       title: "Orthopedic Conditions",
+    //       href: "/services?category=orthopedic-conditions",
+    //     },
+    //     {
+    //       title: "Neuro Disorders",
+    //       href: "/services?category=neuro-disorders",
+    //     },
+    //     { title: "Organ Related", href: "/services?category=organ-related" },
+    //     { title: "Skin Injuries", href: "/services?category=skin-injuries" },
+    //     {
+    //       title: "IV Drip Therapy",
+    //       href: "/services?category=iv-drip-therapy",
+    //     },
+    //     { title: "Science", href: "/services?category=science" },
+    //   ],
+    // },
+        {
       title: "Treatments",
-      links: [
-        { title: "Eye Disorders", href: "/services?category=eye-disorders" },
-        { title: "Infertility", href: "/services?category=Infertility" },
-        {
-          title: "Orthopedic Conditions",
-          href: "/services?category=orthopedic-conditions",
-        },
-        {
-          title: "Neuro Disorders",
-          href: "/services?category=neuro-disorders",
-        },
-        { title: "Organ Related", href: "/services?category=organ-related" },
-        { title: "Skin Injuries", href: "/services?category=skin-injuries" },
-        {
-          title: "IV Drip Therapy",
-          href: "/services?category=iv-drip-therapy",
-        },
-        { title: "Science", href: "/services?category=science" },
-      ],
-    },
-        {
-      title: "Deceases",
       links: [
         { title: "Autoimmune", href: "#" },
         { title: "Infertility", href: "#" },
@@ -131,7 +131,7 @@ export default function Footer() {
         <div className="container flex flex-col lg:gap-10 gap-5">
           <div className="grid lg:grid-cols-[70%_30%] gap-5">
             <div className="">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
                 {footerData.map((col, index) => (
                   <div key={index} className="flex flex-col gap-3">
                     {col?.title && (

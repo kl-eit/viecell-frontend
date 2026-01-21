@@ -12,6 +12,7 @@ import Blogs from "../shared/Blogs/Blogs";
 import Button from "../component/Button/Button";
 import AnimatedCounter from "./AnimatedCounter";
 import HeroSection from "../shared/HeroSection/HeroSection";
+import CTASection from "../component/CTASection/CTASection";
 
 const tabContent = [
   {
@@ -294,8 +295,11 @@ export default async function About() {
       <TeamMember />
 
       <Faqs />
+      
+     
       <Testimonial />
-      <Blogs />
+       <Blogs />
+         <CTASection CTAdata />
     </div>
   );
 }

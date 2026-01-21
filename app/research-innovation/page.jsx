@@ -7,6 +7,7 @@ import Typography, {
 } from "../shared/Typography/Typography";
 import Button from "../component/Button/Button";
 import HeroSection from "../shared/HeroSection/HeroSection";
+import CTASection from "../component/CTASection/CTASection";
 const tabContent = [
   {
     id: "upload",
@@ -281,6 +282,7 @@ export default async function ResearchInnovationPage() {
           </div>
         </div>
       </SectionBlock>
+       <CTASection CTAdata />
     </div>
   );
 }

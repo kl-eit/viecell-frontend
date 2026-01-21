@@ -6,6 +6,7 @@ import Testimonial from "../shared/Testimonial/Testimonial";
 import Typography, { TextDescription } from "../shared/Typography/Typography";
 import FilterTabs from "../shared/FilterTabs/FilterTabs";
 import HeroSection from "../shared/HeroSection/HeroSection";
+import CTASection from "../component/CTASection/CTASection";
 export async function generateMetadata() {
  // const seo = await getPageSEO("treatment-comparison"); // slug of the page
   return {
@@ -73,6 +74,7 @@ export default async function page() {
       </SectionBlock>
       <Testimonial />
       <Blogs />
+        <CTASection CTAdata />
     </div>
   );
 }
