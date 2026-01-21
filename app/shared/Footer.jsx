@@ -32,15 +32,15 @@ export default function Footer() {
         {
       title: "Treatments",
       links: [
-        { title: "Autoimmune", href: "#" },
-        { title: "Infertility", href: "#" },
-        { title: "Knee OA", href: "#" },
-        { title: "Liver Cirrhosis", href: "#" },
-        { title: <>Optical Atrophy & Retinal<br /> Degenerative Disease</>, href: "#" },
-        { title: "SNHL", href: "#" },
-        { title: "Sports Injury", href: "#" },
-        { title: "Type 1 Diabetes", href: "#" },
-
+        { title: "Autoimmune", href: "services/autoimmune-diseases" },
+        { title: "Infertility", href: "/services/infertility" },
+        { title: "Knee OA", href: "/services/knee-osteoarthritis-care-without-surgery" },
+        { title: "Liver Cirrhosis", href: "/services/liver-cirrhosis" },
+        { title: <>Optical Atrophy & Retinal<br /> Degenerative</>, href: "/services/optic-atrophy" },
+        { title: "SNHL", href: "services/sensorineural-hearing-loss-snhl" },
+        { title: "Sports Injury", href: "/services/sports-injuries" },
+        { title: "Diabetes", href: "services/diabetes" },
+        { title: "Brain Stroke", href: "/services/brain-stroke" },
       ],
     },
     {

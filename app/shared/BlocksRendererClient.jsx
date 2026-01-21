@@ -16,7 +16,7 @@ export default function BlocksRendererClient({
   ---------------------------------*/
   const defaultRenderers = {
     paragraph: ({ children }) => (
-      <p className="mb-3 text-reset">
+      <p className="mb-3 last:mb-0 text-reset">
         {children}
       </p>
     ),
@@ -86,7 +86,7 @@ export default function BlocksRendererClient({
     },
 
     "list-item": ({ children }) => (
-      <li className="mb-3">
+      <li className="mb-3 last:mb-0">
         {children}
       </li>
     ),

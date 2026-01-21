@@ -40,7 +40,6 @@ export default function MobileRichNavigationMenu({ menuData }) {
             <ul className="flex flex-col">
               {menuData.map((item, levelIndex) => {
                 const hasChildren = Array.isArray(item?.children) && item?.children.length > 0;
-
                 return (
                   <li key={levelIndex} className="font-['Roboto_Condensed'] text-sm">
                     {hasChildren ? (
@@ -54,7 +53,6 @@ export default function MobileRichNavigationMenu({ menuData }) {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                           </svg>
                         </div>
-
                         <AnimatePresence>
                           {dropdownOpen && (
                             <motion.div initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} className="overflow-hidden">
@@ -107,17 +105,14 @@ export default function MobileRichNavigationMenu({ menuData }) {
           </nav>
         </div>
       )}
-
       <div className="hidden lg:block">
         <RichNavigationMenu menuData={menuData} />
       </div>
     </div>
   );
 }
-
 function RichNavigationMenu({ menuData }) {
   if (!menuData?.length) return null;
-
   return (
     <NavigationMenu className="z-20 text-lime-900">
       <NavigationMenuList>
@@ -129,7 +124,6 @@ function RichNavigationMenu({ menuData }) {
               {hasChildren ? (
                 <>
                   <NavigationMenuTrigger className="font-medium">{item.label}</NavigationMenuTrigger>
-
                   <NavigationMenuContent className="px-0 py-1">
                     <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 p-4 w-5xl bg-white mt-2">
                       {item.children.map((submenu, index) => (
