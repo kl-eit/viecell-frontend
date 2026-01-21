@@ -18,11 +18,11 @@ import { useEffect, useRef, useState } from "react";
 import CarouselNav from "../CarouselNav/CarouselNav";
 export default function Blogs() {
   const [posts, setPosts] = useState([]);
-    const paginationRef = useRef(null);
+  const paginationRef = useRef(null);
   useEffect(() => {
-    fetchAPI(
-      "articles?pagination[limit]=6&sort=publishedAt:desc"
-    ).then((data) => setPosts(data));
+    fetchAPI("articles?pagination[limit]=6&sort=publishedAt:desc").then(
+      (data) => setPosts(data),
+    );
   }, []);
   return (
     <Section mode="light">
@@ -49,17 +49,17 @@ export default function Blogs() {
           modules={[Pagination, Autoplay, EffectFade, Navigation]}
           slidesPerView={3}
           spaceBetween={20}
-        pagination={{ el: paginationRef.current, clickable: true }}
+          pagination={{ el: paginationRef.current, clickable: true }}
           breakpoints={{
             0: { slidesPerView: 1 },
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-             onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = ".custom-prev";
-          swiper.params.navigation.nextEl = ".custom-next";
-          swiper.params.pagination.el = paginationRef.current;
-        }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = ".custom-prev";
+            swiper.params.navigation.nextEl = ".custom-next";
+            swiper.params.pagination.el = paginationRef.current;
+          }}
           className="pb-10 h-full mb-2"
         >
           {posts?.map((post) => {
@@ -104,7 +104,7 @@ export default function Blogs() {
                               year: "numeric",
                               month: "short",
                               day: "numeric",
-                            }
+                            },
                           )}
                         </time>
                       </div>
@@ -137,14 +137,8 @@ export default function Blogs() {
             );
           })}
         </Swiper>
-     
       </div>
-      <div className="flex items-center justify-center gap-4">
-         <div className="w-auto! left-1/2 flex items-center gap-1.5 rounded-[100px] mt-3  bg-white/50! p-5 backdrop-blur-lg  post-pagination"></div>
-      </div>
-          <CarouselNav
-        paginationRef={paginationRef}
-      />
+      <CarouselNav paginationRef={paginationRef} />
     </Section>
   );
 }

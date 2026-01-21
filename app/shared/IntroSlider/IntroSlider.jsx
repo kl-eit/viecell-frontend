@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, EffectFade, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { getMediaUrl } from "../../lib/api";
 import Button from "../../component/Button/Button";
 import CarouselNav from "../../shared/CarouselNav/CarouselNav";
@@ -39,8 +39,8 @@ export default function IntroSlider({ Banner }) {
       }`}
     >
       <Swiper
-        modules={[Pagination, Autoplay, EffectFade, Navigation]}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        modules={[Pagination, Autoplay, Navigation]}
+      //  autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ el: paginationRef.current, clickable: true }}
         navigation={{
           prevEl: ".custom-prev",
@@ -75,12 +75,12 @@ export default function IntroSlider({ Banner }) {
 
                   <div className="slide-button inline-flex justify-start gap-2.5">
                     {slide?.CTA1Link && (
-                      <Link href={`/${slide?.CTA1Link}`}>
+                      <Link href={`${slide?.CTA1Link}`}>
                         <Button variant="primary">{slide?.CTA1}</Button>
                       </Link>
                     )}
                     {slide?.CTA2Link && (
-                      <Link href={`/${slide?.CTA2Link}`}>
+                      <Link href={`${slide?.CTA2Link}`}>
                         <Button variant="white">{slide?.CTA2}</Button>
                       </Link>
                     )}

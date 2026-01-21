@@ -15,17 +15,17 @@ import Typography, { TextDescription } from "../Typography/Typography";
 import Link from "next/link";
 export default function FilterTabs() {
   const [selectedCountry, setSelectedCountry] = useState(
-    treatmentData?.countries[0]
+    treatmentData?.countries[0],
   );
   const [selectedDisease, setSelectedDisease] = useState(
-    treatmentData?.countries[0].diseases[0]
+    treatmentData?.countries[0].diseases[0],
   );
   const [selectedHospital, setSelectedHospital] = useState(
-    treatmentData?.countries[0].diseases[0].hospitals[0]
+    treatmentData?.countries[0].diseases[0].hospitals[0],
   );
   const handleCountryChange = (countryName) => {
     const country = treatmentData?.countries.find(
-      (c) => c.name === countryName
+      (c) => c.name === countryName,
     );
     if (!country) return;
     setSelectedCountry(country);
@@ -39,45 +39,46 @@ export default function FilterTabs() {
   const handleHospitalClick = (hospital) => {
     setSelectedHospital(hospital);
   };
-useEffect(() => {
-  const fetchCountry = async () => {
-    try {
-      const res = await fetch("/api/get-country");
-      if (!res.ok) {
-        console.error("API not found, status:", res.status);
-        return;
-      }
-      const json = await res.json();
-      const country = json.country || json.country_name || json.countryName;
-      console.log("Detected:", country);
-      const matched = treatmentData?.countries.find(
-        (c) => c.name.toLowerCase() === country.toLowerCase()
-      );
-      if (matched) {
-        setSelectedCountry(matched);
-        setSelectedDisease(matched.diseases[0]);
-        setSelectedHospital(matched.diseases[0]?.hospitals[0]);
-      } else {
-        const usa = treatmentData?.countries.find((c) => c.name === "USA");
-        if (usa) {
-          setSelectedCountry(usa);
-          setSelectedDisease(usa.diseases[0]);
-          setSelectedHospital(usa.diseases[0]?.hospitals[0]);
+  useEffect(() => {
+    const fetchCountry = async () => {
+      try {
+        const res = await fetch("/api/get-country");
+        if (!res.ok) {
+          console.error("API not found, status:", res.status);
+          return;
         }
+        const json = await res.json();
+        const country = json.country || json.country_name || json.countryName;
+        console.log("Detected:", country);
+        const matched = treatmentData?.countries.find(
+          (c) => c.name.toLowerCase() === country.toLowerCase(),
+        );
+        if (matched) {
+          setSelectedCountry(matched);
+          setSelectedDisease(matched.diseases[0]);
+          setSelectedHospital(matched.diseases[0]?.hospitals[0]);
+        } else {
+          const usa = treatmentData?.countries.find((c) => c.name === "USA");
+          if (usa) {
+            setSelectedCountry(usa);
+            setSelectedDisease(usa.diseases[0]);
+            setSelectedHospital(usa.diseases[0]?.hospitals[0]);
+          }
+        }
+      } catch (err) {
+        console.error("Country detect error:", err);
       }
-    } catch (err) {
-      console.error("Country detect error:", err);
-    }
-  };
-  fetchCountry();
-}, []);
+    };
+    fetchCountry();
+  }, []);
 
   const isMobile = useIsMobile();
   const pathname = usePathname();
-  const { isHome } = pathname === "/";
+  const isHome  = pathname === "/";
+  console.log(isHome,'isHome')
   return (
     <>
-      {isHome ? (
+      {!isHome ? (
         <div className="flex flex-col gap-3">
           <Typography
             title={`India vs.  ${selectedCountry?.name} – Treatment Comparison`}
@@ -146,7 +147,7 @@ useEffect(() => {
                   value={selectedDisease.id}
                   onValueChange={(value) => {
                     const disease = selectedCountry?.diseases.find(
-                      (d) => d.id === value
+                      (d) => d.id === value,
                     );
                     handleDiseaseClick(disease);
                   }}
@@ -166,7 +167,7 @@ useEffect(() => {
                   value={selectedHospital.name}
                   onValueChange={(value) => {
                     const hospital = selectedDisease?.hospitals.find(
-                      (h) => h.name === value
+                      (h) => h.name === value,
                     );
                     handleHospitalClick(hospital);
                   }}
@@ -263,7 +264,7 @@ useEffect(() => {
                             </ul>
                           </div>
                         </div>
-                      )
+                      ),
                   )}
                 {selectedHospital?.features.length > 0 &&
                   selectedHospital?.features.map(
@@ -291,7 +292,7 @@ useEffect(() => {
                             </ul>
                           </div>
                         </div>
-                      )
+                      ),
                   )}
                 <div className="bg-[#F4F8F4]/60">
                   <div className="px-4 py-3 border-b border-black/10 text-lime-900 text-sm font-semibold font-['Roboto_Condensed'] capitalize leading-6">
@@ -317,7 +318,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-      {isHome ? (
+      {!isHome ? (
         <div className="text-sm text-center bg-[#F4F8F4] py-2 px-10 rounded-[30px]  text-[#2D4213] font-normal">
           This comparison is for informational purposes and helps you evaluate
           clinics based on key treatment factors.

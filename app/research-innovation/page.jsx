@@ -1,4 +1,3 @@
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
 import { fetchAPI } from "../lib/api";
 import Typography, {
@@ -70,7 +69,7 @@ export default async function ResearchInnovationPage() {
                 }
               />
               <div>
-                <Button version="primary" href="/contact-us" icon>
+                <Button version="primary" href="/appointment-booking" icon>
                   Book Appointment
                 </Button>
               </div>
@@ -167,7 +166,7 @@ export default async function ResearchInnovationPage() {
                 align="left"
                 className="capitalize leading-8 text-neutral-500"
               />
-              <Button>Learn More</Button>
+              {/* <Button>Learn More</Button> */}
             </div>
           </div>
           <div className="w-full lg:w-[50%]">
@@ -217,7 +216,7 @@ export default async function ResearchInnovationPage() {
                 align="left"
                 className="capitalize leading-8 text-neutral-500"
               />
-              <Button>Learn More</Button>
+              {/* <Button>Learn More</Button> */}
             </div>
           </div>
         </div>

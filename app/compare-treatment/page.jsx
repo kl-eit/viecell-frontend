@@ -41,8 +41,8 @@ export default async function page() {
                 }
               />
               <div>
-                <Button version="primary" href="/contact-us" icon>
-                  Talk to a Treatment Advisor
+                <Button version="primary" href="https://wa.me/9001290028" icon>
+                 Talk to a Regenerative Specialist
                 </Button>
               </div>
             </div>
@@ -66,7 +66,7 @@ export default async function page() {
             <div className="text-neutral-500 text-base font-normal font-['Roboto'] leading-7 text-center">
               Speak to our medical advisor for personalized guidance.
             </div>
-            <Button icon>Talk to a Treatment Advisor</Button>
+            <Button icon href="https://wa.me/9001290028">Talk to a Regenerative Specialist</Button>
           </div>
 
           <img className="absolute z-1 max-w-[1025px]" src="vector-map.svg" />

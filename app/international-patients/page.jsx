@@ -48,13 +48,16 @@ export default async function InternationalPatientsPage() {
 
   return (
     <div>
-      <PageHeaderSetter title={title} breadcrumbLast="For International Patients" />
-              <HeroSection
-                                title="For International Patients"
-                                description="Viecells welcomes patients from around the world seeking advanced medical and regenerative care."
-                               // imageSrc={pageData?.hero?.imageSrc}
-                                // reverse={pageData?.hero?.reverse}
-                              />
+      <PageHeaderSetter
+        title={title}
+        breadcrumbLast="For International Patients"
+      />
+      <HeroSection
+        title="For International Patients"
+        description="Viecells welcomes patients from around the world seeking advanced medical and regenerative care."
+        // imageSrc={pageData?.hero?.imageSrc}
+        // reverse={pageData?.hero?.reverse}
+      />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-6 gap-3">
@@ -75,7 +78,7 @@ export default async function InternationalPatientsPage() {
                 }
               />
               <div>
-                <Button version="primary" href="/contact-us" icon>
+                <Button version="primary" href="appointment-booking" icon>
                   Book Appointment
                 </Button>
               </div>
@@ -107,7 +110,6 @@ export default async function InternationalPatientsPage() {
                 your consultation, ensuring accurate, personalized care.
               </TextDescription>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 ">
-              
                 {tabContent?.map((item, index) => {
                   return (
                     <div
@@ -130,7 +132,11 @@ export default async function InternationalPatientsPage() {
           </div>
           <div className="col-span-12 lg:col-span-6">
             <div className="flex flex-col gap-4">
-                <img className="w-full rounded-[20px]" src="Secure-Upload.png" alt="Why Choose India Illustration" />
+              <img
+                className="w-full rounded-[20px]"
+                src="Secure-Upload.png"
+                alt="Why Choose India Illustration"
+              />
             </div>
           </div>
         </div>
@@ -152,7 +158,9 @@ export default async function InternationalPatientsPage() {
               From booking your trip to guiding your post-procedure rehab, our
               global team ensures a smooth, stress-free experience.
             </TextDescription>
-            <Button icon={true} href="/appointment-booking">Book Free Virtual Consultation</Button>
+            <Button icon={true} href="https://wa.me/9001290028">
+              Book Free Virtual Consultation
+            </Button>
           </div>
           <div>
             <img className="w-full rounded-[20px]" src="/CTA-banner.png" />
@@ -197,7 +205,9 @@ export default async function InternationalPatientsPage() {
                 align="left"
                 className="capitalize leading-8 text-neutral-500"
               />
-              <Button>Plan Treatment Trip</Button>
+              <Button href="https://wa.me/9001290028">
+                Plan Treatment Trip
+              </Button>
             </div>
           </div>
         </div>
@@ -238,22 +248,13 @@ export default async function InternationalPatientsPage() {
                 align="left"
                 className=" leading-8 text-neutral-500"
               />
-              <Button>Plan Treatment Trip</Button>
+              <Button href="https://wa.me/9001290028">
+                Plan Treatment Trip
+              </Button>
             </div>
           </div>
         </div>
       </SectionBlock>
     </div>
   );
-}
-
-export async function generateMetadata() {
-  const data = await fetchAPI("international-patient");
-  return {
-    title: data?.Title || "International Patients | VieCell",
-    description:
-      data?.Description ||
-      data?.summary ||
-      "Information for international patients visiting VieCell.",
-  };
 }

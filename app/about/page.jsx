@@ -180,7 +180,7 @@ export default async function About() {
                   />
                 </div>
               </div>
-              <Button icon>Book Appointment</Button>
+              <Button icon href="appointment-booking">Book Appointment</Button>
             </div>
           </div>
           <div className="col-span-12 md:col-span-5 position-relative relative">
