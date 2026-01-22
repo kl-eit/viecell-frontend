@@ -6,7 +6,6 @@ import CTASection from "../../component/CTASection/CTASection";
 import ServiceCardSection from "../blocks/ServiceCardSection/ServiceCardSection";
 import ServiceFetureSection from "../blocks/ServiceFetureSection/ServiceFetureSection";
 import FaqSection from "../blocks/FaqSection/FaqSection";
-import ContentSection from "../blocks/ContentSection/ContentSection";
 import TestimonialSection from "../blocks/TestimonialSection";
 import StepForm from "../../shared/Step-Form/StepForm";
 import { Fragment } from "react";
@@ -14,38 +13,38 @@ import BlocksRendererClient from "../../shared/BlocksRendererClient";
 export default async function ServiceDetailsPage({ params }) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
-  const services = await fetchAPI(`services?filters[slug][$eq]=${id}`);
- const servicesData =
-  (await fetchAPINested(
-    `services?filters[slug][$eq]=${id}`,
-    {
+  const services = (await fetchAPI(`services?filters[slug][$eq]=${id}`)) || [];
+  const servicesData =
+    (await fetchAPINested(`services?filters[slug][$eq]=${id}`, {
       Hero: { populate: "*" },
       Intro: { populate: "*" },
       Faq: { populate: "*" },
+      testimonial_category: { populate: "*" },
       components: { populate: "*" },
-    }
-  )) || [];
+    })) || [];
   const service = services?.[0] || null;
-  const pageTitle = servicesData[0]?.Title || "";
-  const newLink = {
-    id: service?.id,
-    Title: service?.Title,
-    slug: id,
-  };
+  const servicePage = servicesData?.[0] || null;
+
+  const pageTitle = servicePage?.Title || "";
+  // const newLink = {
+  //   id: service?.id,
+  //   Title: service?.Title,
+  //   slug: id,
+  // };
   const testimonialCategory = service?.testimonial_category?.slug;
   const testimonial = testimonialCategory
     ? await fetchAPI(
-        `testimonial-categories?filters[slug]=${testimonialCategory}`
+        `testimonial-categories?filters[slug]=${testimonialCategory}`,
       )
     : null;
   // const PageCategories = service?.CategoryPages?.slug || null;
   // const LinkCategories = await fetchAPI(
   //   `service-categories?filters[slug]=${PageCategories}`
   // );
-const ServicetestimonialsData =
-  Array.isArray(testimonial) && testimonial.length > 0
-    ? testimonial[0]?.testimonials?.slice(0, 4)
-    : [];
+  const ServicetestimonialsData =
+    Array.isArray(testimonial) && testimonial.length > 0
+      ? testimonial[0]?.testimonials?.slice(0, 4)
+      : [];
 
   let jsonData = null;
   try {
@@ -56,26 +55,32 @@ const ServicetestimonialsData =
     console.log("JSON Load Error:", err.message);
   }
   const CTAData = jsonData?.CTAData;
-  const pageData = jsonData?.pageData;
-  const faqsData = servicesData[0]?.Faq || [];
-  const servicePage = servicesData?.[0] || null;
+  //const pageData = jsonData?.pageData;
+  const faqsData = servicePage?.Faq || [];
 
   const heroData = {
-    title: servicePage?.Hero?.Title ||  "",
-    banner: servicePage?.Hero?.Banner?.url ||  "",
-    description: servicePage?.Hero?.Content ||  "",
+    title: servicePage?.Hero?.Title || "",
+    banner: servicePage?.Hero?.Banner?.url || "",
+    description: servicePage?.Hero?.Content || "",
   };
   const intorData = {
     label: servicePage?.Intro?.label || "",
     Content: servicePage?.Intro?.Content || "",
   };
+  if (!servicePage) {
+  return (
+    <div className="container  text-center text-xl  py-8 lg:py-30 ">
+      Service not found or API error
+    </div>
+  );
+}
   return (
     <div>
       <HeroSection
         title={heroData?.title}
         description={heroData?.description}
         imageSrc={heroData?.banner}
-        reverse={heroData?.hero?.reverse}
+        reverse={heroData?.hero?.reverse || false}
       />
       <div className="py-8 lg:py-15 text-lime-900 leading-1.2 container grid gap-7">
         <div>
@@ -86,7 +91,6 @@ const ServicetestimonialsData =
         </div>
       </div>
       <div>
-        
         {(servicePage?.components || []).map((section, i) => {
           const d = section;
           const componentRegistry = {

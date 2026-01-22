@@ -71,8 +71,6 @@ export default function Header() {
       url: "contact-us",
     },
   ];
-
-  console.log(menuData, "menuData");
   return (
     <div>
       <div className="relative container mx-auto">
