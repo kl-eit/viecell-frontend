@@ -7,12 +7,10 @@ import Typography, { TextDescription } from "../shared/Typography/Typography";
 import TreatmentsClient from "./TreatmentsClient"; // Client-side component
 export default async function TreatmentsPage() {
   //const services = await fetchAPI("services");
-  const services = await fetchAPINested(
-    `services`,
-    {
+ const services =
+    (await fetchAPINested(`services`, {
       Hero: { populate: "*" },
-    },
-  );
+    })) || [];
   return (
     <div>
       <PageHeaderSetter
@@ -42,7 +40,7 @@ export default async function TreatmentsPage() {
         </div>
         <TreatmentsClient services={services} />
       </SectionBlock>
-        <CTASection CTAdata />
+      <CTASection CTAdata />
     </div>
   );
 }

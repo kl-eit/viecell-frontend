@@ -1,6 +1,4 @@
-import fs from "fs";
-import path from "path";
-import { fetchAPI, fetchAPINested } from "../../lib/api";
+import { fetchAPI, fetchAPINested, STRAPI_URL } from "../../lib/api";
 import HeroSection from "../../shared/HeroSection/HeroSection";
 import CTASection from "../../component/CTASection/CTASection";
 import ServiceCardSection from "../blocks/ServiceCardSection/ServiceCardSection";
@@ -21,12 +19,13 @@ const servicesData =
     Faq: { populate: "*" },
     testimonial_category: { populate: "*" },
     components: { populate: "*" },
-  })) || [];
+  }));
   const service = services?.[0] || null;
   const servicePage = servicesData?.[0] || null;
 
 console.log(servicesData,'servicesData')
 console.log(services,'services')
+console.log(STRAPI_URL,'STRAPI_URL')
   const pageTitle = servicePage?.Title || "";
   // const newLink = {
   //   id: service?.id,
@@ -48,15 +47,8 @@ console.log(services,'services')
       ? testimonial[0]?.testimonials?.slice(0, 4)
       : [];
 
-  let jsonData = null;
-  try {
-    const filePath = path.join(process.cwd(), "public", "data", `${id}.json`);
-    const fileContent = fs.readFileSync(filePath, "utf8");
-    jsonData = JSON.parse(fileContent);
-  } catch (err) {
-    console.log("JSON Load Error:", err.message);
-  }
-  const CTAData = jsonData?.CTAData;
+
+  //const CTAData ;
   //const pageData = jsonData?.pageData;
   const faqsData = servicePage?.Faq || [];
 
@@ -127,7 +119,7 @@ console.log(services,'services')
         <TestimonialSection ServicetestimonialsData={ServicetestimonialsData} />
       )}
       {faqsData?.length > 0 && <FaqSection faqsData={faqsData} />}
-      <CTASection CTAdata={CTAData} pageTitle={pageTitle} />
+      <CTASection CTAdata pageTitle={pageTitle} />
     </div>
   );
 }
