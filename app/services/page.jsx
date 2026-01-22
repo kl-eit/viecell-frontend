@@ -42,7 +42,7 @@ console.log(services,'services')
             <TextDescription text="Explore our range of personalized therapies designed to restore balance, improve wellness, and support your body’s natural healing processes." />
           </div>
         </div>
-        <TreatmentsClient services={services} />
+        <TreatmentsClient services={services || []} />
       </SectionBlock>
       <CTASection CTAdata />
     </div>
