@@ -18,40 +18,40 @@ export default function Header() {
       children: [
         {
           title: "Autoimmune",
-          url: "",
+          url: "/services/autoimmune-diseases",
         },
-        // {
-        //   title: "Infertility",
-        //   url: "/services/infertility",
-        // },
-        // {
-        //   title: "Knee OA",
-        //   url: "/services/knee-osteoarthritis-care-without-surgery",
-        // },
-        // {
-        //   title: "Liver Cirrhosis",
-        //   url: "/services/liver-cirrhosis",
-        // },
-        // {
-        //   title: "Optical Atrophy",
-        //   url: "/services/optic-atrophy",
-        // },
-        // {
-        //   title: "SNHL",
-        //   url: "/services/sensorineural-hearing-loss-snhl",
-        // },
-        // {
-        //   title: "Sports Injury",
-        //   url: "/services/sports-injuries",
-        // },
-        // {
-        //   title: "Diabetes",
-        //   url: "/services/diabetes",
-        // },
-        // {
-        //   title: "Brain Stroke",
-        //   url: "/services/brain-stroke",
-        // },
+        {
+          title: "Infertility",
+          url: "/services/infertility",
+        },
+        {
+          title: "Knee OA",
+          url: "/services/knee-osteoarthritis-care-without-surgery",
+        },
+        {
+          title: "Liver Cirrhosis",
+          url: "/services/liver-cirrhosis",
+        },
+        {
+          title: "Optical Atrophy",
+          url: "/services/optic-atrophy",
+        },
+        {
+          title: "SNHL",
+          url: "/services/sensorineural-hearing-loss-snhl",
+        },
+        {
+          title: "Sports Injury",
+          url: "/services/sports-injuries",
+        },
+        {
+          title: "Diabetes",
+          url: "/services/diabetes",
+        },
+        {
+          title: "Brain Stroke",
+          url: "/services/brain-stroke",
+        },
       ],
     },
     {

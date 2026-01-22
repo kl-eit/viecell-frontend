@@ -6,11 +6,15 @@ import SectionBlock from "../shared/Section";
 import Typography, { TextDescription } from "../shared/Typography/Typography";
 import TreatmentsClient from "./TreatmentsClient"; // Client-side component
 export default async function TreatmentsPage() {
-  //const services = await fetchAPI("services");
- const services =
-    (await fetchAPINested(`services`, {
-      Hero: { populate: "*" },
-    })) || [];
+  const services = await fetchAPI("services","Hero.Banner");
+//  const services =
+//     (await fetchAPINested(`services`, {
+//       Hero: { populate: "*" },
+//     })) || [];
+
+console.log(services,'services1')
+
+console.log(services,'services')
   return (
     <div>
       <PageHeaderSetter
