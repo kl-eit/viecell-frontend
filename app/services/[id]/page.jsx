@@ -14,17 +14,19 @@ export default async function ServiceDetailsPage({ params }) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
   const services = (await fetchAPI(`services?filters[slug][$eq]=${id}`)) || [];
-  const servicesData =
-    (await fetchAPINested(`services?filters[slug][$eq]=${id}`, {
-      Hero: { populate: "*" },
-      Intro: { populate: "*" },
-      Faq: { populate: "*" },
-      testimonial_category: { populate: "*" },
-      components: { populate: "*" },
-    })) || [];
+const servicesData =
+  (await fetchAPINested(`services?filters[slug][$eq]=${id}`, {
+    Hero: { populate: "*" },
+    Intro: { populate: "*" },
+    Faq: { populate: "*" },
+    testimonial_category: { populate: "*" },
+    components: { populate: "*" },
+  })) || [];
   const service = services?.[0] || null;
   const servicePage = servicesData?.[0] || null;
 
+console.log(servicesData,'servicesData')
+console.log(services,'services')
   const pageTitle = servicePage?.Title || "";
   // const newLink = {
   //   id: service?.id,
