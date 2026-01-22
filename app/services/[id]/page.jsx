@@ -15,19 +15,18 @@ export default async function ServiceDetailsPage({ params }) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
   const services = await fetchAPI(`services?filters[slug][$eq]=${id}`);
-  const servicesData = await fetchAPINested(
+ const servicesData =
+  (await fetchAPINested(
     `services?filters[slug][$eq]=${id}`,
     {
       Hero: { populate: "*" },
       Intro: { populate: "*" },
       Faq: { populate: "*" },
-      components: {
-        populate: "*",
-      },
+      components: { populate: "*" },
     }
-  );
-  const service = services?.[0];
-  const pageTitle = servicesData[0]?.Title;
+  )) || [];
+  const service = services?.[0] || null;
+  const pageTitle = servicesData[0]?.Title || "";
   const newLink = {
     id: service?.id,
     Title: service?.Title,
@@ -39,10 +38,10 @@ export default async function ServiceDetailsPage({ params }) {
         `testimonial-categories?filters[slug]=${testimonialCategory}`
       )
     : null;
-  const PageCategories = service?.CategoryPages?.slug;
-  const LinkCategories = await fetchAPI(
-    `service-categories?filters[slug]=${PageCategories}`
-  );
+  // const PageCategories = service?.CategoryPages?.slug || null;
+  // const LinkCategories = await fetchAPI(
+  //   `service-categories?filters[slug]=${PageCategories}`
+  // );
 const ServicetestimonialsData =
   Array.isArray(testimonial) && testimonial.length > 0
     ? testimonial[0]?.testimonials?.slice(0, 4)
@@ -58,15 +57,17 @@ const ServicetestimonialsData =
   }
   const CTAData = jsonData?.CTAData;
   const pageData = jsonData?.pageData;
-  const faqsData = servicesData[0]?.Faq;
+  const faqsData = servicesData[0]?.Faq || [];
+  const servicePage = servicesData?.[0] || null;
+
   const heroData = {
-    title: servicesData[0]?.Hero?.Title,
-    banner: servicesData[0]?.Hero?.Banner?.url,
-    description: servicesData[0]?.Hero?.Content,
+    title: servicePage?.Hero?.Title ||  "",
+    banner: servicePage?.Hero?.Banner?.url ||  "",
+    description: servicePage?.Hero?.Content ||  "",
   };
   const intorData = {
-    label: servicesData[0]?.Intro?.label,
-    Content: servicesData[0]?.Intro?.Content,
+    label: servicePage?.Intro?.label || "",
+    Content: servicePage?.Intro?.Content || "",
   };
   return (
     <div>
@@ -86,7 +87,7 @@ const ServicetestimonialsData =
       </div>
       <div>
         
-        {servicesData[0]?.components?.map((section, i) => {
+        {(servicePage?.components || []).map((section, i) => {
           const d = section;
           const componentRegistry = {
             "shared.feature-block": (
