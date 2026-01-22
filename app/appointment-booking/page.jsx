@@ -1,21 +1,22 @@
-import PageHeader from "../shared/PageHeader/PageHeader";
 import SectionBlock from "../shared/Section";
-import Testimonial from "../shared/Testimonial/Testimonial";
-import Blogs from "../shared/Blogs/Blogs";
 import SideBarHelp from "../shared/SideBarHelp/SideBarHelp";
 import AppointmentForm from "./AppointmentForm";
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import HeroSection from "../shared/HeroSection/HeroSection";
+import CTASection from "../component/CTASection/CTASection";
 export default async function AppointmentBookingPage() {
   return (
     <div>
-      <PageHeaderSetter title="Appointment Booking" breadcrumbLast="Appointment Booking" />
-        <HeroSection
-                          title="Appointment Booking"
-                          description="Book an appointment to discuss your condition, review your medical reports, and understand available treatment options. Our team will guide you through the process and help you take the next step with clarity and confidence."
-                         // imageSrc={pageData?.hero?.imageSrc}
-                          // reverse={pageData?.hero?.reverse}
-                        />
+      <PageHeaderSetter
+        title="Appointment Booking"
+        breadcrumbLast="Appointment Booking"
+      />
+      <HeroSection
+        title="Appointment Booking"
+        description="Book an appointment to discuss your condition, review your medical reports, and understand available treatment options. Our team will guide you through the process and help you take the next step with clarity and confidence."
+        // imageSrc={pageData?.hero?.imageSrc}
+        // reverse={pageData?.hero?.reverse}
+      />
       <SectionBlock>
         <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-6">
           <div className="p-6 lg:p-8 bg-[#F7F8EA] rounded-2xl mb-3 grid gap-5 text-lime-900 font-['Roboto_Condensed'] text-center">
@@ -36,14 +37,7 @@ export default async function AppointmentBookingPage() {
           </div>
         </div>
       </SectionBlock>
-      <Testimonial />
-      <Blogs />
+      <CTASection CTAdata />
     </div>
   );
-}
-export async function generateMetadata() {
-  return {
-    title: "Book an Appointment | VieCell",
-    description: "Book your appointment with VieCell's medical experts.",
-  };
 }

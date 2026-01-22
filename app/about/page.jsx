@@ -38,7 +38,7 @@ const tabContent = [
   },
 ];
 export default async function About() {
-  const AboutData = await fetchAPI("about");
+ // const AboutData = await fetchAPI("about");
   //const seo = AboutData?.blocks?.find((b) => b.__component === "shared.seo");
   return (
     <div>
@@ -126,7 +126,6 @@ export default async function About() {
           <div className="col-span-12 md:col-span-6">
             <div
               className="inline-flex flex-col justify-start items-start gap-5"
-             
             >
               <div className="text-xl font-medium font-['Roboto_Condensed'] text-lime-900 leading-5 italic">
                 Specialist in Regenerative Medicine
@@ -234,7 +233,7 @@ export default async function About() {
                 align="left"
                 className="capitalize leading-8 text-neutral-500"
               />
-              <Button icon>Learn More</Button>
+              {/* <Button icon>Learn More</Button> */}
             </div>
           </div>
           <div className="w-full lg:w-[50%]">
@@ -304,13 +303,8 @@ export default async function About() {
   );
 }
 
-export async function generateMetadata() {
-  const AboutData = await fetchAPI("about");
-  const seo = AboutData?.blocks?.find((b) => b.__component === "shared.seo");
-  return {
-    title: seo?.metaTitle || "About Us | VieCell",
-    description:
-      seo?.metaDescription ||
-      "About VieCell Institute of Regenerative Medicine.",
-  };
-}
+export const metadata = {
+  title: "About Us | VieCell Institute of Regenerative Medicine",
+  description:
+    "Learn about VieCell Institute of Regenerative Medicine, our mission, vision, values, expert doctors, advanced facilities, and commitment to safe, ethical regenerative therapies for patients worldwide.",
+};

@@ -16,7 +16,6 @@ function extractPlainText(blocks) {
     })
     .join("");
 }
-// Helper to truncate text
 function truncateText(text, maxLength = 100) {
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength) + "...";
@@ -46,12 +45,13 @@ export default function TreatmentsClient({ services }) {
      
     }
   }, [filteredServices, categoryParam, router]);
+  console.log(filteredServices,'filteredServices')
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
         {filteredServices?.map((treatment, index) => {
-          const treatmentImage = getMediaUrl(treatment?.Cover);
-          const plainText = extractPlainText(treatment?.Body);
+          const treatmentImage = getMediaUrl(treatment?.Cover || treatment?.Hero.Banner);
+          const plainText = extractPlainText(treatment?.Hero?.Content);
           const truncatedText = truncateText(plainText, 125); 
           return (
             <Card
@@ -59,11 +59,13 @@ export default function TreatmentsClient({ services }) {
               key={index}
             >
               <CardHeader className="p-0">
-                <img
-                  className="w-full h-full object-cover"
+                <div className=" bg-gray-200">
+                   <img
+                  className="aspect-3/2 object-cover"
                   src={treatmentImage}
                   alt={treatment?.Title}
                 />
+                </div>
               </CardHeader>
               <CardContent className="p-6 flex flex-col gap-2">
                 <CardTitle className="text-lime-900 text-lg font-bold font-['Roboto_Condensed'] capitalize leading-5">

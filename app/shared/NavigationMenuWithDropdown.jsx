@@ -24,24 +24,44 @@ export default function MobileRichNavigationMenu({ menuData }) {
           onClick={() => setIsOpen(!isOpen)}
           className="focus:outline-none"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
           </svg>
         </button>
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 w-full h-screen bg-white z-50 p-4 overflow-auto md:hidden">
+        <div className="absolute top-full left-0 w-full h-screen bg-white rounded-[30px] backdrop-blur-[50px] z-50 p-4 overflow-auto md:hidden ">
           <nav className="space-y-4">
-            <ul className="flex flex-col">
+            <ul className="flex flex-col text-lime-900 space-y-2">
               {menuData.map((item, levelIndex) => {
-                const hasChildren = Array.isArray(item?.children) && item?.children.length > 0;
+                const hasChildren =
+                  Array.isArray(item?.children) && item?.children.length > 0;
+
                 return (
-                  <li key={levelIndex} className="font-['Roboto_Condensed'] text-sm">
+                  <li
+                    key={levelIndex}
+                    className="font-['Roboto_Condensed'] text-sm"
+                  >
                     {hasChildren ? (
                       <>
                         <div
@@ -49,42 +69,67 @@ export default function MobileRichNavigationMenu({ menuData }) {
                           onClick={() => setDropdownOpen(!dropdownOpen)}
                         >
                           <a href={`${item?.url}`}>{item?.label}</a>
-                          <svg className={`w-4 h-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <svg
+                            className={`w-4 h-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
                           </svg>
                         </div>
                         <AnimatePresence>
                           {dropdownOpen && (
-                            <motion.div initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} className="overflow-hidden">
+                            <motion.div
+                              initial={{ height: 0 }}
+                              animate={{ height: "auto" }}
+                              exit={{ height: 0 }}
+                              className="overflow-hidden"
+                            >
                               <ul className="pt-1 space-y-1 text-sm">
                                 {item.children?.map((subMenu, index) => (
                                   <li key={index} className="px-2">
-                                    <div className="flex items-center justify-between" onClick={() => setActive(active === index ? null : index)}>
-                                      <Link href={subMenu?.url} className="pl-6 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                                    <div
+                                      className="flex items-center justify-between"
+                                      onClick={() =>
+                                        setActive(
+                                          active === index ? null : index,
+                                        )
+                                      }
+                                    >
+                                      <Link
+                                        href={subMenu?.url}
+                                        className="pl-2 flex items-center px-2 py-1.5 rounded-base  group"
+                                      >
                                         {subMenu?.title}
                                       </Link>
-                                      <svg
-                                        className={`w-4 h-4 transition-transform ${active === index ? "rotate-90" : ""}`}
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7" />
-                                      </svg>
                                     </div>
 
                                     <AnimatePresence>
                                       {active === index &&
-                                        subMenu.children?.map((childItem, idx) => (
-                                          <motion.div key={idx} initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} className="overflow-hidden">
-                                            <Link href={childItem?.url} className="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
-                                              {childItem?.label}
-                                            </Link>
-                                          </motion.div>
-                                        ))}
+                                        subMenu.children?.map(
+                                          (childItem, idx) => (
+                                            <motion.div
+                                              key={idx}
+                                              initial={{ height: 0 }}
+                                              animate={{ height: "auto" }}
+                                              exit={{ height: 0 }}
+                                              className="overflow-hidden"
+                                            >
+                                              <Link
+                                                href={childItem?.url}
+                                                className="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                                              >
+                                                {childItem?.label}
+                                              </Link>
+                                            </motion.div>
+                                          ),
+                                        )}
                                     </AnimatePresence>
                                   </li>
                                 ))}
@@ -94,7 +139,10 @@ export default function MobileRichNavigationMenu({ menuData }) {
                         </AnimatePresence>
                       </>
                     ) : (
-                      <Link className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group" href={`${item?.url}`}>
+                      <Link
+                        className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                        href={`${item?.url}`}
+                      >
                         {item?.label}
                       </Link>
                     )}
@@ -117,36 +165,47 @@ function RichNavigationMenu({ menuData }) {
     <NavigationMenu className="z-20 text-lime-900">
       <NavigationMenuList>
         {menuData.map((item, i) => {
-          const hasChildren = Array.isArray(item?.children) && item?.children?.length > 0;
-
+          const hasChildren =
+            Array.isArray(item?.children) && item?.children?.length > 0;
+          const isSecondLast = i === menuData.length - 2;
           return (
-            <NavigationMenuItem key={i}>
-              {hasChildren ? (
-                <>
-                  <NavigationMenuTrigger className="font-medium">{item.label}</NavigationMenuTrigger>
-                  <NavigationMenuContent className="px-0 py-1">
-                    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 p-4 w-5xl bg-white mt-2">
-                      {item.children.map((submenu, index) => (
-                        <div key={index}>
-                          <h6 className="font-extrabold font-['Roboto_Condensed']">{submenu.title}</h6>
-                          <ul className="mt-2.5 grid gap-1 text-[14px]">
-                            {submenu.children.map((child, idx) => (
-                              <li key={idx}>
-                                <Link href={child.url}>{child.label}</Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  </NavigationMenuContent>
-                </>
-              ) : (
-                <Link key={item?.id} href={`/${item?.url}`} className="px-2 font-medium text-sm">
-                  {item?.label}
-                </Link>
+            <React.Fragment key={i}>
+              {isSecondLast && (
+                <li className="hidden lg:flex items-center">
+                  <span className="h-6 w-px bg-[#979832]/50" />
+                </li>
               )}
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                {hasChildren ? (
+                  <>
+                    <NavigationMenuTrigger className="font-medium relative">
+                      {item.label}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="py-2 sm:px-2">
+                      <div className="flex flex-col w-full">
+                        {item.children.map((submenu, index) => (
+                          <a
+                            key={index}
+                            className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm  hover:bg-[#F3F5EC] focus:outline-hidden focus:bg-gray-100"
+                            href={submenu?.url}
+                          >
+                            {submenu?.title}
+                          </a>
+                        ))}
+                      </div>
+                    </NavigationMenuContent>
+                  </>
+                ) : (
+                  <Link
+                    key={item?.id}
+                    href={`/${item?.url}`}
+                    className="px-2 font-medium text-sm"
+                  >
+                    {item?.label}
+                  </Link>
+                )}
+              </NavigationMenuItem>
+            </React.Fragment>
           );
         })}
       </NavigationMenuList>

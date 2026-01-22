@@ -1,11 +1,18 @@
-import { fetchAPI } from "../lib/api";
+import CTASection from "../component/CTASection/CTASection";
+import { fetchAPI, fetchAPINested } from "../lib/api";
 import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import SectionBlock from "../shared/Section";
 import Typography, { TextDescription } from "../shared/Typography/Typography";
 import TreatmentsClient from "./TreatmentsClient"; // Client-side component
 export default async function TreatmentsPage() {
-  const services = await fetchAPI("services");
+  //const services = await fetchAPI("services");
+  const services = await fetchAPINested(
+    `services`,
+    {
+      Hero: { populate: "*" },
+    },
+  );
   return (
     <div>
       <PageHeaderSetter
@@ -35,6 +42,7 @@ export default async function TreatmentsPage() {
         </div>
         <TreatmentsClient services={services} />
       </SectionBlock>
+        <CTASection CTAdata />
     </div>
   );
 }

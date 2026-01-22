@@ -75,7 +75,6 @@ export default function FilterTabs() {
   const isMobile = useIsMobile();
   const pathname = usePathname();
   const isHome  = pathname === "/";
-  console.log(isHome,'isHome')
   return (
     <>
       {!isHome ? (
