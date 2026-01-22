@@ -26,7 +26,7 @@ export async function fetchAPI(endpoint, populate = "*") {
     return json.data;
   } catch (error) {
     console.error("Strapi fetch error:", error);
-    return undefined;
+     return null;
   }
 }
 
@@ -53,7 +53,7 @@ export async function fetchAPINested(endpoint, populateConfig) {
     return json.data;
   } catch (error) {
     console.error("Strapi nested fetch error:", error);
-    return undefined;
+    return null;
   }
 }
 
