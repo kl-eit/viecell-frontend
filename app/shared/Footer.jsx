@@ -6,37 +6,25 @@ import Button from "../component/Button/Button";
 import Icon from "./icons/icons";
 export default function Footer() {
   const footerData = [
-
-    // {
-    //   title: "Treatments",
-    //   links: [
-    //     { title: "Eye Disorders", href: "/services?category=eye-disorders" },
-    //     { title: "Infertility", href: "/services?category=Infertility" },
-    //     {
-    //       title: "Orthopedic Conditions",
-    //       href: "/services?category=orthopedic-conditions",
-    //     },
-    //     {
-    //       title: "Neuro Disorders",
-    //       href: "/services?category=neuro-disorders",
-    //     },
-    //     { title: "Organ Related", href: "/services?category=organ-related" },
-    //     { title: "Skin Injuries", href: "/services?category=skin-injuries" },
-    //     {
-    //       title: "IV Drip Therapy",
-    //       href: "/services?category=iv-drip-therapy",
-    //     },
-    //     { title: "Science", href: "/services?category=science" },
-    //   ],
-    // },
-        {
+    {
       title: "Treatments",
       links: [
         { title: "Autoimmune", href: "services/autoimmune-diseases" },
         { title: "Infertility", href: "/services/infertility" },
-        { title: "Knee OA", href: "/services/knee-osteoarthritis-care-without-surgery" },
+        {
+          title: "Knee OA",
+          href: "/services/knee-osteoarthritis-care-without-surgery",
+        },
         { title: "Liver Cirrhosis", href: "/services/liver-cirrhosis" },
-        { title: <>Optical Atrophy & Retinal<br /> Degenerative</>, href: "/services/optic-atrophy" },
+        {
+          title: (
+            <>
+              Optical Atrophy & Retinal
+              <br /> Degenerative
+            </>
+          ),
+          href: "/services/optic-atrophy",
+        },
         { title: "SNHL", href: "services/sensorineural-hearing-loss-snhl" },
         { title: "Sports Injury", href: "/services/sports-injuries" },
         { title: "Diabetes", href: "services/diabetes" },
@@ -123,7 +111,7 @@ export default function Footer() {
           </div>
         </div>
       </SectionBlock> */}
-  {/* <ScrollVelocityText
+      {/* <ScrollVelocityText
         text="Repair  Regenerate  Rejuvenate"
       /> */}
       <div className="clear">&nbsp;</div>
@@ -160,7 +148,10 @@ export default function Footer() {
             </div>
             <div>
               <div className="flex flex-col gap-5">
-                <a href="tel:+91 9001290028" className="p-5 relative bg-white rounded-[10px] flex justify-start items-center gap-5 overflow-hidden">
+                <a
+                  href="tel:+91 9001290028"
+                  className="p-5 relative bg-white rounded-[10px] flex justify-start items-center gap-5 overflow-hidden"
+                >
                   <span className="text-lime-900 lg:text-xl text-md font-medium font-['Roboto'] leading-8">
                     Book a Virtual Consultation
                   </span>
@@ -170,7 +161,10 @@ export default function Footer() {
                     className="text-lime-900 ms-auto"
                   />
                 </a>
-                <a href="https://wa.me/9001290028" className="p-5 relative bg-green-500 rounded-[10px] flex justify-start items-center gap-5 overflow-hidden">
+                <a
+                  href="https://wa.me/9001290028"
+                  className="p-5 relative bg-green-500 rounded-[10px] flex justify-start items-center gap-5 overflow-hidden"
+                >
                   <span className="text-white lg:text-xl text-md font-medium font-['Roboto'] leading-8">
                     Talk to Our Specialists on WhatsApp
                     <Icon
@@ -207,7 +201,11 @@ export default function Footer() {
             <hr className="border-t border-[#979832]/30" />
           </div>
           <div className="text-center flex flex-col ">
-            <img className="mx-auto max-w-[140px]" src="/footer-logo.png" alt="logo" />
+            <img
+              className="mx-auto max-w-[140px]"
+              src="/footer-logo.png"
+              alt="logo"
+            />
           </div>
           <div>
             <hr className="border-t border-[#979832]/30" />

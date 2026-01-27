@@ -87,7 +87,7 @@ export default function Header() {
               <MobileRichNavigationMenu menuData={menuData} />
               <div className="flex items-center gap-3 max-lg:hidden lg:gap-4">
                 {/* <span aria-hidden="true" className="h-8 w-px bg-black/10"></span> */}
-                <Button variant="primary" size="sm" href="appointment-booking">
+                <Button variant="primary" size="sm" href="/appointment-booking">
                   Book Appointment
                 </Button>
               </div>

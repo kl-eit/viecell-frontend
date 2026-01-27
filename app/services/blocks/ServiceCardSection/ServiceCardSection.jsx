@@ -17,13 +17,21 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
     four: "lg:grid-cols-4",
   };
 
+
+
+
   const gridCols =
     data?.CardsperRow && colMap[data?.CardsperRow]
       ? colMap[data?.CardsperRow]
       : data?.cards?.length === 2
         ? "lg:grid-cols-2"
         : "lg:grid-cols-3";
-
+  const BottomgridCols =
+    data?.BottomCardsperRow && colMap[data?.BottomCardsperRow]
+      ? colMap[data?.BottomCardsperRow]
+      : data?.cards?.length === 2
+        ? "lg:grid-cols-2"
+        : "lg:grid-cols-3";
   return (
     <SectionBlock
       className={`bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 text-center ${alignClass[effectiveAlign]}`}
@@ -59,11 +67,11 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
             return (
               <div
                 key={i}
-                className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col justify-center items-start gap-4"
+                className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2"
               >
                 {card?.title && (
                   <h3
-                    className="lg:text-2xl text-lg font-normal font-['Roboto_Condensed']"
+                    className="lg:text-2xl text-lg font-semibold font-['Roboto_Condensed']"
                     dangerouslySetInnerHTML={{ __html: card?.title }}
                   />
                 )}
@@ -92,7 +100,7 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
               dangerouslySetInnerHTML={{ __html: data?.BottomCardTitle }}
             />
           </div>
-          <div className="grid grid-cols-1 text-left  gap-7 lg:grid-cols-2">
+          <div className={`grid grid-cols-1 text-left  gap-7 ${BottomgridCols}`}>
             {data?.BottomCard?.map((card, i) => {
               return (
                 <div

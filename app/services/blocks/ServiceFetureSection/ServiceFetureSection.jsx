@@ -20,7 +20,7 @@ export default function ServiceFetureSection({ fetureData, reverse }) {
     : [];
   return (
     <SectionBlock className="pt-0!">
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-25 gap-10 items-center text-lime-900">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-15 gap-10 items-center text-lime-900">
         <div
           className={
             reverse

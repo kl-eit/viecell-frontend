@@ -51,13 +51,13 @@ export default function AnimatedCounter({ end, duration = 2000, label }) {
   }, [hasStarted, end, duration]);
 
   return (
-    <div ref={ref} className="inline-flex flex-col gap-2.5">
-      <div className="text-center text-lime-900 text-7xl font-extrabold font-['Roboto_Condensed']">
+    <div ref={ref} className="inline-flex flex-col gap-2.5 w-1/2 md:w-auto">
+      <div className="text-center text-lime-900 text-4xl lg:text-7xl font-extrabold font-['Roboto_Condensed']">
         {count}
         {end.toString().includes("+") ? "+" : ""}
         {end.toString().includes("%") ? "%" : ""}
       </div>
-      <div className="text-xl">{label}</div>
+      <div className="text-md lg:text-xl">{label}</div>
     </div>
   );
 }

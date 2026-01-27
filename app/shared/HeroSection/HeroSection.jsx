@@ -15,7 +15,7 @@ export default function HeroSection({
             reverse ? "lg:flex-row-reverse" : ""
           }`}
         >
-          <div className="max-w-[592px]">
+          <div className="max-w-[550px]">
             <h1 className="text-2xl lg:text-[2.625rem] leading-none font-['Roboto_Condensed'] font-semibold mb-4">
               {title}
             </h1>

@@ -114,7 +114,7 @@ export default async function About() {
             subtitle="Trusted by patients worldwide for safe and effective regenerative treatments."
           />
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-wrap">
           <AnimatedCounter end="120+" label="International Patients" />
           <AnimatedCounter end="95%" label="Successful Outcomes" />
           <AnimatedCounter end="15+" label="Years of Experience" />
@@ -184,8 +184,8 @@ export default async function About() {
           </div>
           <div className="col-span-12 md:col-span-5 position-relative relative">
             <img className="max-w-full" src="/about-img.png" />
-            <div className="px-5 py-7 left-[-20%] bottom-8 absolute bg-white/80 rounded-[30px] inline-flex justify-start items-center gap-5">
-              <div className="text-center justify-start text-lime-900 text-7xl font-extrabold font-['Roboto_Condensed'] capitalize leading-[68px]">
+            <div className="px-5 py-3 lg:py-7 left-[10%] lg:left-[-20%] bottom-8 absolute bg-white/80 rounded-[30px] inline-flex justify-start items-center gap-5">
+              <div className="text-center justify-start text-lime-900 text-3xl lg:text-7xl font-extrabold font-['Roboto_Condensed'] capitalize leading-normal">
                 15+
               </div>
               <div className="justify-start text-neutral-500 text-xl font-normal font-['Roboto'] leading-8">
@@ -245,8 +245,8 @@ export default async function About() {
         </div>
       </SectionBlock>
       <SectionBlock>
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-6">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+          <div>
             <div className="flex flex-col gap-4">
               <img
                 className="w-full rounded-[20px]"
@@ -255,7 +255,7 @@ export default async function About() {
               />
             </div>
           </div>
-          <div className="col-span-12 lg:col-span-6">
+          <div>
             <div className="flex flex-col gap-6">
               <Typography
                 title="Inspirational Health <br/> Our Vision & Mission"
