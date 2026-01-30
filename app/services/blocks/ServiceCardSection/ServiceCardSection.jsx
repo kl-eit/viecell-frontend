@@ -120,7 +120,7 @@ console.log("data", data);
           <div className="my-2">
             <hr className="border-t border-[#979832]/30 opacity-40" />
           </div>
-          {data?.BottomCardslabel &&    <div className="text-md font-medium">{data?.BottomCardslabel}</div>}
+          {data?.BottomCardslabel && <div className="text-md font-medium">{data?.BottomCardslabel}</div>}
           
           <div>
             <div

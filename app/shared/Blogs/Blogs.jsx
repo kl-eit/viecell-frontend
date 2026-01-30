@@ -41,7 +41,7 @@ export default function Blogs() {
         </div>
 
         <div className="col-span-12 lg:col-span-4 flex justify-start lg:justify-end">
-          <Link href="/blog">
+          <Link href="/blogs">
             <Button icon>View All</Button>
           </Link>
         </div>
@@ -72,7 +72,7 @@ export default function Blogs() {
                   key={post.id}
                   className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5"
                 >
-                  {post.cover && (
+                  {post?.cover ? (
                     <div className="relative w-full">
                       <img
                         src={imageUrl}
@@ -81,6 +81,8 @@ export default function Blogs() {
                         height={post?.cover.height}
                       />
                     </div>
+                  ) : (
+                    <div className="aspect-4/2 w-full bg-gray-200"></div>
                   )}
 
                   <CardContent className="p-5 flex flex-col h-full gap-3">
@@ -97,10 +99,10 @@ export default function Blogs() {
                         />
 
                         <time
-                          dateTime={post.publishedAt}
+                          dateTime={post?.Date || post?.publishedAt}
                           itemProp="datePublished"
                         >
-                          {new Date(post.publishedAt).toLocaleDateString(
+                          {new Date(post?.Date || post?.publishedAt).toLocaleDateString(
                             "en-US",
                             {
                               year: "numeric",
@@ -111,10 +113,9 @@ export default function Blogs() {
                         </time>
                       </div>
                     </div>
-
-                    {post.category && (
+                    {post?.category && (
                       <span className="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-2 w-fit">
-                        {post.category}
+                        {post?.category}
                       </span>
                     )}
                     <CardTitle className="text-lime-900 leading-normal">
@@ -125,11 +126,11 @@ export default function Blogs() {
                     </CardDescription>
 
                     <div className="mt-auto">
-                      <ReadMore href={`/blog/${post.slug}`} showArrow />
+                      <ReadMore href={`/blogs/${post?.slug}`} showArrow />
                     </div>
                   </CardContent>
 
-                  <meta itemProp="image" content={post.image} />
+                  <meta itemProp="image" content={post?.image} />
                   <meta
                     itemProp="author"
                     content={post?.author?.name || "VieCells"}

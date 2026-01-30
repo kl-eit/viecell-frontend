@@ -28,9 +28,9 @@ export default function ServiceFetureSection({ fetureData, reverse }) {
               : "order-2 lg:order-1 max-w-[600px]"
           }
         >
-          <div className=" w-full flex flex-col justify-center items-center bg-[linear-gradient(360deg,#F7F9EF_0%,#E5F0CA_100%)] rounded-xl overflow-hidden relative">
+          <div className={`${!sliderImages?.length ? 'aspect-square' : ''} w-full flex flex-col justify-center items-center bg-[linear-gradient(360deg,#F7F9EF_0%,#E5F0CA_100%)] rounded-xl overflow-hidden relative`}>
             {!sliderImages?.length ? (
-              <div className="aspect-square">No Image Found</div>
+              <div>No Image Found</div>
             ) : sliderImages.length === 1 ? (
             
                 <img

@@ -136,7 +136,7 @@ export default async function InternationalPatientsPage() {
               <img
                 className="w-full rounded-[20px]"
                 src="Secure-Upload.png"
-                alt="Why Choose India Illustration"
+                alt="Why Choose India"
               />
             </div>
           </div>

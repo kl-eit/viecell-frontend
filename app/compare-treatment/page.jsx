@@ -21,8 +21,8 @@ export default async function page() {
           <HeroSection
                                 title="Compare Global Stem Cell Centers with India"
                                 description="Quickly explore leading stem cell clinics and compare them with India by disease treatment, therapy type, technology, and clinical expertise."
-                               // imageSrc={pageData?.hero?.imageSrc}
-                                // reverse={pageData?.hero?.reverse}
+                                imageSrc="Vector-map-gray.svg"
+                                
                               />
       {/* <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">

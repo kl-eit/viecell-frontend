@@ -88,7 +88,7 @@ export default async function BlogPage() {
                   </CardDescription> */}
 
                   <div className="mt-auto">
-                    <ReadMore href={`/blog/${post?.slug}`} showArrow />
+                    <ReadMore href={`/blogs/${post?.slug}`} showArrow />
                   </div>
                 </CardContent>
 
@@ -98,7 +98,7 @@ export default async function BlogPage() {
                   content={post?.author?.name || "VieCells"}
                 />
                 <Link
-                  href={`/blog/${post?.slug}`}
+                  href={`/blogs/${post?.slug}`}
                   className="absolute inset-0 z-10"
                   aria-label={`Read more about ${post?.title}`}
                 />
