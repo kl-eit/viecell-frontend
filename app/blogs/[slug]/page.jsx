@@ -1,6 +1,5 @@
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { fetchAPI, getMediaUrl } from "../../lib/api";
-import { PageHeaderSetter } from "../../lib/PageHeaderContext";
 import { CalendarIcon, UserIcon } from "../../shared/icons/icons";
 import Typography from "../../shared/Typography/Typography";
 import SectionBlock from "../../shared/Section";
@@ -12,8 +11,11 @@ export async function generateMetadata({ params }) {
   const { slug } = resolvedParams;
   const posts = await fetchAPI(`articles?filters[slug][$eq]=${slug}`);
   const post = posts?.[0];
+  const title = post?.title 
+    ? `${post.title} - viecells`
+    : "Blog Post - viecells";
   return {
-    title: post?.title || 'Blog Post',
+    title: title || "Blog Post",
   };
 }
 export default async function BlogDetailsPage({ params }) {
@@ -23,19 +25,26 @@ export default async function BlogDetailsPage({ params }) {
   const categories = await fetchAPI(`categories`);
   const post = posts?.[0];
   const recentPostsData = await fetchAPI(
-    `articles?sort[0]=publishedAt:desc&pagination[limit]=3&filters[slug][$ne]=${slug}`
+    `articles?sort[0]=publishedAt:desc&pagination[limit]=3&filters[slug][$ne]=${slug}`,
   );
   const recentPosts = recentPostsData || [];
-  console.log(posts,'categories')
+  const BlogDetails = [
+    {
+      title: post?.title,
+      description: post?.description,
+      createdAt: post?.createdAt,
+      author: post?.author,
+      blog_categories: post?.blog_categories || [],
+    },
+  ];
   return (
     <>
-      <PageHeaderSetter title="Blog Details" breadcrumbLast="Blog Details" />
-          <HeroSection
-                    title={"Blog Details"}
-                    description="This article is written to help patients and caregivers better understand medical conditions, available treatment options, and emerging regenerative approaches. The information shared here is educational in nature and designed to support informed decision-making—not to replace professional medical advice."
-                    // imageSrc={pageData?.hero?.imageSrc}
-                    // reverse={pageData?.hero?.reverse}
-                  />
+      <HeroSection
+        title={post?.title}
+        description="This article is written to help patients and caregivers better understand medical conditions, available treatment options, and emerging regenerative approaches. The information shared here is educational in nature and designed to support informed decision-making—not to replace professional medical advice."
+        isBlogDetails={true}
+        BlogDetails={BlogDetails}
+      />
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-9">
@@ -50,29 +59,30 @@ export default async function BlogDetailsPage({ params }) {
                     className="w-full"
                   />
                 )}
-                   <div className="flex gap-3 mb-2 absolute bottom-2 px-4">
-                {post?.blog_categories?.map((category) =>{ 
-                  return(
-                  <div key={category.id}>
-                    <Link
-                      className="text-xs text-lime-900 font-['Roboto_Condensed'] bg-lime-100 px-3 py-1 rounded-2xl"
-                      href={`/category/${category?.slug}`}
-                    >
-                      {category?.name}
-                    </Link>
-                  </div>
-                )})}
+                <div className="flex gap-3 mb-2 absolute bottom-2 px-4">
+                  {post?.blog_categories?.map((category) => {
+                    return (
+                      <div key={category.id}>
+                        <Link
+                          className="text-xs text-lime-900 font-['Roboto_Condensed'] bg-lime-100 px-3 py-1 rounded-2xl"
+                          href={`/category/${category?.slug}`}
+                        >
+                          {category?.name}
+                        </Link>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              </div>
-           
+
               <div className="flex flex-col h-full gap-4">
-                <Typography
+                {/* <Typography
                   title={post?.title}
                   headingLevel="h2"
                   size="xl"
                   color="primary"
                   LineHeading={true}
-                />
+                /> */}
                 <div className="flex items-center md:divide-x divide-black/10  text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
                   <div className="w-auto pr-3 flex items-center gap-2">
                     <UserIcon aria-label="UserIcon" />
@@ -84,10 +94,10 @@ export default async function BlogDetailsPage({ params }) {
                       role="img"
                       aria-label="Open calendar"
                     />
-                    <time dateTime={post?.publishedAt} itemProp="datePublished">
-                      {new Date(post?.publishedAt).toLocaleDateString("en-US", {
+                    <time dateTime={post?.Date || post?.publishedAt} itemProp="datePublished">
+                      {new Date(post?.Date || post?.publishedAt).toLocaleDateString("en-US", {
                         year: "numeric",
-                        month: "long",
+                        month: "short",
                         day: "numeric",
                       })}
                     </time>
@@ -114,21 +124,28 @@ export default async function BlogDetailsPage({ params }) {
               <div className="recentPosts flex flex-col gap-3">
                 {recentPosts.map((post) => (
                   <div key={post.id} className="grid grid-cols-12 gap-4">
-                    {post?.cover && (
-                      <div className="mb-4 overflow-hidden rounded-lg col-span-12 md:col-span-4">
+                    <div className="mb-4 overflow-hidden col-span-4 ">
+                      {post?.cover ? (
                         <img
-                          src={getMediaUrl(post.cover)}
+                          src={getMediaUrl(post?.cover)}
                           alt={post?.title}
-                          width={post.cover.width || 400}
-                          height={post.cover.height || 200}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          width={post?.cover?.width}
+                          height={post?.cover?.height}
+                          className="aspect-3/2 object-cover"
                         />
-                      </div>
-                    )}
-                    <div className="col-span-12 md:col-span-8 flex flex-col gap-2">
+                      ) : (
+                        <div className="aspect-3/2 w-full lg:ml-auto bg-white/60"></div>
+                      )}
+                    </div>
+
+                    <div className="col-span-8 flex flex-col gap-2">
                       <Link href={`/blog/${post?.slug}`}>
                         <Typography
-                          title={post?.title}
+                          title={
+                            post?.title?.length > 40
+                              ? post.title.slice(0, 40) + "…"
+                              : post?.title
+                          }
                           headingLevel="h3"
                           size="xs"
                           color="primary"
@@ -136,16 +153,16 @@ export default async function BlogDetailsPage({ params }) {
                       </Link>
                       <div className="flex items-center text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
                         <time
-                          dateTime={post?.publishedAt}
+                          dateTime={post?.Date || post?.publishedAt}
                           itemProp="datePublished"
                         >
-                          {new Date(post?.publishedAt).toLocaleDateString(
+                          {new Date(post?.Date || post?.publishedAt).toLocaleDateString(
                             "en-US",
                             {
                               year: "numeric",
                               month: "short",
                               day: "numeric",
-                            }
+                            },
                           )}
                         </time>
                       </div>
@@ -179,7 +196,7 @@ export default async function BlogDetailsPage({ params }) {
           </div>
         </div>
       </SectionBlock>
-        <CTASection CTAdata />
+      <CTASection CTAdata />
     </>
   );
 }

@@ -1,10 +1,8 @@
 import React from "react";
 import SectionBlock from "../../../shared/Section";
 import BlocksRendererClient from "../../../shared/BlocksRendererClient";
-
 export default function WhyChooseSection({ whychooseData }) {
   const data = whychooseData;
-  console.log(data, "whychooseData");
   return (
     <SectionBlock
       className={`bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 text-center`}

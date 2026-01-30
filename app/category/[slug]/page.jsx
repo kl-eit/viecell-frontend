@@ -1,18 +1,27 @@
-import { Card, CardContent, CardDescription, CardTitle } from "../../../components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "../../../components/ui/card";
 import { PageHeaderSetter } from "../../lib/PageHeaderContext";
 import { fetchAPI } from "../../lib/api";
 import { ReadMore } from "../../component/Button/Button";
 import SectionBlock from "../../shared/Section";
 import { UserIcon } from "../../shared/icons/icons";
+import HeroSection from "../../shared/HeroSection/HeroSection";
 export default async function DetailsPage({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
-  const articles = await fetchAPI(`categories?filters[slug]=${slug}`,);
-  console.log(articles,'articles')
+  const articles = await fetchAPI(`categories?filters[slug]=${slug}`);
+  const title = articles[0]?.name || "Category";
+  console.log(articles, "articles");
   return (
     <div>
-      <PageHeaderSetter title={slug} />
-      
+      <HeroSection
+        title={title}
+       // description="This article is written to help patients and caregivers better understand medical conditions, available treatment options, and emerging regenerative approaches."
+      />
       <SectionBlock>
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
           {articles[0]?.articles?.map((post) => (
@@ -34,10 +43,10 @@ export default async function DetailsPage({ params }) {
                 )}
                 <CardContent className="p-5 flex flex-col h-full gap-3">
                   <div className="flex items-center md:divide-x divide-black/10  text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
-                    <div className="w-auto pr-3 flex items-center gap-2">
+                    {/* <div className="w-auto pr-3 flex items-center gap-2">
                       <UserIcon aria-label="UserIcon" />
                       {post?.author?.name || "VieCells"}
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* {post?.blog_categories && (
@@ -48,9 +57,9 @@ export default async function DetailsPage({ params }) {
                   <CardTitle className="text-lime-900 leading-normal">
                     {post?.title}
                   </CardTitle>
-                  <CardDescription className="text-neutral-500">
+                  {/* <CardDescription className="text-neutral-500">
                     {post?.description || post?.excerpt}
-                  </CardDescription>
+                  </CardDescription> */}
 
                   <div className="mt-auto">
                     <ReadMore href={`/blog/${post?.slug}`} showArrow />

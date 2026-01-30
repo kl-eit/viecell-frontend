@@ -15,8 +15,12 @@ export default function MobileRichNavigationMenu({ menuData }) {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [active, setActive] = useState(0);
+  const closeMenu = () => {
+  setIsOpen(false);
+  setDropdownOpen(false);
+  setActive(null);
+};
   if (!menuData?.length) return null;
-
   return (
     <div>
       <div className="lg:hidden">
@@ -68,7 +72,7 @@ export default function MobileRichNavigationMenu({ menuData }) {
                           className="flex items-center justify-between px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
                           onClick={() => setDropdownOpen(!dropdownOpen)}
                         >
-                          <a href={`${item?.url}`}>{item?.label}</a>
+                          <a href={`${item?.url}`}  onClick={closeMenu}>{item?.label} </a>
                           <svg
                             className={`w-4 h-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
                             fill="none"
@@ -104,9 +108,9 @@ export default function MobileRichNavigationMenu({ menuData }) {
                                     >
                                       <Link
                                         href={subMenu?.url}
-                                        className="pl-2 flex items-center px-2 py-1.5 rounded-base  group"
+                                        className="pl-2 flex items-center px-2 py-1.5 rounded-base  group" onClick={closeMenu}
                                       >
-                                        {subMenu?.title}
+                                        {subMenu?.title} 
                                       </Link>
                                     </div>
 
@@ -141,7 +145,7 @@ export default function MobileRichNavigationMenu({ menuData }) {
                     ) : (
                       <Link
                         className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
-                        href={`${item?.url}`}
+                        href={`${item?.url}`}  onClick={closeMenu}
                       >
                         {item?.label}
                       </Link>

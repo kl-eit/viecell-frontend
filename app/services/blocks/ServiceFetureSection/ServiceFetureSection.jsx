@@ -28,9 +28,9 @@ export default function ServiceFetureSection({ fetureData, reverse }) {
               : "order-2 lg:order-1 max-w-[600px]"
           }
         >
-          <div className="aspect-square w-full flex flex-col justify-center items-center bg-[linear-gradient(360deg,#F7F9EF_0%,#E5F0CA_100%)] rounded-xl overflow-hidden relative">
+          <div className=" w-full flex flex-col justify-center items-center bg-[linear-gradient(360deg,#F7F9EF_0%,#E5F0CA_100%)] rounded-xl overflow-hidden relative">
             {!sliderImages?.length ? (
-              <div>No Image Found</div>
+              <div className="aspect-square">No Image Found</div>
             ) : sliderImages.length === 1 ? (
             
                 <img
@@ -53,6 +53,7 @@ export default function ServiceFetureSection({ fetureData, reverse }) {
                         <img
                           src={`${STRAPI_URL}${image?.url}`}
                           alt={image?.alt}
+                          className="mx-auto"
                         />
                       </SwiperSlide>
                     );
@@ -88,7 +89,7 @@ export default function ServiceFetureSection({ fetureData, reverse }) {
               remarkPlugins={[remarkGfm]}
               components={{
                 ul: ({ node, ...props }) => (
-                  <ul className="list-disc pl-6 my-2" {...props} />
+                  <ul className="list-disc pl-6 my-2 space-y-2" {...props} />
                 ),
                  ol: ({ node, ...props }) => (
                   <ul className="list-decimal pl-6 my-2 space-y-2" {...props} />
@@ -111,7 +112,24 @@ export default function ServiceFetureSection({ fetureData, reverse }) {
           {data?.Message && (
             <div className="p-5 bg-lime-50 rounded-[10px] inline-flex items-center gap-5">
               <div className="font-normal leading-normal">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}
+                  components={{
+                ul: ({ node, ...props }) => (
+                  <ul className="list-disc pl-6 space-y-1" {...props} />
+                ),
+                 ol: ({ node, ...props }) => (
+                  <ul className="list-decimal pl-6 space-y-1" {...props} />
+                ),
+                p: ({ node, ...props }) => (
+                  <p
+                    className="mb-2 leading-relaxed"
+                    {...props}
+                  />
+                ),
+                strong: ({ node, ...props }) => (
+                  <strong className="font-semibold " {...props} />
+                ),
+              }}>
                   {data?.Message}
                 </ReactMarkdown>
               </div>

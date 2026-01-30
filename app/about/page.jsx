@@ -13,6 +13,7 @@ import Button from "../component/Button/Button";
 import AnimatedCounter from "./AnimatedCounter";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import CTASection from "../component/CTASection/CTASection";
+import Infrastructure from "./Infrastructure";
 
 const tabContent = [
   {
@@ -82,11 +83,10 @@ export default async function About() {
                 </div>
                 <TypographyList
                   items={[
-                    "standard regenerative protocols under ethical guidelines",
-                    "Internationally trained medical experts",
-                    "Affordable care — typically 70% less cost than U.S. clinics",
-                    "No waiting list for advanced procedures",
-                    "from online consultation to follow-up after returning home",
+                    "Expert interventional radiologists",
+                    "Regenerative medicine consultants",
+                    "Molecular biology researchers",
+                    "Stem cell laboratory technicians",
                   ]}
                   size="md"
                   color="secondary"
@@ -103,10 +103,10 @@ export default async function About() {
           />
         </div>
       </SectionBlock>
-      <SectionBlock className="bg-[#F7F8EA]" rounded>
+      <SectionBlock>
         <div>
           <Typography
-            title="Our Happy Clients & Achievements"
+            title="Our Trusted Patients & Milestones"
             headingLevel="h2"
             size="xl"
             color="primary"
@@ -121,7 +121,7 @@ export default async function About() {
           <AnimatedCounter end="3+" label="Countries Served" />
         </div>
       </SectionBlock>
-      <SectionBlock className="relative">
+      {/* <SectionBlock className="relative">
         <div className="grid grid-cols-12 lg:gap-15 gap-6 items-center justify-between">
           <div className="col-span-12 md:col-span-6">
             <div
@@ -199,10 +199,10 @@ export default async function About() {
             className="absolute right-0 bottom-15  object-contain"
           />
         </div>
-      </SectionBlock>
+      </SectionBlock> */}
       <SectionBlock className="bg-[#F7F8EA]" rounded>
-        <div className="flex flex-col lg:flex-row gap-10">
-          <div className="w-full lg:w-[50%]">
+        <div className="grid grid-cols-1 gap-10 lg:gap-20 lg:grid-cols-2">
+          <div className="max-w-[540px]">
             <div className="self-stretch flex flex-col justify-start items-start gap-3">
               <Typography
                 title="Infrastructure & Facilities"
@@ -226,7 +226,6 @@ export default async function About() {
                   "Advanced stem cell processing units",
                   "Clinical imaging & interventional radiology suite",
                   "International patient assistance desk",
-                  "Orthopedic Treatments",
                 ]}
                 size="md"
                 color="secondary"
@@ -236,11 +235,8 @@ export default async function About() {
               {/* <Button icon>Learn More</Button> */}
             </div>
           </div>
-          <div className="w-full lg:w-[50%]">
-            <img
-              className="w-full self-stretch rounded-[20px]"
-              src="/CTA-banner.png"
-            />
+          <div className="min-w-0">
+             <Infrastructure /> 
           </div>
         </div>
       </SectionBlock>

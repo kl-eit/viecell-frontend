@@ -17,39 +17,41 @@ export default async function BlogPage() {
   return (
     <>
       <PageHeaderSetter title="Blog" />
-          <HeroSection
-              title="Our Blog"
-              description="Explore expert-written articles covering medical conditions, treatment approaches, patient education, and the evolving science of regenerative therapy. Our goal is to provide clear, reliable information to help you better understand your health and make informed decisions—without hype or unnecessary medical jargon."
-              // imageSrc={pageData?.hero?.imageSrc}
-              // reverse={pageData?.hero?.reverse}
-            />
+      <HeroSection
+        title="Our Blog"
+        description="Explore expert-written articles covering medical conditions, treatment approaches, patient education, and the evolving science of regenerative therapy."
+        // imageSrc={pageData?.hero?.imageSrc}
+        // reverse={pageData?.hero?.reverse}
+      />
       <SectionBlock>
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
           {posts?.map((post) => (
-            <div key={post?.id}>
+            <div key={post?.id} className="relative">
               <Card
-               
                 className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5"
                 itemScope
                 itemType="https://schema.org/BlogPosting"
               >
-                {post?.cover && (
-                  <div className="relative w-full">
+                <div className="relative w-full">
+                  {post?.cover ? (
                     <img
                       src={getMediaUrl(post?.cover)}
                       alt={post?.title}
-                      width={post?.cover.width}
-                      height={post?.cover.height}
+                      width={post?.cover?.width}
+                      height={post?.cover?.height}
+                      className="aspect-3/2 object-cover"
                     />
-                  </div>
-                )}
+                  ) : (
+                    <div className="aspect-3/2 w-full lg:ml-auto rounded-xl bg-gray-200"></div>
+                  )}
+                </div>
 
                 <CardContent className="p-5 flex flex-col h-full gap-3">
                   <div className="flex items-center md:divide-x divide-black/10  text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
-                    <div className="w-auto pr-3 flex items-center gap-2">
+                    {/* <div className="w-auto pr-3 flex items-center gap-2">
                       <UserIcon aria-label="UserIcon" />
                       {post?.author?.name || "VieCells"}
-                    </div>
+                    </div> */}
                     {/* <div className="flex-1 px-3 flex items-center gap-2">
                       <CalendarIcon
                         size={16}
@@ -81,9 +83,9 @@ export default async function BlogPage() {
                   <CardTitle className="text-lime-900 leading-normal">
                     {post?.title}
                   </CardTitle>
-                  <CardDescription className="text-neutral-500">
+                  {/* <CardDescription className="text-neutral-500">
                     {post?.description || post?.excerpt}
-                  </CardDescription>
+                  </CardDescription> */}
 
                   <div className="mt-auto">
                     <ReadMore href={`/blog/${post?.slug}`} showArrow />
@@ -95,12 +97,17 @@ export default async function BlogPage() {
                   itemProp="author"
                   content={post?.author?.name || "VieCells"}
                 />
+                <Link
+                  href={`/blog/${post?.slug}`}
+                  className="absolute inset-0 z-10"
+                  aria-label={`Read more about ${post?.title}`}
+                />
               </Card>
             </div>
           ))}
         </div>
       </SectionBlock>
-       <CTASection CTAdata />
+      <CTASection CTAdata />
     </>
   );
 }

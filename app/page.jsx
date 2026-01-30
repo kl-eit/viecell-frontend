@@ -2,7 +2,7 @@ import IntroSlider from "./shared/IntroSlider/IntroSlider";
 import ThemeCard from "./component/card/card";
 import Faqs from "./shared/Faq/Faq";
 import Blogs from "./shared/Blogs/Blogs";
-import { fetchAPI, getMediaUrl } from "./lib/api";
+import { fetchAPI, fetchAPINested, getMediaUrl } from "./lib/api";
 import Testimonial from "./shared/Testimonial/Testimonial";
 import TeamMemberSection from "./shared/Team/TeamMember";
 import FilterTabs from "./shared/FilterTabs/FilterTabs";
@@ -17,6 +17,7 @@ import Typography, {
 } from "./shared/Typography/Typography";
 import { ArrowRightIcon } from "./shared/icons/icons";
 export default async function Home() {
+
   const BannerData = await fetchAPI("home", "Banner.BannerImage");
   const TreatmentsData = await fetchAPI("home", "Treatment.Treatment.Image");
   const Banner = BannerData?.Banner || [];
@@ -84,26 +85,31 @@ export default async function Home() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
-            {TreatmentData.Treatment?.map((treatment, index) => {
-              const treatmentImage = getMediaUrl(treatment?.Image);
+            {TreatmentData?.Treatment?.map((item, index) => {
+              const treatmentImage = getMediaUrl(item?.Image);
               return (
                 <Card
                   className="bg-white border-0 flex-1 flex flex-col overflow-hidden"
-                  key={treatment?.id}
+                  key={item?.id}
                 >
                   <CardHeader className="p-0">
                     <img
                       className="w-full h-full object-cover"
                       src={treatmentImage}
-                      alt={treatment?.Title}
+                      alt={item?.Name}
                     />
                   </CardHeader>
                   <CardContent className="p-6 flex flex-col gap-2">
                     <CardTitle className="text-lime-900 text-lg font-bold font-['Roboto_Condensed'] capitalize leading-5">
-                      {treatment?.Name}
+                      {item?.Name}
                     </CardTitle>
+                    <p className="text-lime-900 text-md">
+                      {item?.Description?.length > 95
+                        ? item.Description.slice(0, 95) + "..."
+                        : item?.Description}
+                    </p>
                     <div>
-                      <ReadMore href={treatment?.slug} showArrow />
+                      <ReadMore href={`services/${item?.slug}`} showArrow />
                     </div>
                   </CardContent>
                 </Card>
@@ -111,12 +117,12 @@ export default async function Home() {
             })}
           </div>
           <div className="inline-flex justify-center items-center gap-2.5">
-            <div className="inline-flex items-center gap-2 font-medium font-['Roboto_Condensed'] underline leading-5 group relative">
+            <a className="inline-flex items-center gap-2 font-medium font-['Roboto_Condensed'] underline leading-5 group relative" href="https://wa.me/9001290028">
               Request a Personalized Treatment Plan
               <span className="rotate-0 transition-all duration-200 group-hover:-rotate-45">
                 <ArrowRightIcon />
               </span>
-            </div>
+            </a>
           </div>
         </div>
       </SectionBlock>
@@ -153,11 +159,10 @@ export default async function Home() {
                 </div>
                 <TypographyList
                   items={[
-                    "standard regenerative protocols under ethical guidelines",
-                    "Internationally trained medical experts",
-                    "Affordable care — typically 70% less cost than U.S. clinics",
-                    "No waiting list for advanced procedures",
-                    "from online consultation to follow-up after returning home",
+                    "Expert interventional radiologists",
+                    "Regenerative medicine consultants",
+                    "Molecular biology researchers",
+                    "Stem cell laboratory technicians",
                   ]}
                   size="md"
                   color="secondary"
@@ -195,7 +200,7 @@ export default async function Home() {
               global team ensures a smooth, stress-free experience.
             </TextDescription>
             <Button icon={true} href="appointment-booking">
-             Book Appointment
+              Book Appointment
             </Button>
           </div>
           <div>
@@ -207,145 +212,13 @@ export default async function Home() {
         <FilterTabs />
       </SectionBlock>
 
-      {/* <SectionBlock data-aos="fade-up" data-aos-delay={100}>
-        <div className="grid grid-cols-12 gap-6 items-center">
-          <div className="col-span-12 md:col-span-6">
-            <Typography
-              title="Why Choose India for Regenerative Medicine"
-              headingLevel="h2"
-              size="xl"
-              color="primary"
-              LineHeading={true}
-            />
-          </div>
-          <div className="col-span-12 md:col-span-6 flex justify-start lg:justify-end">
-            <TextDescription>
-              See why India (VieCell) offers world-class regenerative <br />
-              care at globally affordable costs.
-            </TextDescription>
-          </div>
-        </div>
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black/10 gap-0">
-              <div className="flex-1 p-7 rounded-tl-[30px] rounded-bl-[30px]  flex justify-start items-start gap-14 border border-[#F5F8FA] border-r-0">
-                <div className="flex-1 inline-flex flex-col justify-center items-start gap-5">
-                  <div className="self-stretch justify-start text-lime-900 text-lg font-semibold  leading-6">
-                    Feature
-                  </div>
-                  <ul className="py-3 flex flex-col space-y-3 w-full">
-                    {[
-                      "Diseases Treated",
-                      "Cost Range USD",
-                      "Cost Per Day",
-                      "Delivery Methods",
-                    ].map((item, i, arr) => (
-                      <li
-                        key={i}
-                        className={`w-full flex justify-between items-center border-b border-dashed border-gray-300 py-1 ${
-                          i === arr.length - 1 ? "border-b-0" : ""
-                        }`}
-                      >
-                        {item}
-                        <span>
-                          <ArrowRightIcon size={12} />
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="flex-1 p-7  border border-[#F5F8FA] flex justify-start items-start gap-14">
-                <div className="flex-1 inline-flex flex-col justify-center items-start gap-5">
-                  <div className="self-stretch justify-start text-lime-900 text-lg font-semibold  leading-6">
-                    U.S.
-                  </div>
-                  <ul className="py-3 flex flex-col space-y-3 w-full">
-                    {[
-                      "$$$$",
-                      "Restricted",
-                      "3–6 months",
-                      "Local only",
-                    ].map((item, i, arr) => (
-                      <li
-                        key={i}
-                        className={`w-full flex justify-between items-center border-b border-dashed border-gray-300 py-1 ${
-                          i === arr.length - 1 ? "border-b-0" : ""
-                        }`}
-                      >
-                        {item}
-                        <span>
-                          <ArrowRightIcon size={12} />
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="flex-1 p-7 bg-[#F4F8F4]/60 rounded-tr-[30px] rounded-br-[30px] flex justify-start items-start gap-14">
-                <div className="flex-1 inline-flex flex-col justify-center items-start gap-5">
-                  <div className="self-stretch justify-start text-lime-900 text-lg font-semibold  leading-6">
-                    India (VieCell)
-                  </div>
-                  <ul className="py-3 flex flex-col space-y-3 w-full">
-                    {[
-                      "Liver Failure, Kidney Failure, Neurological, Heart Failure, Orthopedic",
-                      "10000-15000",
-                      "1786",
-                      "Intravenous, Intrathecal, Local Injection, Trans-arterial",
-                    ].map((item, i, arr) => (
-                      <li
-                        key={i}
-                        className={`w-full flex justify-between items-center border-b border-dashed border-gray-300 py-1 ${
-                          i === arr.length - 1 ? "border-b-0" : ""
-                        }`}
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-12 md:col-span-12">
-            <div className="justify-start text-lime-900 text-base font-semibold  capitalize leading-8">
-              What Makes India a Leading Choice
-            </div>
-            <TypographyList
-              items={[
-                "World-class treatments",
-                "Ethical guidelines",
-                "Fraction of the international cost",
-                "Special expertise in Trans-Arterial cell Therapy",
-              ]}
-              size="md"
-              color="secondary"
-              align="left"
-              className="capitalize leading-8 text-neutral-500"
-            />
-          </div>
-        </div>
-
-        <div
-          className="flex flex-col md:flex-row justify-center items-center gap-2.5 
-            bg-[#F4F8F4] p-2.5 md:p-5 rounded-[30px] 
-            text-[#2D4213] font-normal leading-6"
-        >
-          Experience world-class quality at globally affordable costs
-          <div className="inline-flex items-center gap-2 text-[#647252] underline leading-6">
-           <Link href="/compare-treatment">Compare Treatment Options <ArrowRightIcon /></Link>
-            
-          </div>
-        </div>
-</SectionBlock> */}
-
+     
       <SectionBlock noSpacing data-aos="fade-up" data-aos-delay={100}>
         <div className="flex flex-col md:flex-row gap-14 p-5 lg:p-10 bg-[#F4F8F4] rounded-4xl">
           <div className="w-full md:w-[40%]">
             <img
               className="w-full self-stretch rounded-[20px]"
-              src="/CTA-banner.png"
+              src="/Travel-Support-Services.png"
             />
           </div>
           <div className="w-full md:w-[60%]">
@@ -379,7 +252,9 @@ export default async function Home() {
                 align="left"
                 className="capitalize leading-8 text-neutral-500"
               />
-              <Button href="https://wa.me/9001290028">Plan Treatment Trip</Button>
+              <Button href="https://wa.me/9001290028">
+                Plan Treatment Trip
+              </Button>
             </div>
           </div>
         </div>

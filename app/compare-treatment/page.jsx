@@ -19,12 +19,12 @@ export default async function page() {
     <div>
   
           <HeroSection
-                                title="Treatment Comparison"
+                                title="Compare Global Stem Cell Centers with India"
                                 description="Quickly explore leading stem cell clinics and compare them with India by disease treatment, therapy type, technology, and clinical expertise."
                                // imageSrc={pageData?.hero?.imageSrc}
                                 // reverse={pageData?.hero?.reverse}
                               />
-      <SectionBlock>
+      {/* <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-5 gap-3">
             <div className="flex flex-col gap-6">
@@ -55,7 +55,7 @@ export default async function page() {
             />
           </div>
         </div>
-      </SectionBlock>
+      </SectionBlock> */}
       <SectionBlock>
         <FilterTabs />
         <div className="container p-14 relative bg-linear-to-l from-lime-200 via-stone-100 to-lime-100 rounded-4xl inline-flex justify-start items-start gap-72 overflow-hidden">

@@ -50,7 +50,7 @@ export default function TreatmentsClient({ services }) {
     <div>
       <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-6">
         {filteredServices?.map((treatment, index) => {
-          const treatmentImage = getMediaUrl(treatment?.Cover || treatment?.Hero.Banner);
+          const treatmentImage = getMediaUrl(treatment?.Cover);
           const plainText = extractPlainText(treatment?.Hero?.Content);
           const truncatedText = truncateText(plainText, 125); 
           return (

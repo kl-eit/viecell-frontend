@@ -8,6 +8,8 @@ import { fetchAPI, getMediaUrl } from "../../lib/api";
 import Typography from "../Typography/Typography";
 import Link from "next/link";
 import Image from "next/image";
+import "swiper/css";
+import "swiper/css/pagination";
 import {
   Card,
   CardContent,
@@ -60,7 +62,7 @@ export default function Blogs() {
             swiper.params.navigation.nextEl = ".custom-next";
             swiper.params.pagination.el = paginationRef.current;
           }}
-          className="pb-10 h-full mb-2"
+          className="pb-10 h-full mb-2 w-full"
         >
           {posts?.map((post) => {
             const imageUrl = getMediaUrl(post?.cover);

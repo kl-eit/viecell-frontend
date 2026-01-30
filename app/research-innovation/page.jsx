@@ -45,14 +45,13 @@ export default async function ResearchInnovationPage() {
 
   return (
     <div>
-    
-            <HeroSection
-                    title="Research & Innovation"
-                    description="At Viecell Institute, research is the foundation of every breakthrough. From stem-cell innovation to cutting-edge therapeutic models, our teams work to transform scientific discovery into real-world medical impact."
-                   // imageSrc={pageData?.hero?.imageSrc}
-                    // reverse={pageData?.hero?.reverse}
-                  />
-      <SectionBlock>
+      <HeroSection
+        title="Advancing the Future of Regenerative Medicine"
+        description="At Viecell Institute, research is the foundation of every breakthrough. From stem-cell innovation to cutting-edge therapeutic models, our teams work to transform scientific discovery into real-world medical impact."
+         imageSrc="Your-Journey.png"
+      
+      />
+      {/* <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 md:col-span-6 gap-3">
             <div className="flex flex-col gap-3 lg:gap-6">
@@ -83,8 +82,8 @@ export default async function ResearchInnovationPage() {
             />
           </div>
         </div>
-      </SectionBlock>
-      <SectionBlock className="bg-[#F7F8EA]">
+      </SectionBlock> */}
+      <SectionBlock>
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 lg:col-span-6">
             <div className="flex flex-col gap-4">
@@ -172,7 +171,7 @@ export default async function ResearchInnovationPage() {
           <div className="w-full lg:w-[50%]">
             <img
               className="w-full self-stretch rounded-[20px]"
-              src="/CTA-banner.png"
+              src="/Clinical-Research.png"
             />
           </div>
         </div>
@@ -182,7 +181,7 @@ export default async function ResearchInnovationPage() {
           <div className="w-full lg:w-[50%]">
             <img
               className="w-full self-stretch rounded-[20px]"
-              src="/CTA-banner.png"
+              src="/Team-cientists-experimenting-together.png"
             />
           </div>
           <div className="w-full lg:w-[50%]">
@@ -221,7 +220,7 @@ export default async function ResearchInnovationPage() {
           </div>
         </div>
       </SectionBlock>
-      <SectionBlock className="bg-linear-to-b from-[#F7F8EA] to-white">
+      <SectionBlock className="">
         <div className="grid grid-cols-12 gap-10 items-center">
           <div className="col-span-12 lg:col-span-6">
             <Typography
@@ -271,7 +270,8 @@ export default async function ResearchInnovationPage() {
                 Joint Research & Technology Development
               </div>
               <div>
-                <TextDescription className="leading-normal"
+                <TextDescription
+                  className="leading-normal"
                   text={
                     " We co-develop technologies, methodologies, and translational models with international experts to accelerate innovation and ensure scientific excellence."
                   }
@@ -281,7 +281,7 @@ export default async function ResearchInnovationPage() {
           </div>
         </div>
       </SectionBlock>
-       <CTASection CTAdata />
+      <CTASection CTAdata />
     </div>
   );
 }

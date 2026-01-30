@@ -7,15 +7,14 @@ import Typography, { TextDescription } from "../shared/Typography/Typography";
 import TreatmentsClient from "./TreatmentsClient"; // Client-side component
 export default async function TreatmentsPage() {
   // const services = await fetchAPI("services","Hero.Banner");
- const services = await fetchAPI("services", {
-    Hero: { populate: "*" }
-  }) || [];
+  const services =
+    (await fetchAPI("services", {
+      Hero: { populate: "*" },
+      Cover: { populate: "*" },
+    })) || [];
 
   console.log("SERVICES:", services);
 
-console.log(services,'services1')
-
-console.log(services,'services')
   return (
     <div>
       <PageHeaderSetter

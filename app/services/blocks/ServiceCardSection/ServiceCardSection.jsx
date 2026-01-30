@@ -16,10 +16,6 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
     three: "lg:grid-cols-3",
     four: "lg:grid-cols-4",
   };
-
-
-
-
   const gridCols =
     data?.CardsperRow && colMap[data?.CardsperRow]
       ? colMap[data?.CardsperRow]
@@ -32,6 +28,9 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
       : data?.cards?.length === 2
         ? "lg:grid-cols-2"
         : "lg:grid-cols-3";
+
+console.log("data", data);
+
   return (
     <SectionBlock
       className={`bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 text-center ${alignClass[effectiveAlign]}`}
@@ -71,7 +70,7 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
               >
                 {card?.title && (
                   <h3
-                    className="lg:text-2xl text-lg font-semibold font-['Roboto_Condensed']"
+                    className="lg:text-xl text-lg font-semibold font-['Roboto_Condensed']"
                     dangerouslySetInnerHTML={{ __html: card?.title }}
                   />
                 )}
@@ -81,6 +80,33 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
           })}
         </div>
       </div>
+      {/* <div className="flex flex-col gap-5">
+        <div className="font-medium">
+          How Stem Cell–Derived Exosomes May Help
+        </div>
+        <div className="grid grid-cols-1 text-left  gap-7 lg:grid-cols-3">
+          <div className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2">
+            <p className="mb-3 last:mb-0 text-reset">
+              Neuroprotection of retinal ganglion cells and photoreceptors
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2">
+            <p className="mb-3 last:mb-0 text-reset">
+              Neuroprotection of retinal ganglion cells and photoreceptors
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2">
+            <p className="mb-3 last:mb-0 text-reset">
+              Support of axonal integrity and synaptic connections
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2">
+            <p className="mb-3 last:mb-0 text-reset">
+              Improved microvascular stability and metabolic support
+            </p>
+          </div>
+        </div>
+      </div> */}
       <div
         className="text-md"
         dangerouslySetInnerHTML={{ __html: data?.noteText }}
@@ -94,13 +120,17 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
           <div className="my-2">
             <hr className="border-t border-[#979832]/30 opacity-40" />
           </div>
+          {data?.BottomCardslabel &&    <div className="text-md font-medium">{data?.BottomCardslabel}</div>}
+          
           <div>
             <div
               className={`max-w-3xl lg:text-3xl text-xl font-['Roboto_Condensed'] mx-auto text-center`}
               dangerouslySetInnerHTML={{ __html: data?.BottomCardTitle }}
             />
           </div>
-          <div className={`grid grid-cols-1 text-left  gap-7 ${BottomgridCols}`}>
+          <div
+            className={`grid grid-cols-1 text-left  gap-7 ${BottomgridCols}`}
+          >
             {data?.BottomCard?.map((card, i) => {
               return (
                 <div

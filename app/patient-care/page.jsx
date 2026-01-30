@@ -23,20 +23,20 @@ const tabContent = [
     title: "Efficient Review",
     description:
       "Doctors access records ahead of consultations for accurate and faster diagnosis.",
-    image: "https://placehold.co/100x100",
+    image: "Secure-Upload.png",
   },
   {
     id: "care",
     title: "Integrated Care",
     description:
       "All patient data is organized digitally, ensuring continuity across visits.",
-    image: "https://placehold.co/100x100",
+    image: "Secure-Upload.png",
   },
   {
     id: "confidentiality",
     title: "Confidentiality Guaranteed",
     description: "Data privacy and HIPAA-compliant handling for all records.",
-    image: "https://placehold.co/100x100",
+    image: "Secure-Upload.png",
   },
 ];
 export default async function PatientCarePage() {
@@ -44,16 +44,17 @@ export default async function PatientCarePage() {
   const title = data?.Title || "Patient Care";
   //const htmlContent = data?.Content || data?.description || null;
   const seo = data?.Seo?.find((b) => b.__component === "shared.seo");
+  console.log(data,'patient care data')
   return (
     <>
       <PageHeaderSetter title="Patient Care" breadcrumbLast="Patient Care" />
       <HeroSection
         title="Dedicated Inpatient Care for International Patients"
         description="Viecells provides seamless inpatient care for international patients, offering personalized treatment planning, advanced regenerative therapies, hospital coordination, and end-to-end support—so you can focus on healing with confidence and comfort, far from home."
-        // imageSrc={pageData?.hero?.imageSrc}
+         imageSrc={data?.Content?.Image?.url}
         // reverse={pageData?.hero?.reverse}
       />
-      <SectionBlock>
+      {/* <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-4">
             <Typography
@@ -75,8 +76,8 @@ export default async function PatientCarePage() {
             alt="Patient Care Illustration"
           />
         </div>
-      </SectionBlock>
-      <SectionBlock noSpacing>
+      </SectionBlock> */}
+      <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-5">
             <Typography
