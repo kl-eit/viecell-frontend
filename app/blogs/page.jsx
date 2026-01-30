@@ -4,16 +4,11 @@ import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
 import { ReadMore } from "../component/Button/Button";
 import { CalendarIcon, UserIcon } from "../shared/icons/icons";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardTitle,
-} from "../../components/ui/card";
+import { Card, CardContent, CardTitle } from "../../components/ui/card";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import CTASection from "../component/CTASection/CTASection";
 export default async function BlogPage() {
-  const posts = await fetchAPI("articles");
+  const posts = await fetchAPI("articles?sort=Date:desc");
   return (
     <>
       <PageHeaderSetter title="Blog" />
@@ -42,39 +37,35 @@ export default async function BlogPage() {
                       className="aspect-3/2 object-cover"
                     />
                   ) : (
-                    <div className="aspect-3/2 w-full lg:ml-auto rounded-xl bg-gray-200"></div>
+                    <div className="aspect-3/2 w-full lg:ml-auto rounded-xl bg-[linear-gradient(270deg,#F3F5EC_0%,#FFFFFF_49.77%,#F3F5EC_100%)]"></div>
                   )}
                 </div>
-
                 <CardContent className="p-5 flex flex-col h-full gap-3">
                   <div className="flex items-center md:divide-x divide-black/10  text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
-                    {/* <div className="w-auto pr-3 flex items-center gap-2">
+                    <div className="w-auto pr-3 flex items-center gap-2">
                       <UserIcon aria-label="UserIcon" />
                       {post?.author?.name || "VieCells"}
-                    </div> */}
-                    {/* <div className="flex-1 px-3 flex items-center gap-2">
+                    </div>
+                    <div className="flex-1 px-3 flex items-center gap-2">
                       <CalendarIcon
                         size={16}
                         role="img"
                         aria-label="Open calendar"
                       />
-
                       <time
-                        dateTime={post?.publishedAt}
+                        dateTime={post?.Date || post?.publishedAt}
                         itemProp="datePublished"
                       >
-                        {new Date(post?.publishedAt).toLocaleDateString(
-                          "en-US",
-                          {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                          }
-                        )}
+                        {new Date(
+                          post?.Date || post?.publishedAt,
+                        ).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
                       </time>
-                    </div> */}
+                    </div>
                   </div>
-
                   {/* {post?.blog_categories && (
                     <span className="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-2 w-fit">
                       {post?.blog_categories}
@@ -83,10 +74,6 @@ export default async function BlogPage() {
                   <CardTitle className="text-lime-900 leading-normal">
                     {post?.title}
                   </CardTitle>
-                  {/* <CardDescription className="text-neutral-500">
-                    {post?.description || post?.excerpt}
-                  </CardDescription> */}
-
                   <div className="mt-auto">
                     <ReadMore href={`/blogs/${post?.slug}`} showArrow />
                   </div>

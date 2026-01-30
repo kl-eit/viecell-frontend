@@ -1,10 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "../component/Button/Button";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { getNames } from "country-list";
-
 export default function AppointmentForm() {
   const countries = getNames();
 
@@ -13,7 +12,6 @@ export default function AppointmentForm() {
     email: "",
     phone: "",
     country: "",
-   
     symptoms: "",
     agreeToTerms: false,
   });
@@ -93,11 +91,13 @@ export default function AppointmentForm() {
           agreeToTerms: false,
         });
       } else {
-        setSubmitMessage("⚠ Error booking appointment. Please try again.");
+        const resData = await response.json().catch(() => null);
+        const errMsg = resData?.error || resData?.message || resData?.details || "Error booking appointment. Please try again.";
+        setSubmitMessage(`⚠ ${errMsg}`);
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setSubmitMessage("⚠ Error booking appointment. Please try again.");
+      setSubmitMessage(`⚠ ${error?.message || 'Error booking appointment. Please try again.'}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -165,9 +165,6 @@ export default function AppointmentForm() {
 
       {/* Country Dropdown */}
       <div>
-
-
-        
         <select
           name="country"
           value={formData.country}
@@ -189,8 +186,6 @@ export default function AppointmentForm() {
           <p className="text-red-500 text-sm mt-1">{errors.country}</p>
         )}
       </div>
-
-     
 
       {/* Symptoms */}
       <div className="md:col-span-2">

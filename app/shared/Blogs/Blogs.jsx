@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardTitle,
 } from "../../../components/ui/card";
 import { useEffect, useRef, useState } from "react";
@@ -22,10 +21,11 @@ export default function Blogs() {
   const [posts, setPosts] = useState([]);
   const paginationRef = useRef(null);
   useEffect(() => {
-    fetchAPI("articles?pagination[limit]=6&sort=publishedAt:desc").then(
+    fetchAPI("articles?pagination[limit]=6&sort=Date:desc").then(
       (data) => setPosts(data),
     );
   }, []);
+  console.log(posts, "posts");
   return (
     <Section mode="light">
       <div className="grid grid-cols-12 gap-6 items-center">
@@ -39,7 +39,6 @@ export default function Blogs() {
             subtitle="Latest news, tips, and insights on health, wellness, and regenerative medicine."
           />
         </div>
-
         <div className="col-span-12 lg:col-span-4 flex justify-start lg:justify-end">
           <Link href="/blogs">
             <Button icon>View All</Button>
@@ -65,26 +64,28 @@ export default function Blogs() {
           className="pb-10 h-full mb-2 w-full"
         >
           {posts?.map((post) => {
-            const imageUrl = getMediaUrl(post?.cover);
+            const imageUrl = getMediaUrl(post?.cover?.url);
             return (
               <SwiperSlide key={post?.id} className="flex p-1">
                 <Card
                   key={post.id}
-                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5"
+                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5 relative"
                 >
                   {post?.cover ? (
                     <div className="relative w-full">
-                      <img
-                        src={imageUrl}
+                      <Image
+                        src={getMediaUrl(post?.cover)}
                         alt={post?.title}
                         width={post?.cover.width}
                         height={post?.cover.height}
+                        priority
+                        className="aspect-4/2 object-cover"
+                         unoptimized
                       />
                     </div>
                   ) : (
-                    <div className="aspect-4/2 w-full bg-gray-200"></div>
+                    <div className="aspect-4/2 w-full bg-[linear-gradient(270deg,#F3F5EC_0%,#FFFFFF_49.77%,#F3F5EC_100%)]"></div>
                   )}
-
                   <CardContent className="p-5 flex flex-col h-full gap-3">
                     <div className="flex items-center md:divide-x divide-black/10  text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
                       <div className="w-auto pr-3 flex items-center gap-2">
@@ -97,7 +98,6 @@ export default function Blogs() {
                           role="img"
                           aria-label="Open calendar"
                         />
-
                         <time
                           dateTime={post?.Date || post?.publishedAt}
                           itemProp="datePublished"
@@ -119,18 +119,17 @@ export default function Blogs() {
                       </span>
                     )}
                     <CardTitle className="text-lime-900 leading-normal">
-                      {post.title}
+                   {post?.title?.length > 80
+                              ? post?.title.slice(0, 80) + "…"
+                              : post?.title}
                     </CardTitle>
-                    <CardDescription className="text-neutral-500">
+                    {/* <CardDescription className="text-neutral-500">
                       {post?.description || post.excerpt}
-                    </CardDescription>
-
+                    </CardDescription> */}
                     <div className="mt-auto">
                       <ReadMore href={`/blogs/${post?.slug}`} showArrow />
                     </div>
                   </CardContent>
-
-                  <meta itemProp="image" content={post?.image} />
                   <meta
                     itemProp="author"
                     content={post?.author?.name || "VieCells"}

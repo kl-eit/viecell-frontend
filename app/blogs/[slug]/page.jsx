@@ -134,7 +134,7 @@ export default async function BlogDetailsPage({ params }) {
                           className="aspect-3/2 object-cover"
                         />
                       ) : (
-                        <div className="aspect-3/2 w-full lg:ml-auto bg-white/60"></div>
+                        <div className="aspect-3/2 w-full lg:ml-auto bg-[linear-gradient(270deg,#F3F5EC_0%,#FFFFFF_49.77%,#F3F5EC_100%)]"></div>
                       )}
                     </div>
 

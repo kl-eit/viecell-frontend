@@ -28,12 +28,7 @@ export default async function ServiceDetailsPage({ params }) {
   );
   const service = services?.[0] || null;
   const servicePage = servicesData?.[0] || null;
-
-  console.log(servicesData, "servicesData");
-  console.log(services, "services");
-  console.log(STRAPI_URL, "STRAPI_URL");
   const pageTitle = servicePage?.Title || "";
-
   const testimonialCategory = service?.testimonial_category?.slug;
   const testimonial = testimonialCategory
     ? await fetchAPI(
@@ -91,7 +86,7 @@ export default async function ServiceDetailsPage({ params }) {
             dangerouslySetInnerHTML={{ __html: intorData?.label || "" }}
           />
         </div>
-        <div className="lg:text-3xl text-lg font-normal font-['Roboto_Condensed']">
+        <div className="lg:text-2xl text-lg font-normal font-['Roboto_Condensed']">
           <BlocksRendererClient content={intorData?.Content || ""} />
         </div>
       </div>
@@ -126,7 +121,7 @@ export default async function ServiceDetailsPage({ params }) {
           return (
             <Fragment key={section.id || i}>
               {componentRegistry[section.__component] || null}
-              {id === "liver-cirrhosis" && i === 2 && <StepForm />}
+              {id === "liver-cirrhosis" && i === 1 && <StepForm />}
               {id === "optic-atrophy" && i === 0 && (
                 <SectionBlock
                   className={`bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 text-center`}

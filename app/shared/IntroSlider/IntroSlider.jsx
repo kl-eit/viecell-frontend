@@ -90,7 +90,7 @@ export default function IntroSlider({ Banner }) {
                   <Image
                     src={BannerImage}
                     alt={slide?.Title || "Banner"}
-                    className="object-contain max-h-[calc(100vh-200px)]"
+                    className="object-contain max-h-[calc(100vh-100px)]"
                     property="true"
                     width={slide?.BannerImage?.width}
                     height={slide?.BannerImage?.height}
