@@ -1,0 +1,51 @@
+.bg-primary{
+      background-color:#F7F9EF;
+          fill: var(--color-lime-900)
+}
+.text-primary {
+       color: var(--color-lime-900);
+}
+.w-3 {
+    width: .75rem;
+}
+.h-3 {
+    height: .75rem;
+}
+.bg-stage-clinical{
+  background-color: hsl(160 60% 45%);
+ 
+}
+.bg-stage-proof{
+  background-color: hsl(45 85% 55%);
+ 
+}
+.bg-stage-discovery{
+  background-color: hsl(280 55% 60%);
+  
+}
+.bg-stage-ongoing{
+  background-color:hsl(200 70% 50%);
+ 
+}
+
+
+
+.text-stage-clinical{
+  
+  color: hsl(160 60% 45%);
+}
+.text-stage-proof{
+ 
+  color: hsl(45 85% 55%);
+}
+.text-stage-discovery{
+  
+  color: hsl(280 55% 60%);
+}
+.text-stage-ongoing{
+  
+  color: hsl(200 70% 50%);
+}
+.bg-stage-clinical\/15{
+  background-color: hsl(160deg 60% 45% / 15%);
+}

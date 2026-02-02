@@ -16,7 +16,7 @@ export default function WhyChooseSection({ whychooseData }) {
         dangerouslySetInnerHTML={{ __html: data?.title }}
       />
       <div>
-        <div className="w-[180px] flex justify-center mx-auto">
+        <div className="max-w-[100px] lg:max-w-[180px] flex justify-center mx-auto">
           <img
             src="/footer-logo.png"
             alt="Feature Logo"
@@ -28,7 +28,7 @@ export default function WhyChooseSection({ whychooseData }) {
         </div>
       </div>
      
-      <div className={`grid grid-cols-1 lg:grid-cols-3  text-left  gap-7 `}>
+      <div className={`grid grid-cols-1 lg:grid-cols-3  text-left  gap-4 lg:gap-7 `}>
         {data?.card?.map((card, i) => {
           return (
             <div

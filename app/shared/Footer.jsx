@@ -77,36 +77,6 @@ export default function Footer() {
   ];
   return (
     <>
-      {/* <SectionBlock
-        className="bg-[linear-gradient(270deg,#F3F5EC_0%,#FFFFFF_49.77%,#F3F5EC_100%)] text-lime-900"
-        noSpacing
-        rounded
-      >
-        <div className="flex flex-col gap-20 mx-auto">
-          <div className="max-w-6xl">
-            <div className="flex-1 py-14 inline-flex flex-col justify-center items-center gap-10">
-              <h3 className=" text-2xl font-medium leading-normal">
-                Take the first step toward Liver Regeneration
-              </h3>
-              <div className="text-5xl text-center">
-                Understanding your condition is the first step.
-                <br /> Viecell helps you explore personalized regenerative
-                solutions based on your medical profile.
-              </div>
-              <div className="gap-2.5 grid grid-cols-1 md:grid-cols-2">
-                <Button className="justify-center">Book Consultation</Button>
-                <Button
-                  variant="outline-primary"
-                  href="/appointment-booking"
-                  className="justify-center"
-                >
-                  Talk to a Regenerative Specialist
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </SectionBlock> */}
       {/* <ScrollVelocityText
         text="Repair  Regenerate  Rejuvenate"
       /> */}

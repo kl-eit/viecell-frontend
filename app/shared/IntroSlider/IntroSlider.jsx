@@ -86,7 +86,7 @@ export default function IntroSlider({ Banner }) {
                     )}
                   </div>
                 </div>
-                <div className="lg:block hidden">
+                <div>
                   <Image
                     src={BannerImage}
                     alt={slide?.Title || "Banner"}
@@ -105,45 +105,7 @@ export default function IntroSlider({ Banner }) {
       <CarouselNav
         paginationRef={paginationRef}
       />
-      {/* <div className="flex items-center justify-center gap-4">
-        <div className="custom-prev">
-          <button
-            variant="white"
-            className="p-4 bg-white/60 rounded-[100px] cursor-pointer group relative w-14 h-14 inline-flex flex-col justify-center items-center gap-2.5"
-          >
-            <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
-              <path
-                d="M7 13L1 7L7 1"
-                stroke="#979832"
-                strokeOpacity="0.5"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-        <div className="custom-pagination w-auto! flex items-center  gap-2! p-5 bg-white/60 rounded-[100px]"></div>
-        <div className="custom-next">
-          <button
-            variant="white"
-            className="p-4 bg-white/60 rounded-[100px] cursor-pointer group relative w-14 h-14 inline-flex flex-col justify-center items-center gap-2.5"
-          >
-            <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
-              <path
-                d="M1 13L7 7L1 1"
-                stroke="#979832"
-                strokeOpacity="0.5"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-      </div> */}
-
-      <style>{`
+      {/* <style>{`
         .swiper-pagination-bullet {
           background-color: #E6F1CD !important;
           opacity: 1 !important;
@@ -158,7 +120,7 @@ export default function IntroSlider({ Banner }) {
           .swiper-fade .swiper-slide {
           transition: opacity 1.2s ease-in-out !important;
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 }

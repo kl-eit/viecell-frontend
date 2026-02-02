@@ -5,7 +5,6 @@ import SectionBlock from "../../../shared/Section";
 import BlocksRendererClient from "../../../shared/BlocksRendererClient";
 export default function ServiceCardBlock({ ServiceCardBlock }) {
   const data = ServiceCardBlock;
-  console.log(data, "data");
   return (
     <SectionBlock className="text-lime-900">
       <>
@@ -21,7 +20,6 @@ export default function ServiceCardBlock({ ServiceCardBlock }) {
             dangerouslySetInnerHTML={{ __html: data?.Title }}
           />
         )}
-        <div>&nbsp;</div>
         <div
           className={`grid grid-cols-1 text-left  gap-10 lg:gap-30 ${
             data?.card?.length === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3"

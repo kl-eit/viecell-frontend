@@ -54,7 +54,7 @@ export default function MobileRichNavigationMenu({ menuData }) {
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 w-full h-screen bg-white rounded-[30px] backdrop-blur-[50px] z-50 p-4 overflow-auto md:hidden ">
+        <div className="absolute top-full left-0 w-full  bg-white rounded-[30px] backdrop-blur-[50px] z-50 p-4 overflow-auto md:hidden ">
           <nav className="space-y-4">
             <ul className="flex flex-col text-lime-900 space-y-2">
               {menuData.map((item, levelIndex) => {

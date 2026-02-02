@@ -14,6 +14,7 @@ import AnimatedCounter from "./AnimatedCounter";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import CTASection from "../component/CTASection/CTASection";
 import Infrastructure from "./Infrastructure";
+import Image from "next/image";
 
 const tabContent = [
   {
@@ -244,10 +245,12 @@ export default async function About() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
           <div>
             <div className="flex flex-col gap-4">
-              <img
+              <Image
                 className="w-full rounded-[20px]"
-                src="Secure-Upload.png"
+                src="/hitting-target.png"
                 alt="Why Choose India Illustration"
+                width={600}
+                height={400}
               />
             </div>
           </div>
@@ -269,7 +272,7 @@ export default async function About() {
                   return (
                     <div
                       key={index}
-                      className={`bg-slate-50 px-7 py-5 rounded-[20px] inline-flex justify-start items-center gap-5 w-full transition-colors duration-200 hover:bg-[#E6F0CC] hover:text-white cursor-pointer`}
+                      className={`bg-[#F3F5EC] px-7 py-5 rounded-[20px] inline-flex justify-start items-center gap-5 w-full transition-colors duration-200 hover:bg-[#E6F0CC] hover:text-white`}
                     >
                       <div className="flex-1 inline-flex flex-col justify-center items-center gap-2.5 text-left">
                         <div className="self-stretch text-lime-900 text-xl font-semibold font-['Roboto_Condensed'] leading-7">

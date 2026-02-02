@@ -1,6 +1,5 @@
 import BlocksRendererClient from "../../../shared/BlocksRendererClient";
 import SectionBlock from "../../../shared/Section";
-
 export default function ServiceCardSection({ fetureData, align = "center" }) {
   const data = fetureData;
   const alignClass = {
@@ -29,7 +28,7 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
         ? "lg:grid-cols-2"
         : "lg:grid-cols-3";
 
-console.log("data", data);
+  console.log("data", data);
 
   return (
     <SectionBlock
@@ -39,7 +38,7 @@ console.log("data", data);
       <div className="text-md font-medium">{data?.label}</div>
       <div
         className={
-          fetureLogo ? "flex items-center justify-center gap-10" : "text-center"
+          fetureLogo ? "flex items-center justify-center gap-4 lg:gap-10" : "text-center"
         }
       >
         {fetureLogo && (
@@ -61,7 +60,7 @@ console.log("data", data);
       </div>
       <div className="flex flex-col gap-5">
         <div className="font-medium">{data?.cardslabel}</div>
-        <div className={`grid grid-cols-1 text-left  gap-7 ${gridCols}`}>
+        <div className={`grid grid-cols-1 text-left  gap-4 lg:gap-7 ${gridCols}`}>
           {data?.cards?.map((card, i) => {
             return (
               <div
@@ -80,56 +79,34 @@ console.log("data", data);
           })}
         </div>
       </div>
-      {/* <div className="flex flex-col gap-5">
-        <div className="font-medium">
-          How Stem Cell–Derived Exosomes May Help
-        </div>
-        <div className="grid grid-cols-1 text-left  gap-7 lg:grid-cols-3">
-          <div className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2">
-            <p className="mb-3 last:mb-0 text-reset">
-              Neuroprotection of retinal ganglion cells and photoreceptors
-            </p>
-          </div>
-          <div className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2">
-            <p className="mb-3 last:mb-0 text-reset">
-              Neuroprotection of retinal ganglion cells and photoreceptors
-            </p>
-          </div>
-          <div className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2">
-            <p className="mb-3 last:mb-0 text-reset">
-              Support of axonal integrity and synaptic connections
-            </p>
-          </div>
-          <div className="p-6 bg-white rounded-2xl border border-[#979832]/20 inline-flex flex-col items-start gap-2">
-            <p className="mb-3 last:mb-0 text-reset">
-              Improved microvascular stability and metabolic support
-            </p>
-          </div>
-        </div>
-      </div> */}
-      <div
+     {data?.noteText &&  <div
         className="text-md"
         dangerouslySetInnerHTML={{ __html: data?.noteText }}
-      />
-      <div
-        className={`max-w-4xl lg:text-3xl text-xl font-['Roboto_Condensed'] ${fetureLogo ? "" : "mx-auto "}`}
-        dangerouslySetInnerHTML={{ __html: data?.bottomTitle }}
-      />
-      {data?.BottomCardTitle && (
+      />}
+     
+      {data?.bottomTitle && (
+        <div
+          className={`max-w-4xl lg:text-3xl text-xl font-['Roboto_Condensed'] ${fetureLogo ? "" : "mx-auto "}`}
+          dangerouslySetInnerHTML={{ __html: data?.bottomTitle }}
+        />
+      )}
+      {(data?.BottomCardTitle || data?.BottomCardslabel) && (
         <>
           <div className="my-2">
             <hr className="border-t border-[#979832]/30 opacity-40" />
           </div>
-          {data?.BottomCardslabel && <div className="text-md font-medium">{data?.BottomCardslabel}</div>}
-          
-          <div>
+          {data?.BottomCardslabel && (
+            <div className="text-md font-medium">{data?.BottomCardslabel}</div>
+          )}
+
+          {data?.BottomCardTitle && (
             <div
               className={`max-w-3xl lg:text-3xl text-xl font-['Roboto_Condensed'] mx-auto text-center`}
               dangerouslySetInnerHTML={{ __html: data?.BottomCardTitle }}
             />
-          </div>
+          )}
           <div
-            className={`grid grid-cols-1 text-left  gap-7 ${BottomgridCols}`}
+            className={`grid grid-cols-1 text-left  gap-4 lg:gap-7 ${BottomgridCols}`}
           >
             {data?.BottomCard?.map((card, i) => {
               return (

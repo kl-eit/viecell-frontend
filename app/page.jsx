@@ -17,7 +17,6 @@ import Typography, {
 } from "./shared/Typography/Typography";
 import { ArrowRightIcon } from "./shared/icons/icons";
 export default async function Home() {
-
   const BannerData = await fetchAPI("home", "Banner.BannerImage");
   const TreatmentsData = await fetchAPI("home", "Treatment.Treatment.Image");
   const Banner = BannerData?.Banner || [];

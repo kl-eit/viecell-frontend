@@ -73,9 +73,9 @@ export default function Header() {
   ];
 
   return (
-    <div>
+    <div className={`px-2 py-4 z-20 w-full absolute left-0`}>
       <div className="relative container mx-auto">
-        <header className={`px-2 py-4 z-20 w-full absolute left-0`}>
+        <header>
           <div className="bg-white/60 rounded-[100px] backdrop-blur-[50px] px-5 py-2.5 ">
             <div className="flex items-center justify-between">
               <div className="shrink-0">
