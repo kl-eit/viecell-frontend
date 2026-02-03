@@ -3,14 +3,14 @@ import CTASection from "../component/CTASection/CTASection";
 import SectionBlock from "../shared/Section";
 import { fetchAPI } from "../lib/api";
 import StoriesGrid from "./StoriesGrid";
-import { TestimonialsColumn } from "./testimonials-columns-1";
+// import { TestimonialsColumn } from "./testimonials-columns-1";
 export default async function page() {
   const StoriesData = await fetchAPI("testimonials");
   // console.log("StoriesData:", StoriesData);
-  const firstColumn = StoriesData.slice(0, 3);
-  const secondColumn = StoriesData.slice(3, 6);
-  const thirdColumn = StoriesData.slice(6, 9);
-  console.log("StoriesData:", StoriesData);
+  // const firstColumn = StoriesData.slice(0, 3);
+  // const secondColumn = StoriesData.slice(3, 6);
+  // const thirdColumn = StoriesData.slice(6, 9);
+  // console.log("StoriesData:", StoriesData);
   return (
     <div>
       <HeroSection
