@@ -151,6 +151,7 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-lime-900 transition"
+                            aria-label={social?.name}
                           >
                             {social?.icon}
                           </Link>

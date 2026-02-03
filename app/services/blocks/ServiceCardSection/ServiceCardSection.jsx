@@ -27,15 +27,12 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
       : data?.cards?.length === 2
         ? "lg:grid-cols-2"
         : "lg:grid-cols-3";
-
-  console.log("data", data);
-
   return (
     <SectionBlock
       className={`bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 text-center ${alignClass[effectiveAlign]}`}
       rounded
     >
-      <div className="text-md font-medium">{data?.label}</div>
+      {data?.label && <div className="text-md font-medium">{data?.label}</div>}
       <div
         className={
           fetureLogo ? "flex items-center justify-center gap-4 lg:gap-10" : "text-center"

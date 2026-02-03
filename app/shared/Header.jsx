@@ -1,5 +1,4 @@
 import Button from "../component/Button/Button";
-import RichNavigationMenu from "./NavigationMenuWithDropdown";
 import Link from "next/link";
 import { fetchAPI } from "../lib/api";
 import MobileRichNavigationMenu from "./NavigationMenuWithDropdown";
@@ -80,7 +79,7 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <div className="shrink-0">
                 <Link href="/">
-                  <img className="w-[150px]" src="/logo.png" />
+                  <img className="w-[150px]" src="/logo.png" alt="viecellbiotherapeutics" />
                 </Link>
               </div>
 

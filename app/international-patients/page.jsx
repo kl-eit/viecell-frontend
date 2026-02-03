@@ -135,7 +135,7 @@ export default async function InternationalPatientsPage() {
             <div className="flex flex-col gap-4">
               <img
                 className="w-full rounded-[20px]"
-                src="Secure-Upload.png"
+                src="Vector-map.png"
                 alt="Why Choose India"
               />
             </div>

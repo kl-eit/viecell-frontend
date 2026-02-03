@@ -79,14 +79,14 @@ export default function BlocksRendererClient({
       const ListTag = format === "ordered" ? "ol" : "ul";
 
       return (
-        <ListTag className="mb-3 pl-5 list-disc">
+        <ListTag className="mb-2 pl-5 list-disc">
           {children}
         </ListTag>
       );
     },
 
     "list-item": ({ children }) => (
-      <li className="mb-3 last:mb-0">
+      <li className="mb-2 last:mb-0">
         {children}
       </li>
     ),

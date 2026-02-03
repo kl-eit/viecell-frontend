@@ -63,7 +63,7 @@ export default function TestimonialSection({
                     <div className="text-md font-medium">
                       <span className="block">{item?.Name}</span>
                       <p>
-                        {selectedText.replace("{condition}", item?.Designation)}
+                        {selectedText.replace("{condition}", item?.Designation.replace("Ortho", "OA"))}
                       </p>
                     </div>
                   </div>

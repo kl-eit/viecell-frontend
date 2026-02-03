@@ -8,9 +8,9 @@ export default function ThemeCard({ item, className, children }) {
         className
       )}
     >
-      {item?.icon && <div>
+      {/* {item?.icon && <div>
         <img src={item?.icon} className="h-auto" alt={item?.title} />
-      </div>}
+      </div>} */}
       <div className="flex flex-col gap-2">
         <h3 className="text-xl font-semibold text-lime-900 leading-normal">
           {item?.title}

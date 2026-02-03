@@ -2,7 +2,7 @@ import IntroSlider from "./shared/IntroSlider/IntroSlider";
 import ThemeCard from "./component/card/card";
 import Faqs from "./shared/Faq/Faq";
 import Blogs from "./shared/Blogs/Blogs";
-import { fetchAPI, fetchAPINested, getMediaUrl } from "./lib/api";
+import {fetchAPINested, getMediaUrl } from "./lib/api";
 import Testimonial from "./shared/Testimonial/Testimonial";
 import TeamMemberSection from "./shared/Team/TeamMember";
 import FilterTabs from "./shared/FilterTabs/FilterTabs";
@@ -17,10 +17,12 @@ import Typography, {
 } from "./shared/Typography/Typography";
 import { ArrowRightIcon } from "./shared/icons/icons";
 export default async function Home() {
-  const BannerData = await fetchAPI("home", "Banner.BannerImage");
-  const TreatmentsData = await fetchAPI("home", "Treatment.Treatment.Image");
-  const Banner = BannerData?.Banner || [];
-  const TreatmentData = TreatmentsData?.Treatment || [];
+  const HomeData = await fetchAPINested("home", {
+    Banner: { populate: "BannerImage" },
+    Treatment: { populate: "Treatment.Image" },
+  });
+  const Banner = HomeData?.Banner || [];
+  const TreatmentData = HomeData?.Treatment || [];
   const features = [
     {
       icon: "/International-Standards.svg",
@@ -38,6 +40,8 @@ export default async function Home() {
       desc: "Patients from over 20 countries trust Viecell for transparent processes, reliable outcomes, and continuity of care.",
     },
   ];
+
+  console.log("TreatmentData", TreatmentData);
 
   return (
     <div>
@@ -116,7 +120,10 @@ export default async function Home() {
             })}
           </div>
           <div className="inline-flex justify-center items-center gap-2.5">
-            <a className="inline-flex items-center gap-2 font-medium font-['Roboto_Condensed'] underline leading-5 group relative" href="https://wa.me/9001290028">
+            <a
+              className="inline-flex items-center gap-2 font-medium font-['Roboto_Condensed'] underline leading-5 group relative"
+              href="https://wa.me/9001290028"
+            >
               Request a Personalized Treatment Plan
               <span className="rotate-0 transition-all duration-200 group-hover:-rotate-45">
                 <ArrowRightIcon />
@@ -211,7 +218,6 @@ export default async function Home() {
         <FilterTabs />
       </SectionBlock>
 
-     
       <SectionBlock noSpacing data-aos="fade-up" data-aos-delay={100}>
         <div className="flex flex-col md:flex-row gap-14 p-5 lg:p-10 bg-[#F4F8F4] rounded-4xl">
           <div className="w-full md:w-[40%]">

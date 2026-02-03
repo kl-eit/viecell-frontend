@@ -48,12 +48,13 @@ export default function ServiceFetureSection({ fetureData, reverse }) {
                   loop={sliderImages?.length > 1}
                 >
                   {data?.Slider?.map((image, idx) => {
+                    
                     return (
-                      <SwiperSlide key={idx}>
+                      <SwiperSlide key={idx} className="place-content-center">
                         <img
                           src={`${STRAPI_URL}${image?.url}`}
-                          alt={image?.alt}
-                          className="mx-auto"
+                          alt={image?.alt || `Slide image ${idx + 1}`}
+                          className="mx-auto my-auto"
                         />
                       </SwiperSlide>
                     );
@@ -82,17 +83,17 @@ export default function ServiceFetureSection({ fetureData, reverse }) {
             headingLevel="h3"
             size="lg"
             color="primary"
-            className="max-w-[480px] lg:text-3xl!"
+            className="max-w-[540px] lg:text-3xl!"
           />
           <div className="w-full">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
                 ul: ({ node, ...props }) => (
-                  <ul className="list-disc pl-6 my-2 space-y-2" {...props} />
+                  <ul className="list-disc pl-6 my-2 space-y-1" {...props} />
                 ),
                  ol: ({ node, ...props }) => (
-                  <ul className="list-decimal pl-6 my-2 space-y-2" {...props} />
+                  <ul className="list-decimal pl-6 my-2 space-y-1" {...props} />
                 ),
                 p: ({ node, ...props }) => (
                   <p
