@@ -7,7 +7,7 @@ export default function ScrollVelocityText({
   return (
     <div className="w-full overflow-hidden py-8  flex justify-center">
       <motion.div
-        className="flex w-max whitespace-nowrap text-lime-100 text-8xl font-semibold font-['Roboto_Condensed'] uppercase"
+        className="flex w-max whitespace-nowrap text-lime-100 text-6xl font-semibold font-['Roboto_Condensed'] uppercase"
         animate={{ x: ["0%", "-50%"] }}
         transition={{
           repeat: Infinity,
@@ -15,10 +15,10 @@ export default function ScrollVelocityText({
           ease: "linear"
         }}
       >
-        <span>{text}</span>
-        <span>{text}</span>
-        <span>{text}</span>
-        <span>{text}</span>
+        <span className="px-6">{text}</span>
+        <span className="px-6">{text}</span>
+        <span className="px-6">{text}</span>
+        <span className="px-6">{text}</span>
       </motion.div>
       {/* <marquee
         behavior="scroll"

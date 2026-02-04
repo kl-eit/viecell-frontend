@@ -44,11 +44,10 @@ export default function WorkProcess() {
             </div>
             <div className="self-stretch flex flex-col justify-center items-center gap-2.5">
               <div className="self-stretch text-center justify-start text-lime-900 text-2xl font-semibold font-['Roboto_Condensed'] leading-6">
-                Free Online Consultation
+              Medical Report Review
               </div>
               <div className="self-stretch text-center justify-start text-neutral-500 text-base font-normal  leading-6">
-                Securely share your medical reports and get expert review with
-                cost estimates.
+               Securely upload your medical reports and receive an expert review with clear treatment and cost estimates.
               </div>
             </div>
             <img

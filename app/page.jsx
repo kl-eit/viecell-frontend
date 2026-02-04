@@ -2,14 +2,13 @@ import IntroSlider from "./shared/IntroSlider/IntroSlider";
 import ThemeCard from "./component/card/card";
 import Faqs from "./shared/Faq/Faq";
 import Blogs from "./shared/Blogs/Blogs";
-import {fetchAPINested, getMediaUrl } from "./lib/api";
+import { fetchAPINested, getMediaUrl } from "./lib/api";
 import Testimonial from "./shared/Testimonial/Testimonial";
 import TeamMemberSection from "./shared/Team/TeamMember";
 import FilterTabs from "./shared/FilterTabs/FilterTabs";
 import SectionBlock from "./shared/Section";
 import CTASection from "./component/CTASection/CTASection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-// import MarqueeDemo from "./components/ui/marquee";
 import Button, { ReadMore } from "./component/Button/Button";
 import Typography, {
   TextDescription,
@@ -17,6 +16,7 @@ import Typography, {
   TitleDescription,
 } from "./shared/Typography/Typography";
 import { ArrowRightIcon } from "./shared/icons/icons";
+// import TestimonialsMarquee from "./shared/TestimonialsMarquee/TestimonialsMarquee";
 export default async function Home() {
   const HomeData = await fetchAPINested("home", {
     Banner: { populate: "BannerImage" },
@@ -208,7 +208,11 @@ export default async function Home() {
             </Button>
           </div>
           <div>
-            <img className="w-full rounded-[20px]" src="/CTA-banner.png" alt="CTA banner" />
+            <img
+              className="w-full rounded-[20px]"
+              src="/CTA-banner.png"
+              alt="CTA banner"
+            />
           </div>
         </div>
       </SectionBlock>
@@ -221,7 +225,8 @@ export default async function Home() {
           <div className="w-full md:w-[40%]">
             <img
               className="w-full self-stretch rounded-[20px]"
-              src="/Travel-Support-Services.png" alt="Support-Services"
+              src="/Travel-Support-Services.png"
+              alt="Support-Services"
             />
           </div>
           <div className="w-full md:w-[60%]">
@@ -304,10 +309,11 @@ export default async function Home() {
               </div>
               <div className="self-stretch flex flex-col justify-center items-center gap-2.5">
                 <div className="self-stretch text-center justify-start text-lime-900 text-2xl font-semibold font-['Roboto_Condensed'] leading-6">
-                Medical Report Review
+                  Medical Report Review
                 </div>
                 <div className="self-stretch text-center justify-start text-neutral-500 text-base font-normal  leading-6">
-                 Securely upload your medical reports and receive an expert review with clear treatment and cost estimates.
+                  Securely upload your medical reports and receive an expert
+                  review with clear treatment and cost estimates.
                 </div>
               </div>
               <img
@@ -335,14 +341,10 @@ export default async function Home() {
         </div>
       </SectionBlock>
 
-      
-
       <TeamMemberSection />
       <Faqs />
       <Testimonial />
-      <SectionBlock data-aos="fade-up" data-aos-delay={100}>
-       {/* <MarqueeDemo /> */}
-      </SectionBlock>
+      {/* <TestimonialsMarquee /> */}
       <Blogs />
       <CTASection />
     </div>

@@ -304,7 +304,7 @@ export default async function ResearchInnovationPage() {
       <section className="py-[2rem] lg:py-[3.75rem] bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 text-center items-start rounded-[30px]">
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="text-left">
               <h2 className="text-2xl lg:text-[2.625rem] leading-none font-['Roboto_Condensed'] font-semibold mb-4">
                 Research &amp; Development at Viecell
               </h2>

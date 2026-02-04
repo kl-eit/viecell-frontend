@@ -59,7 +59,7 @@ export default function TeamMemberSection() {
           slidesPerView={5}
           spaceBetween={20}
           loop={true}
-          pagination={{ clickable: true }}
+          pagination={{ el: ".teamMember-pagination", clickable: true }}
           breakpoints={{
             0: { slidesPerView: 1 },
             540: { slidesPerView: 2 },
@@ -85,7 +85,7 @@ export default function TeamMemberSection() {
                     <CardTitle className="text-lime-900 text-lg font-bold font-['Roboto_Condensed'] capitalize leading-5">
                       {team?.Name}
                     </CardTitle>
-                    <CardDescription className="text-neutral-500 text-base font-normal font-['Roboto'] capitalize leading-6">
+                    <CardDescription className="text-lime-900 text-base font-normal font-['Roboto'] capitalize">
                       {team?.designation}
                     </CardDescription>
                   </CardContent>
@@ -96,6 +96,10 @@ export default function TeamMemberSection() {
         </Swiper>
         
       </div>
+      <div className="d-flex mx-auto">
+          <div className="teamMember-pagination w-auto! flex items-center gap-2! p-5 bg-white/60 rounded-[100px]"></div>
+      </div>
+       
     </SectionBlock>
   );
 }

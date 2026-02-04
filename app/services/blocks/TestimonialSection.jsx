@@ -61,10 +61,10 @@ export default function TestimonialSection({
                       )}
                     </div>
                     <div className="text-md font-medium">
-                      <span className="block">{item?.Name}</span>
-                      <p>
+                      <span className="block">- {item?.Name}</span>
+                      {/* <p>
                         {selectedText.replace("{condition}", item?.Designation.replace("Ortho", "OA"))}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </SwiperSlide>

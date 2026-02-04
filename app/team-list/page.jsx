@@ -3,6 +3,7 @@ import SectionBlock from "../shared/Section";
 import { fetchAPI, getMediaUrl } from "../lib/api";
 import Testimonial from "../shared/Testimonial/Testimonial";
 import Blogs from "../shared/Blogs/Blogs";
+import CTASection from "../component/CTASection/CTASection";
 import Typography, { TextDescription } from "../shared/Typography/Typography";
 import {
   Card,
@@ -42,7 +43,7 @@ export default async function TeamListPage() {
         </div>
 
         <div>
-          <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-6 mt-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6 mt-6">
             {teams?.map((team, index) => {
               const imageUrl = getMediaUrl(team?.Profile);
               return (
@@ -61,7 +62,7 @@ export default async function TeamListPage() {
                     <CardTitle className="text-lime-900 text-lg font-bold font-['Roboto_Condensed'] capitalize leading-5">
                       {team?.Name}
                     </CardTitle>
-                    <CardDescription className="text-neutral-500 text-base font-normal font-['Roboto'] capitalize leading-6">
+                    <CardDescription className="text-lime-900 text-base font-normal font-['Roboto'] capitalize leading-6">
                       {team?.designation}
                     </CardDescription>
                   </CardContent>
@@ -73,6 +74,7 @@ export default async function TeamListPage() {
       </SectionBlock>
       <Testimonial />
       <Blogs />
+         <CTASection />
     </div>
   );
 }

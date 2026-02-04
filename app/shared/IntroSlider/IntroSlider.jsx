@@ -66,7 +66,7 @@ export default function IntroSlider({ Banner }) {
             >
               <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-15 justify-center items-center">
                 <div className="flex flex-col px-4 sm:px-6 gap-7 max-w-[500px]">
-                  <div className="slide-title text-lime-900 text-3xl lg:text-5xl font-extrabold font-['Roboto_Condensed'] capitalize leading-none">
+                  <div className="slide-title text-lime-900 text-3xl lg:text-5xl font-extrabold font-['Roboto_Condensed'] uppercase leading-none">
                     {slide?.Title}
                   </div>
                   <div className="slide-desc text-lime-900 text-lg font-normal font-['Roboto'] lleading-none">

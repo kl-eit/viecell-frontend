@@ -3,6 +3,14 @@ import Icon from "./icons/icons";
 export default function Footer() {
   const footerData = [
     {
+      title: "Advanced Therapies",
+      links: [
+        { title: "Cell Therapy", href: "/cell-therapy" },
+        { title: "Exosomes Therapy", href: "/exosomes-therapy" },
+        { title: "Cellular Immunotherapy", href: "/cellular-immunotherapy" },
+      ],
+    },
+    {
       title: "Treatments",
       links: [
         { title: "Autoimmune", href: "services/autoimmune-diseases" },
@@ -26,13 +34,6 @@ export default function Footer() {
         { title: "Diabetes", href: "services/diabetes" },
         { title: "Brain Stroke", href: "/services/brain-stroke" },
       ],
-    }, {
-      title: "Advanced Therapies",
-      links: [
-        { title: "Cell Therapy", href: "/cell-therapy" },
-        { title: "Exosomes Therapy", href: "/exosomes-therapy" },
-        { title: "Cellular Immunotherapy", href: "/cellular-immunotherapy" },
-      ],
     },
     {
       title: "Important Links",
@@ -44,7 +45,7 @@ export default function Footer() {
         { title: "About", href: "/about" },
         { title: "News & Events", href: "#" },
         { title: "Blogs", href: "/blogs" },
-        { title: "Press Coverage", href: "#" },
+        { title: "Press Coverage", href: "/press-coverage" },
         { title: "Contact", href: "/contact-us" },
       ],
     }

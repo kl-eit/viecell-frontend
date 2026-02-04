@@ -49,7 +49,7 @@ export default async function PatientCarePage() {
     <>
       <PageHeaderSetter title="Patient Care" breadcrumbLast="Patient Care" />
       <HeroSection
-        title="Dedicated Inpatient Care for International Patients"
+        title="Dedicated In patient Care for International Patients"
         description="Viecells provides seamless inpatient care for international patients, offering personalized treatment planning, advanced regenerative therapies, hospital coordination, and end-to-end support—so you can focus on healing with confidence and comfort, far from home."
          imageSrc={data?.Content?.Image?.url}
         // reverse={pageData?.hero?.reverse}
