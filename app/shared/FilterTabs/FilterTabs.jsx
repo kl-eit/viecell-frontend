@@ -119,7 +119,7 @@ export default function FilterTabs() {
           <h1 className="text-lime-900 text-md font-semibold font-['Roboto_Condensed'] capitalize leading-6">
             Clinic Comparison Results
           </h1>
-          <div className="flex flex-col md:flex-row items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
             <span className="text-lime-900 text-md font-semibold font-['Roboto_Condensed']">
               Filters
             </span>
@@ -326,7 +326,7 @@ export default function FilterTabs() {
         <div
           className="flex flex-col md:flex-row justify-center items-center gap-2.5 
             bg-[#F4F8F4] p-2.5 md:p-5 rounded-[30px] 
-            text-[#2D4213] font-normal leading-6"
+            text-[#2D4213] font-normal leading-6 text-center"
         >
           Experience world-class quality at globally affordable costs
           <div className="inline-flex items-center gap-2 text-[#647252] underline leading-6">

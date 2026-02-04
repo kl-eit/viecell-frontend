@@ -71,8 +71,11 @@ export default function Blogs() {
                   key={post.id}
                   className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5 relative"
                 >
+                  <Link href={`/blogs/${post?.slug}`} >
+                
                   {post?.cover ? (
                     <div className="relative w-full">
+                      
                       <Image
                         src={getMediaUrl(post?.cover)}
                         alt={post?.title}
@@ -85,7 +88,7 @@ export default function Blogs() {
                     </div>
                   ) : (
                     <div className="aspect-4/2 w-full bg-[linear-gradient(270deg,#F3F5EC_0%,#FFFFFF_49.77%,#F3F5EC_100%)]"></div>
-                  )}
+                  )}  </Link>
                   <CardContent className="p-5 flex flex-col h-full gap-3">
                     <div className="flex items-center md:divide-x divide-black/10  text-lime-900 text-xs font-normal font-['Roboto'] capitalize leading-4">
                       <div className="w-auto pr-3 flex items-center gap-2">

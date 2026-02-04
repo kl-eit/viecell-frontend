@@ -72,7 +72,9 @@ export default async function BlogPage() {
                     </span>
                   )} */}
                   <CardTitle className="text-lime-900 leading-normal">
-                    {post?.title}
+                   {post?.title?.length > 80
+                        ? post?.title.slice(0, 80) + "…"
+                        : post?.title}
                   </CardTitle>
                   <div className="mt-auto">
                     <ReadMore href={`/blogs/${post?.slug}`} showArrow />

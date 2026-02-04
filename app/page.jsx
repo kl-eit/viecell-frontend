@@ -9,6 +9,7 @@ import FilterTabs from "./shared/FilterTabs/FilterTabs";
 import SectionBlock from "./shared/Section";
 import CTASection from "./component/CTASection/CTASection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+// import MarqueeDemo from "./components/ui/marquee";
 import Button, { ReadMore } from "./component/Button/Button";
 import Typography, {
   TextDescription,
@@ -40,9 +41,6 @@ export default async function Home() {
       desc: "Patients from over 20 countries trust Viecell for transparent processes, reliable outcomes, and continuity of care.",
     },
   ];
-
-  console.log("TreatmentData", TreatmentData);
-
   return (
     <div>
       <IntroSlider Banner={Banner} />
@@ -66,7 +64,7 @@ export default async function Home() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-7.5 space-x-2">
-          {features.map((item, i) => (
+          {features?.map((item, i) => (
             <ThemeCard key={i} item={item} />
           ))}
         </div>
@@ -210,7 +208,7 @@ export default async function Home() {
             </Button>
           </div>
           <div>
-            <img className="w-full rounded-[20px]" src="/CTA-banner.png" />
+            <img className="w-full rounded-[20px]" src="/CTA-banner.png" alt="CTA banner" />
           </div>
         </div>
       </SectionBlock>
@@ -223,7 +221,7 @@ export default async function Home() {
           <div className="w-full md:w-[40%]">
             <img
               className="w-full self-stretch rounded-[20px]"
-              src="/Travel-Support-Services.png"
+              src="/Travel-Support-Services.png" alt="Support-Services"
             />
           </div>
           <div className="w-full md:w-[60%]">
@@ -306,11 +304,10 @@ export default async function Home() {
               </div>
               <div className="self-stretch flex flex-col justify-center items-center gap-2.5">
                 <div className="self-stretch text-center justify-start text-lime-900 text-2xl font-semibold font-['Roboto_Condensed'] leading-6">
-                  Free Online Consultation
+                Medical Report Review
                 </div>
                 <div className="self-stretch text-center justify-start text-neutral-500 text-base font-normal  leading-6">
-                  Securely share your medical reports and get expert review with
-                  cost estimates.
+                 Securely upload your medical reports and receive an expert review with clear treatment and cost estimates.
                 </div>
               </div>
               <img
@@ -337,9 +334,15 @@ export default async function Home() {
           </div>
         </div>
       </SectionBlock>
+
+      
+
       <TeamMemberSection />
       <Faqs />
       <Testimonial />
+      <SectionBlock data-aos="fade-up" data-aos-delay={100}>
+       {/* <MarqueeDemo /> */}
+      </SectionBlock>
       <Blogs />
       <CTASection />
     </div>

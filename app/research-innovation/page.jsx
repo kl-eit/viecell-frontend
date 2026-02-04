@@ -1,12 +1,5 @@
 import { FlaskConical, TestTubes, Microscope, Layers } from "lucide-react";
-
 import SectionBlock from "../shared/Section";
-import { fetchAPI } from "../lib/api";
-import Typography, {
-  TextDescription,
-  TypographyList,
-} from "../shared/Typography/Typography";
-import Button from "../component/Button/Button";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import CTASection from "../component/CTASection/CTASection";
 import "./styles.css";
@@ -139,11 +132,6 @@ const features = [
   },
 ];
 export default async function ResearchInnovationPage() {
-  const researchData = await fetchAPI("research-innovation");
-  const title = researchData?.Title || "Research & Innovation";
-  const htmlContent =
-    researchData?.Content || researchData?.description || null;
-
   return (
     <div>
       <HeroSection
@@ -313,7 +301,7 @@ export default async function ResearchInnovationPage() {
           ))}
         </div>
       </SectionBlock>
-      <section className=" py-[2rem] lg:py-[3.75rem] bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 text-center text-left items-start rounded-[30px]">
+      <section className="py-[2rem] lg:py-[3.75rem] bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 text-center items-start rounded-[30px]">
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -706,7 +694,7 @@ export default async function ResearchInnovationPage() {
         className="bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900 "
         rounded
       >
-        <div className="rounded-3xl p-8 md:p-12 lg:p-16 shadow-glow relative overflow-hidden">
+        <div>
           {/* Background blurs */}
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-white/5 blur-3xl" />

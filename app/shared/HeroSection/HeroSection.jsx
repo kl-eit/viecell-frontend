@@ -26,10 +26,10 @@ const getImageSrc = (src) => {
   };
 
   return (
-    <div className={`${gradient} rounded-[30px] pt-40 pb-8`}>
+    <div className={`${gradient} rounded-[30px] pt-30 pb-8`}>
       <div className="container mx-auto  text-lime-900">
         {isBlogDetails ? (
-           <div className="max-w-[550px]"><h1 className="text-2xl lg:text-3xl  leading-none font-['Roboto_Condensed'] font-semibold mb-4">
+           <div className="max-w-[550px]"><h1 className="text-2xl lg:text-3xl  leading-none font-['Roboto_Condensed'] font-semibold mb-4 uppercase">
               {title}
             </h1></div>
         ) : (
@@ -39,7 +39,7 @@ const getImageSrc = (src) => {
           }`}
         >
           <div className="max-w-[550px]">
-            <h1 className="text-2xl lg:text-[2.625rem] leading-none font-['Roboto_Condensed'] font-semibold mb-4">
+            <h1 className="text-2xl lg:text-[2.625rem] leading-none font-['Roboto_Condensed'] font-semibold mb-4 uppercase">
               {title}
             </h1>
             <div className="text-base lg:text-lg leading-snug">

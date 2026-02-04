@@ -31,7 +31,7 @@ export default function CTASection({ CTAdata, pageTitle }) {
     >
       <div className="flex flex-col gap-20 mx-auto">
         <div className="max-w-4xl mx-auto">
-          <div className="flex-1 py-14 inline-flex flex-col justify-center items-center gap-8">
+          <div className="flex-1 py-14 inline-flex flex-col justify-center items-center gap-4">
             <h3 className=" lg:text-lg text-md font-medium leading-normal">
               {pageTitle
                 ? `Take the first step toward ${pageTitle}`
