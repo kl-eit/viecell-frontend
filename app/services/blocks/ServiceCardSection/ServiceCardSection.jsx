@@ -56,7 +56,8 @@ export default function ServiceCardSection({ fetureData, align = "center" }) {
         />
       </div>
       <div className="flex flex-col gap-5">
-        <div className="font-medium">{data?.cardslabel}</div>
+        {data?.cardslabel &&  <div className="font-medium">{data?.cardslabel}</div>}
+       
         <div className={`grid grid-cols-1 text-left  gap-4 lg:gap-7 ${gridCols}`}>
           {data?.cards?.map((card, i) => {
             return (

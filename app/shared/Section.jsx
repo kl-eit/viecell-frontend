@@ -14,7 +14,7 @@ const SectionBlock = ({
       className={`${styles} ${padding} ${className} ${radus}`}
       {...rest}
     >
-      <div className="container grid gap-7">
+      <div className="container grid gap-6">
         {children}
       </div>
     </section>

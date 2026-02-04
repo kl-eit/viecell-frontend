@@ -79,7 +79,7 @@ export default async function ServiceDetailsPage({ params }) {
         imageSrc={heroData?.banner}
         reverse={heroData?.hero?.reverse || false}
       />
-      <div className="py-8 lg:py-15 text-lime-900 leading-1.2 container grid gap-7">
+      <div className="py-8 lg:py-15 text-lime-900 leading-1.2 container grid gap-4 lg:gap-6">
         <div>
           <span
             className="font-medium"

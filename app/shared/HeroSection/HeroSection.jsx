@@ -34,7 +34,7 @@ const getImageSrc = (src) => {
             </h1></div>
         ) : (
          <div
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-center text-lime-900 ${
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center justify-center text-lime-900 ${
             reverse ? "lg:flex-row-reverse" : ""
           }`}
         >

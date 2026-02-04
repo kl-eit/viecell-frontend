@@ -236,7 +236,7 @@ export default function page() {
         </div>
       </SectionBlock>
 
-      <div className="py-8 lg:py-15 text-lime-900 leading-1.2 container grid gap-7">
+      <div className="py-8 lg:py-15 text-lime-900 leading-1.2 container grid gap-6">
         <div>
           <span className="font-medium">Understanding the Cause</span>
         </div>
