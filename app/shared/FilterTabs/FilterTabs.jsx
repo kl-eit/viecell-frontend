@@ -271,7 +271,7 @@ export default function FilterTabs() {
                       Object.entries(feature).length > 0 && (
                         <div key={idx}>
                           <div className="px-4 py-3 border-b border-black/10 text-lime-900 text-sm font-semibold font-['Roboto_Condensed'] capitalize leading-6">
-                            vs.
+                          
                             {selectedCountry?.name}
                           </div>
                           <div className="px-4">
@@ -295,7 +295,7 @@ export default function FilterTabs() {
                   )}
                 <div className="bg-[#F4F8F4]/60">
                   <div className="px-4 py-3 border-b border-black/10 text-lime-900 text-sm font-semibold font-['Roboto_Condensed'] capitalize leading-6">
-                    India (VieCell)
+                     vs. India (VieCell)
                   </div>
                   <div className="px-4">
                     <ul className="flex flex-col w-full text-xs divide-y divide-dashed divide-gray-300 [&>li]:py-3 [&>li]:cursor-pointer">

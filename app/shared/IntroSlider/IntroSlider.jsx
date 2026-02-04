@@ -64,12 +64,12 @@ export default function IntroSlider({ Banner }) {
               key={index}
               ref={(el) => (slideRefs.current[index] = el)}
             >
-              <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-15 justify-center items-center">
-                <div className="flex flex-col px-4 sm:px-6 gap-7 max-w-[500px]">
-                  <div className="slide-title text-lime-900 text-3xl lg:text-5xl font-extrabold font-['Roboto_Condensed'] uppercase leading-none">
+              <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-15 justify-center items-center">
+                <div className="flex flex-col px-4 sm:px-6 gap-4 lg:gap-6 max-w-[500px]">
+                  <div className="slide-title text-lime-900 text-2xl lg:text-5xl font-extrabold font-['Roboto_Condensed'] uppercase leading-none">
                     {slide?.Title}
                   </div>
-                  <div className="slide-desc text-lime-900 text-lg font-normal font-['Roboto'] lleading-none">
+                  <div className="slide-desc text-lime-900 lg:text-lg font-normal font-['Roboto'] lleading-none">
                     {slide?.Description}
                   </div>
 
@@ -86,7 +86,7 @@ export default function IntroSlider({ Banner }) {
                     )}
                   </div>
                 </div>
-                <div>
+                <div className="px-4 lg:p-0">
                   <Image
                     src={BannerImage}
                     alt={slide?.Title || "Banner"}

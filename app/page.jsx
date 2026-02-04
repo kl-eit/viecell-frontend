@@ -16,6 +16,7 @@ import Typography, {
   TitleDescription,
 } from "./shared/Typography/Typography";
 import { ArrowRightIcon } from "./shared/icons/icons";
+import Link from "next/link";
 // import TestimonialsMarquee from "./shared/TestimonialsMarquee/TestimonialsMarquee";
 export default async function Home() {
   const HomeData = await fetchAPINested("home", {
@@ -94,11 +95,14 @@ export default async function Home() {
                   key={item?.id}
                 >
                   <CardHeader className="p-0">
-                    <img
+                    <Link href={`services/${item?.slug}`}>
+                      <img
                       className="w-full h-full object-cover"
                       src={treatmentImage}
                       alt={item?.Name}
                     />
+                    </Link>
+                  
                   </CardHeader>
                   <CardContent className="p-6 flex flex-col gap-2">
                     <CardTitle className="text-lime-900 text-lg font-bold font-['Roboto_Condensed'] capitalize leading-5">
