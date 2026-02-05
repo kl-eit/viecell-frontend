@@ -13,7 +13,7 @@ export default function Header() {
     },
     {
       label: "Treatments",
-      url: "treatments",
+      url: "/services",
       children: [
         {
           title: "Autoimmune",
