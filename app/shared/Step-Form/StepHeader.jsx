@@ -16,7 +16,7 @@ export default function StepHeader({
           headingLevel="h2"
           size="md"
           color="primary"
-          className="font-normal!"
+          className="font-normal! text-lg!"
         />
       </div>
 

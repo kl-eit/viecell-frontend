@@ -219,7 +219,7 @@ export default async function InternationalPatientsPage() {
           <div className="w-full md:w-[40%]">
             <img
               className="w-full self-stretch rounded-[20px]"
-              src="/CTA-banner.png"
+              src="/Accommodation-Local-Care.png"
             />
           </div>
           <div className="w-full md:w-[60%]">

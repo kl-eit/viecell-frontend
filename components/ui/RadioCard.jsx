@@ -33,7 +33,7 @@ export default function RadioCard({
       </div>
 
       {/* Label */}
-      <span className="text-base font-medium text-[#2D4213]">
+      <span className="text-sm font-medium text-[#2D4213]">
         {label}
       </span>
     </Card>

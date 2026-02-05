@@ -5,7 +5,7 @@ export function Marquee({
   className,
   reverse = false,
   pauseOnHover = true,
-  vertical = false,
+  vertical = true,
   children,
 }) {
   return (

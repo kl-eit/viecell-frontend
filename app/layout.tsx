@@ -4,6 +4,7 @@ import "./globals.css";
 import AOSProvider from "./lib/AOSProvider";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
+import BackToTop from "./shared/BackToTop/BackToTop";
 import { PageHeaderProvider } from "./lib/PageHeaderContext";
 import ScrollVelocityText from "./shared/ScrollVelocityText/ScrollVelocityText";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
               {children}
               <ScrollVelocityText text="Repair  Regenerate  Rejuvenate" />
               <Footer />
+               <BackToTop />
             </main>
           </AOSProvider>
         </PageHeaderProvider>

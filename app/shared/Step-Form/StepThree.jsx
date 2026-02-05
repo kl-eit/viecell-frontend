@@ -30,13 +30,13 @@ export default function StepThree({
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -24 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="w-full flex flex-col gap-10"
+        className="w-full flex flex-col gap-6"
       >
         {/* Header */}
         <StepHeader
           title="Let’s start by understanding what may be contributing to liver damage in your case."
           step={3}
-          totalSteps={options?.length > 0 ? "4":"3" }
+          totalSteps={options?.length > 0 ? "4" : "3"}
         />
         {/* Breadcrumb + Title */}
         <div className="flex flex-col gap-4">
@@ -47,7 +47,7 @@ export default function StepThree({
             headingLevel="h3"
             size="lg"
             color="primary"
-            className="max-w-4xl"
+            className="max-w-4xl text-xl"
           />
         </div>
         {content.symptoms?.length > 0 && (
@@ -63,11 +63,9 @@ export default function StepThree({
             }}
             className="flex flex-col gap-4"
           >
-            <p className="font-semibold text-neutral-500">
-              Common Symptoms
-            </p>
+            <p className="font-semibol">Common Symptoms</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
               {content.symptoms.map((item) => (
                 <motion.div
                   key={item.title}
@@ -77,12 +75,8 @@ export default function StepThree({
                   }}
                 >
                   <Card className="p-6 rounded-xl bg-[#E6F1CD] border-0 shadow-none min-h-full">
-                    <h4 className="font-semibold mb-2">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-neutral-500">
-                      {item.desc}
-                    </p>
+                    <h4 className="font-semibold mb-2">{item.title}</h4>
+                    <p className="text-sm">{item.desc}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -98,20 +92,15 @@ export default function StepThree({
             transition={{ delay: 0.2 }}
             className="flex flex-col gap-4"
           >
-            <p className="font-semibold text-neutral-500">
-              Often Leads To
-            </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  <Card className="p-6 rounded-xl bg-[#FFEBA3] border-0 shadow-none max-w-md">
-              <h4 className="font-semibold mb-2">
-                {content.leadsTo.title}
-              </h4>
-              <p className="text-sm text-neutral-500">
-                {content.leadsTo.desc}
-              </p>
-            </Card>
-              </div>
-          
+            <p className="font-semibold ">Often Leads To</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
+              <Card className="p-4 rounded-xl bg-[#FFEBA3] border-0 shadow-none max-w-md">
+                <h4 className="font-semibold mb-2">{content.leadsTo.title}</h4>
+                <p className="text-sm">
+                  {content.leadsTo.desc}
+                </p>
+              </Card>
+            </div>
           </motion.div>
         )}
 
@@ -153,23 +142,38 @@ export default function StepThree({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="flex gap-6"
+          className="grid grid-cols-1 text-left  gap-4 lg:gap-6 lg:grid-cols-2"
         >
-          <Button variant="outline-primary" onClick={onPrev}>
-            Previous
-          </Button>
-
-          {options?.length > 0 ? (
-            <Button
-              onClick={() => onNext(value)}
-              disabled={!value}
-              className={!value ? "cursor-not-allowed opacity-50" : ""}
-            >
-              Continue
+          <div className="flex flex-row gap-2">
+            <Button variant="outline-primary" onClick={onPrev} size="sm">
+              Previous
             </Button>
-          ) : (
-            <Button onClick={onReset}>Reset</Button>
-          )}
+
+            {options?.length > 0 ? (
+              <Button
+                size="sm"
+                onClick={() => onNext(value)}
+                disabled={!value}
+                className={!value ? "cursor-not-allowed opacity-50" : ""}
+              >
+                Continue
+              </Button>
+            ) : (
+              <>
+                <Button onClick={onReset} size="sm">
+                  Reset
+                </Button>
+              </>
+            )}
+          </div>
+          <div className="flex flex-row gap-2 justify-end">
+            <Button href="/appointment-booking" size="sm">
+              Book Appointment
+            </Button>
+            <Button href="https://wa.me/9001290028" target="_blank" size="sm"  variant="outline-primary">
+              Talk to a Regenerative Specialist
+            </Button>
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>

@@ -38,11 +38,11 @@ export default function StepForm() {
       <div className="text-md font-medium">
         Identify Possible Liver Cirrhosis Symptoms
       </div>
-      <div className="lg:text-4xl text-xl font-['Roboto_Condensed'] max-w-5xl">
+      <div className="lg:text-3xl text-xl font-['Roboto_Condensed']">
         Answer a few simple questions to identify possible liver cirrhosis
         symptoms based on your condition.
       </div>
-      <div className="lg:p-14 p-7 bg-white rounded-2xl border border-[#979832]/20 flex flex-col justify-start items-start lg:gap-12 gap-6 overflow-hidden">
+      <div className="lg:p-10 p-4 bg-white rounded-2xl border border-[#979832]/20 flex flex-col justify-start items-start lg:gap-12 gap-6 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={step}

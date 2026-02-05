@@ -62,8 +62,6 @@ export default async function ServiceDetailsPage({ params }) {
     title: servicePage?.whychoose?.Title || "",
     card: servicePage?.whychoose?.services || [],
   };
-
-  console.log(servicePage, "servicePage");
   if (!servicePage) {
     return (
       <div className="container  text-center text-xl  py-8 lg:py-30 ">
@@ -79,7 +77,7 @@ export default async function ServiceDetailsPage({ params }) {
         imageSrc={heroData?.banner}
         reverse={heroData?.hero?.reverse || false}
       />
-      <div className="py-8 lg:py-15 text-lime-900 leading-1.2 container grid gap-4 lg:gap-6">
+      <div className="py-8 lg:py-10 text-lime-900 leading-1.2 container grid gap-4 lg:gap-6">
         <div>
           <span
             className="font-medium"

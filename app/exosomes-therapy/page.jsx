@@ -28,11 +28,11 @@ export default function page() {
 
               <p className=" leading-relaxed mb-6">
                 Exosomes, tiny extracellular vesicles secreted by cells, are
-                emerging as a groundbreaking innovation in the fields of{" "}
+                emerging as a groundbreaking innovation in the fields of
                 <span className="font-semibold text-foreground">
                   Dermatology
-                </span>{" "}
-                and{" "}
+                </span>
+                and
                 <span className="font-semibold text-foreground">
                   Aesthetic Medicine
                 </span>
@@ -43,11 +43,11 @@ export default function page() {
 
               <p className=" leading-relaxed">
                 Recent advancements in exosome technology have unveiled their
-                potential to{" "}
+                potential to
                 <span className="font-semibold text-foreground">
                   Rejuvenate
-                </span>{" "}
-                and enhance the health of{" "}
+                </span>
+                and enhance the health of
                 <span className="font-semibold text-foreground">
                   Hair and Skin
                 </span>
@@ -184,27 +184,27 @@ export default function page() {
           <div className="bg-muted/30 rounded-2xl p-8 bg-white shadow-sm">
             <p className=" leading-relaxed mb-4">
               In skin care, exosomes have shown remarkable capabilities in
-              promoting{" "}
+              promoting
               <span className="font-semibold text-foreground">
                 tissue regeneration
               </span>
-              ,{" "}
+              ,
               <span className="font-semibold text-foreground">
                 reducing inflammation
               </span>
-              , and stimulating{" "}
-              <span className="font-semibold text-foreground">collagen</span>{" "}
+              , and stimulating
+              <span className="font-semibold text-foreground">collagen</span>
               production.
             </p>
             <p className=" leading-relaxed">
-              By facilitating{" "}
+              By facilitating
               <span className="font-semibold text-foreground">
                 cellular repair
-              </span>{" "}
+              </span>
               and <span className="font-semibold text-foreground">renewal</span>
-              , exosomes help restore the skin&apos;s natural{" "}
-              <span className="font-semibold text-foreground">radiance</span>{" "}
-              and{" "}
+              , exosomes help restore the skin&apos;s natural
+              <span className="font-semibold text-foreground">radiance</span>
+              and
               <span className="font-semibold text-foreground">elasticity</span>.
             </p>
           </div>
@@ -218,28 +218,28 @@ export default function page() {
           <div className="bg-primary/10 rounded-3xl p-8 md:p-12 bg-white shadow-sm">
             <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
               The benefits of exosomes extend to hair restoration as well.
-              Exosomes can stimulate{" "}
+              Exosomes can stimulate
               <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent mx-1 bg-[#F3F5EC] text-foreground hover:bg-primary/30">
                 hair follicle cells
               </span>
-              , promoting{" "}
+              , promoting
               <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent mx-1 bg-[#F3F5EC] text-foreground hover:bg-primary/30">
                 hair growth
-              </span>{" "}
-              and preventing hair loss. Their regenerative properties aid in{" "}
+              </span>
+              and preventing hair loss. Their regenerative properties aid in
               <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent mx-1 bg-[#F3F5EC] text-foreground hover:bg-primary/30">
                 reviving dormant hair follicles
-              </span>{" "}
-              and{" "}
+              </span>
+              and
               <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent mx-1 bg-[#F3F5EC] text-foreground hover:bg-primary/30">
                 enhancing the thickness
-              </span>{" "}
+              </span>
               and quality of existing hair.
             </p>
 
             <p className="text-lg md:text-xl text-foreground leading-relaxed">
               This has led to increased interest in exosome therapy as a viable
-              option for individuals struggling with{" "}
+              option for individuals struggling with
               <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent mx-1 bg-[#F3F5EC] text-foreground hover:bg-primary/30">
                 hair thinning and baldness
               </span>

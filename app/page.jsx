@@ -138,7 +138,7 @@ export default async function Home() {
       <SectionBlock className="relative">
         <div className="grid grid-cols-12 lg:gap-15 gap-6 items-center">
           <div className="col-span-12 md:col-span-5">
-            <img className="max-w-full" src="/about-img.png" />
+            <img className="max-w-full" src="/about-img.png" alt="about" />
           </div>
           <div className="col-span-12 md:col-span-7">
             <div
@@ -178,7 +178,7 @@ export default async function Home() {
                   className="capitalize leading-8"
                 />
               </div>
-              <Button icon={true} href="/about">
+              <Button icon={true} href="/about-us">
                 Learn More
               </Button>
             </div>
@@ -302,7 +302,7 @@ export default async function Home() {
               </div>
               <img
                 src="/steps-line_icon.svg"
-                className="absolute top-2 left-[calc(67%)] max-w-full hidden lg:block"
+                className="absolute top-2 left-[calc(67%)] max-w-full hidden lg:block" alt="steps-line"
               />
             </div>
             <div className="flex-1  inline-flex flex-col justify-start items-center gap-6 relative">
@@ -321,7 +321,7 @@ export default async function Home() {
                 </div>
               </div>
               <img
-                src="/steps-line2_icon.svg"
+                src="/steps-line2_icon.svg" alt="steps-line2"
                 className="absolute top-6 left-[calc(65%)] max-w-full hidden lg:block"
               />
             </div>

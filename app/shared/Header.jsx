@@ -9,7 +9,7 @@ export default function Header() {
   const menuData = [
     {
       label: "About",
-      url: "about",
+      url: "about-us",
     },
     {
       label: "Treatments",

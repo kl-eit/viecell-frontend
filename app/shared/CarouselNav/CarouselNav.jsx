@@ -4,6 +4,7 @@ const CarouselNav = ({ onPrev, onNext, paginationRef }) => {
       <div className="custom-prev">
         <button
           onClick={onPrev}
+           aria-label="Previous slide"
           className="p-4 bg-white/60 rounded-[100px] cursor-pointer group relative w-14 h-14 inline-flex flex-col justify-center items-center gap-2.5"
         >
           <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
@@ -27,6 +28,7 @@ const CarouselNav = ({ onPrev, onNext, paginationRef }) => {
       <div className="custom-next">
         <button
           onClick={onNext}
+            aria-label="Next slide"
           className="p-4 bg-white/60 rounded-[100px] cursor-pointer group relative w-14 h-14 inline-flex flex-col justify-center items-center gap-2.5"
         >
           <svg width="8" height="14" viewBox="0 0 8 14" fill="none">

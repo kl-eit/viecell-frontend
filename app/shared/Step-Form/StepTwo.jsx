@@ -60,6 +60,7 @@ console.log(selected,'selected')
             size="lg"
             color="primary"
             subtitle="Choose the option closest to you. You can review or change this later."
+            className="text-xl"
           />
         </div>
         <motion.div
@@ -71,7 +72,7 @@ console.log(selected,'selected')
               transition: { staggerChildren: 0.08 },
             },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6"
         >
           {options.map((option) => (
             <motion.div
@@ -115,12 +116,12 @@ console.log(selected,'selected')
           transition={{ delay: 0.25 }}
           className="flex gap-6"
         >
-          <Button onClick={onPrev} variant="outline-primary">
+          <Button onClick={onPrev} variant="outline-primary" size="sm">
             Previous
           </Button>
 
           <Button
-            onClick={handleContinue}
+            onClick={handleContinue} size="sm"
             className={!selected ? "cursor-not-allowed opacity-50" : ""}
           >
             Continue

@@ -7,7 +7,7 @@ const SectionBlock = ({
   ...rest
 }) => {
  const styles = mode === "dark" ? "text-white" : "";
- const padding = noSpacing ? "" : "py-[2rem] lg:py-[3.75rem]";
+ const padding = noSpacing ? "" : "py-[2rem] lg:py-[3rem]";
  const radus = rounded ? "rounded-[30px]" : "";
   return (
     <section

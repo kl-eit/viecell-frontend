@@ -26,7 +26,7 @@ console.log(value,'onNext')
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -24 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="flex flex-col gap-10"
+        className="flex flex-col gap-4 lg:gap-6"
       >
         <StepHeader
           title="Let’s start by understanding what may be contributing to liver damage in your case."
@@ -38,6 +38,7 @@ console.log(value,'onNext')
           headingLevel="h2"
           size="lg"
           color="primary"
+          className="text-lg!"
           subtitle="Choose the option closest to you. You can review or change this later."
         />
         <motion.div
@@ -49,7 +50,7 @@ console.log(value,'onNext')
               transition: { staggerChildren: 0.1 },
             },
           }}
-          className="w-full flex flex-col sm:flex-row gap-6"
+          className="w-full flex flex-col sm:flex-row gap-4 lg:gap-6"
         >
           {options.map((option) => (
             <motion.div
@@ -74,7 +75,7 @@ console.log(value,'onNext')
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25 }}
         >
-          <Button onClick={() => onNext(value)}>
+          <Button onClick={() => onNext(value)} size="sm">
             Continue
           </Button>
         </motion.div>

@@ -34,14 +34,14 @@ export default function StoriesGrid({ stories, categories }) {
       </div> */}
       {/* Testimonials Grid */}
       {filteredStories.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {filteredStories.map((item) => (
             <blockquote
               key={item.id}
               className="bg-[linear-gradient(180deg,#E5F0CA_0%,#F7F9EF_100%)] text-lime-900 p-6 rounded-xl shadow text-center"
             >
               <div className="flex flex-col gap-10 text-center items-center h-full">
-                <div>
+                {/* <div>
                   <svg width="40" height="40" viewBox="0 0 67 50" fill="none">
                     <path
                       fillRule="evenodd"
@@ -50,15 +50,15 @@ export default function StoriesGrid({ stories, categories }) {
                       fill="#2D4213"
                     ></path>
                   </svg>
-                </div>            
-                <div className="text-center lg:text-xl text-md font-normal font-['Roboto_Condensed'] text-lime-900 leading-1.2">
+                </div>             */}
+                <div className="text-left lg:text-xl text-md font-normal font-['Roboto_Condensed'] text-lime-900 leading-1.2">
                   <BlocksRendererClient content={item?.Message || ""} />
                 </div>
-                <div className="mb-4 mt-auto">
-                  <p className="text-lime-900 font-semibold">{item?.Name}</p>
-                  {item?.Designation && (
+                <div className="mt-auto w-full">
+                  <p className="text-lime-900 font-semibold text-right uppercase">- {item?.Name}</p>
+                  {/* {item?.Designation && (
                     <p className="text-sm">{item?.Designation}</p>
-                  )}
+                  )} */}
                 </div>
               </div>
             </blockquote>

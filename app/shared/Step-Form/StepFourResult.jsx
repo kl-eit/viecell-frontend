@@ -32,7 +32,7 @@ export default function StepFourResult({
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -24 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="flex flex-col gap-10"
+        className="flex flex-col gap-4 lg:gap-6"
       >
         <StepHeader
           title="Let’s start by understanding what may be contributing to liver damage in your case."
@@ -60,8 +60,8 @@ export default function StepFourResult({
           <Typography
             title={result.title}
             subtitle={result.subtitle}
-            headingLevel="h1"
-            size="xl"
+            headingLevel="h3"
+            size="lg"
             color="primary"
             className="max-w-4xl"
           />
@@ -78,9 +78,7 @@ export default function StepFourResult({
             }}
             className="flex flex-col gap-4"
           >
-            <p className="font-semibold text-neutral-500">
-              Common Symptoms
-            </p>
+            <p className="font-semibold">Common Symptoms</p>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {result.symptoms.map((item) => (
@@ -92,12 +90,8 @@ export default function StepFourResult({
                   }}
                 >
                   <Card className="p-6 rounded-xl bg-[#E6F1CD] border-0 shadow-none min-h-full">
-                    <h4 className="font-semibold mb-2">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-neutral-500">
-                      {item.desc}
-                    </p>
+                    <h4 className="font-semibold mb-2">{item.title}</h4>
+                    <p className="text-sm">{item.desc}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -108,15 +102,31 @@ export default function StepFourResult({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25 }}
-          className="flex gap-6"
+          className="grid grid-cols-1 text-left  gap-4 lg:gap-6 lg:grid-cols-2"
         >
-          <Button variant="outline-primary" onClick={onPrev}>
-            Previous
-          </Button>
-
-          <Button onClick={onReset}>
-            Reset
-          </Button>
+          <div className="flex flex-row gap-2">
+            <Button variant="outline-primary"  size="sm" onClick={onPrev}>
+              Previous
+            </Button>
+            <Button onClick={onReset} size="sm">
+              Reset
+            </Button>
+          </div>
+        
+              <div className="flex flex-row gap-2 justify-end">
+              <Button href="/appointment-booking" size="sm">
+                Book Appointment
+              </Button>
+              <Button
+               size="sm"
+                variant="outline-primary"
+                href="https://wa.me/9001290028"
+                target="_blank"
+              >
+                Talk to a Regenerative Specialist
+              </Button>
+            </div>
+         
         </motion.div>
       </motion.div>
     </AnimatePresence>
