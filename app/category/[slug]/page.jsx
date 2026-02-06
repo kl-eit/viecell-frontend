@@ -22,7 +22,7 @@ export default async function DetailsPage({ params }) {
   );
   const title = CategoryData[0]?.name || "Category";
   const articles = CategoryData[0]?.articles || [];
-  console.log(CategoryData, "articles");
+
   return (
     <div>
       <HeroSection

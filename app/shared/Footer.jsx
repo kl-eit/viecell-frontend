@@ -48,7 +48,7 @@ export default function Footer() {
         { title: "Research & Innovation ", href: "/research-innovation" },
         { title: "Press Coverage", href: "/press-coverage" },
         { title: "Privacy Policy", href: "/privacy-policy" },
-        { title: "Terms & Conditions", href: "/terms" },
+        { title: "Terms & Conditions", href: "/terms-conditions" },
       ],
     },
   ];
@@ -255,8 +255,9 @@ export default function Footer() {
         href="https://wa.me/9001290028"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
       >
-        <div className="p-4 right-10 bottom-5 fixed bg-[#25D366] rounded-[100px]  outline-offset-[-0.50px] outline-white/80 inline-flex flex-col justify-center items-center gap-2">
+        <div className="p-4 right-10 bottom-5 fixed bg-[#25D366] rounded-[100px]  outline-offset-[-0.50px] outline-white/80 inline-flex flex-col justify-center items-center gap-2 z-10">
           <svg
             width="16"
             height="16"

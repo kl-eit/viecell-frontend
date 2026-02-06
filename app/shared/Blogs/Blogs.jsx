@@ -25,7 +25,6 @@ export default function Blogs() {
       (data) => setPosts(data),
     );
   }, []);
-  console.log(posts, "posts");
   return (
     <Section mode="light">
       <div className="grid grid-cols-12 gap-6 items-center">
@@ -71,7 +70,7 @@ export default function Blogs() {
                   key={post.id}
                   className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5 relative"
                 >
-                  <Link href={`/blogs/${post?.slug}`} >
+                  <Link href={`/blogs/${post?.slug}`} aria-label={`Read blog post: ${post?.title}`}>
                 
                   {post?.cover ? (
                     <div className="relative w-full">
@@ -130,7 +129,7 @@ export default function Blogs() {
                       {post?.description || post.excerpt}
                     </CardDescription> */}
                     <div className="mt-auto">
-                      <ReadMore href={`/blogs/${post?.slug}`} showArrow />
+                      <ReadMore href={`/blogs/${post?.slug}`} showArrow  aria-label={`Read blog post: ${post?.title}`} />
                     </div>
                   </CardContent>
                   <meta

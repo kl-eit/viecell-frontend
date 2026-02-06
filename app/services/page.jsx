@@ -12,9 +12,6 @@ export default async function TreatmentsPage() {
       Hero: { populate: "*" },
       Cover: { populate: "*" },
     })) || [];
-
-  console.log("SERVICES:", services);
-
   return (
     <div>
       <PageHeaderSetter

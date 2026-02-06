@@ -15,6 +15,13 @@ export default function IntroSlider({ Banner }) {
     if (!slide) return;
   };
   const [pageLoaded, setPageLoaded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => ({
+      ...prev,
+      [index]: true,
+    }));
+  };
   useEffect(() => {
     const handleLoad = () => {
       setPageLoaded(true);
@@ -34,13 +41,11 @@ export default function IntroSlider({ Banner }) {
   }, []);
   return (
     <div
-      className={`rounded-[30px] bg-[#F7F9EF] pt-30 pb-5 min-h-[calc(100vh-24px)] flex flex-col items-center justify-center ${
-        pageLoaded ? "opacity-100" : "opacity-0"
-      }`}
+      className={`rounded-[30px] bg-[#F7F9EF] pt-30 pb-5 min-h-[calc(100vh-24px)] flex flex-col items-center justify-center`}
     >
       <Swiper
         modules={[Pagination, Autoplay, Navigation]}
-      //  autoplay={{ delay: 4000, disableOnInteraction: false }}
+        //  autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ el: paginationRef.current, clickable: true }}
         navigation={{
           prevEl: ".custom-prev",
@@ -51,7 +56,7 @@ export default function IntroSlider({ Banner }) {
         loop
         className="container my-auto"
         onInit={() => setPageLoaded(false)}
-         onBeforeInit={(swiper) => {
+        onBeforeInit={(swiper) => {
           swiper.params.navigation.prevEl = ".custom-prev";
           swiper.params.navigation.nextEl = ".custom-next";
           swiper.params.pagination.el = paginationRef.current;
@@ -86,11 +91,12 @@ export default function IntroSlider({ Banner }) {
                     )}
                   </div>
                 </div>
-                <div className="px-4 lg:p-0">
+                <div className="px-4 lg:p-0 relative">
                   <Image
                     src={BannerImage}
                     alt={slide?.Title || "Banner"}
-                    className="object-contain max-h-[calc(100vh-100px)]"
+                    className={`object-contain max-h-[calc(100vh-100px)] transition-all duration-700 ease-out ${loadedImages[index] ? "opacity-100 blur-0" : "opacity-0 blur-xl"}`}
+                    onLoadingComplete={() => handleImageLoad(index)}
                     property="true"
                     width={slide?.BannerImage?.width}
                     height={slide?.BannerImage?.height}
@@ -102,9 +108,7 @@ export default function IntroSlider({ Banner }) {
           );
         })}
       </Swiper>
-      <CarouselNav
-        paginationRef={paginationRef}
-      />
+      <CarouselNav paginationRef={paginationRef} />
       {/* <style>{`
         .swiper-pagination-bullet {
           background-color: #E6F1CD !important;

@@ -139,7 +139,7 @@ export default async function BlogDetailsPage({ params }) {
                     </div>
 
                     <div className="col-span-8 flex flex-col gap-2">
-                      <Link href={`/blog/${post?.slug}`}>
+                      <Link href={`/blogs/${post?.slug}`}>
                         <Typography
                           title={
                             post?.title?.length > 40

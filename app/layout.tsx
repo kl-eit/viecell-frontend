@@ -7,7 +7,6 @@ import Footer from "./shared/Footer";
 import BackToTop from "./shared/BackToTop/BackToTop";
 import { PageHeaderProvider } from "./lib/PageHeaderContext";
 import ScrollVelocityText from "./shared/ScrollVelocityText/ScrollVelocityText";
-
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700"],

@@ -85,10 +85,12 @@ export const ReadMore = ({
   text = "Learn More",
   className = "",
   showArrow = true,
+    ...props
 }) => {
   return (
     <Link
       href={href}
+         {...props}
       className={`cursor-pointer group relative inline-flex items-center gap-2.5 text-lime-900 text-base font-medium font-['Roboto_Condensed'] leading-6 ${className}`}
     >
       <span>{text}</span>
