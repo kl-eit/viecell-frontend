@@ -82,7 +82,7 @@ export default function TreatmentsClient({ services }) {
               const truncatedText = truncateText(plainText, 95);
               return (
                 <Card
-                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden"
+                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden group"
                   key={index}
                 >
                   <CardHeader className="p-0">

@@ -23,7 +23,7 @@ export default async function BlogPage() {
           {posts?.map((post) => (
             <div key={post?.id} className="relative">
               <Card
-                className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5"
+                className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5 group"
                 itemScope
                 itemType="https://schema.org/BlogPosting"
               >

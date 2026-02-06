@@ -68,7 +68,7 @@ export default function Blogs() {
               <SwiperSlide key={post?.id} className="flex p-1">
                 <Card
                   key={post.id}
-                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5 relative"
+                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5 relative group"
                 >
                   <Link href={`/blogs/${post?.slug}`} aria-label={`Read blog post: ${post?.title}`}>
                 
@@ -81,7 +81,7 @@ export default function Blogs() {
                         width={post?.cover.width}
                         height={post?.cover.height}
                         priority
-                        className="aspect-4/2 object-cover"
+                        className="aspect-4/2 object-cover "
                          unoptimized
                       />
                     </div>

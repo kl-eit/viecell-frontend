@@ -13,7 +13,7 @@ export default function Footer() {
     {
       title: "Treatments",
       links: [
-        { title: "Autoimmune", href: "services/autoimmune-diseases" },
+        { title: "Autoimmune", href: "/services/autoimmune-diseases" },
         { title: "Infertility", href: "/services/infertility" },
         {
           title: "Knee OA",
@@ -29,9 +29,9 @@ export default function Footer() {
           ),
           href: "/services/optic-atrophy",
         },
-        { title: "SNHL", href: "services/sensorineural-hearing-loss-snhl" },
+        { title: "SNHL", href: "/services/sensorineural-hearing-loss-snhl" },
         { title: "Sports Injury", href: "/services/sports-injuries" },
-        { title: "Diabetes", href: "services/diabetes" },
+        { title: "Diabetes", href: "/services/diabetes" },
         { title: "Brain Stroke", href: "/services/brain-stroke" },
       ],
     },
@@ -99,7 +99,7 @@ export default function Footer() {
                 {footerData.map((col, index) => (
                   <div key={index} className="flex flex-col gap-3">
                     {col?.title && (
-                      <div className="text-stone-500 font-normal">
+                      <div className="text-[#647252] font-normal">
                         {col?.title}
                       </div>
                     )}
@@ -111,7 +111,7 @@ export default function Footer() {
                         <li key={i}>
                           <Link
                             href={link?.href}
-                            className="text-lime-900 hover:text-stone-500 font-medium font-['Roboto']"
+                            className="text-lime-900 hover:text-lime-700 font-medium font-['Roboto']"
                           >
                             {link.title}
                           </Link>
@@ -126,7 +126,7 @@ export default function Footer() {
               <div className="flex flex-col gap-5">
                 <a
                   href="tel:+91 9001290028"
-                  className="p-5 relative bg-white rounded-[10px] flex justify-start items-center gap-5 overflow-hidden"
+                  className="p-5 relative bg-white rounded-[10px] flex justify-start items-center gap-5 overflow-hidden group"
                 >
                   <span className="text-lime-900 lg:text-xl text-md font-medium font-['Roboto'] leading-8">
                     Book a Virtual Consultation
@@ -134,19 +134,21 @@ export default function Footer() {
                   <Icon
                     name="Phone"
                     size={24}
-                    className="text-lime-900 ms-auto"
+                    className="text-lime-900 ms-auto transform transition-transform duration-300 
+                 group-hover:scale-110"
                   />
                 </a>
                 <a
                   href="https://wa.me/9001290028"
-                  className="p-5 relative bg-green-500 rounded-[10px] flex justify-start items-center gap-5 overflow-hidden"
+                  className="p-5 relative bg-green-500 rounded-[10px] flex justify-start items-center gap-5 overflow-hidden group"
                 >
                   <span className="text-white lg:text-xl text-md font-medium font-['Roboto'] leading-8">
                     Talk to Our Specialists on WhatsApp
                     <Icon
                       name="whatsapp"
                       size={24}
-                      className="w-24 h-24 -right-1 -top-3 absolute text-white/20"
+                      className="w-24 h-24 -right-1 -top-3 absolute text-white/20  transform transition-transform duration-300 
+                 group-hover:scale-110"
                     />
                   </span>
                 </a>
@@ -189,7 +191,7 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="flex flex-col gap-2">
-              <div className="text-stone-500 font-normal">
+              <div className="text-[#647252] font-normal">
                 Call us for instant assistance
               </div>
               <a
@@ -200,7 +202,7 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="text-stone-500 font-normal">
+              <div className="text-[#647252] font-normal">
                 Reach out us via mail
               </div>
               <a
@@ -211,9 +213,12 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="text-stone-500 font-normal">VieCell HQ</div>
-              501, Kalp Business Center, Opp. Lavanya Mall, City Light, Surat
+              <div className="text-[#647252] font-normal">VieCell HQ</div>
+              <div className="text-lime-900">
+                  501, Kalp Business Center, Opp. Lavanya Mall, City Light, Surat
               395007, Gujarat, India
+              </div>
+            
             </div>
           </div>
           <div>

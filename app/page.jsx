@@ -91,7 +91,7 @@ export default async function Home() {
               const treatmentImage = getMediaUrl(item?.Image);
               return (
                 <Card
-                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden"
+                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden group"
                   key={item?.id}
                 >
                   <CardHeader className="p-0">

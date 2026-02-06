@@ -29,7 +29,7 @@ const getImageSrc = (src) => {
     <div className={`${gradient} rounded-[30px] pt-30 pb-8`}>
       <div className="container mx-auto  text-lime-900">
         {isBlogDetails ? (
-           <div className="max-w-[550px]"><h1 className="text-2xl lg:text-3xl  leading-none font-['Roboto_Condensed'] font-semibold mb-4 uppercase">
+           <div className="max-w-[900px]"><h1 className="text-2xl lg:text-3xl  leading-none font-['Roboto_Condensed'] font-semibold mb-4 uppercase">
               {title}
             </h1></div>
         ) : (

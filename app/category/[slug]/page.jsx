@@ -39,7 +39,7 @@ export default async function DetailsPage({ params }) {
             {articles?.map((post) => (
               <div key={post?.id}>
                 <Card
-                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5 relative"
+                  className="bg-white border-0 flex-1 flex flex-col overflow-hidden h-[calc(100%-10px)] mb-5 relative group"
                   itemScope
                   itemType="https://schema.org/BlogPosting"
                 >
