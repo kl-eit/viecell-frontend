@@ -16,7 +16,7 @@ export default function CTASection({ CTAdata, pageTitle }) {
         {
           text: "Talk to a Regenerative Specialist",
           variant: "outline-primary",
-          href: "https://wa.me/9001290028",
+          href: "https://wa.me/919001290028",
         },
       ],
     },

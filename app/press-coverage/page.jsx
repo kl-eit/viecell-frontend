@@ -12,18 +12,10 @@ export default function page() {
     {
       id: 1,
       image: "/press/et-changemakers-1.jpg",
-      title: "ET Changemakers - Viecell Institute of Regenerative Medicine",
-      publication: "Economic Times",
-      date: "",
-      category: "award",
-    },
-    {
-      id: 2,
-      image: "/press/times-changemakers-1.jpg",
-      title: "Times Changemakers - Viecell Institute Recognition",
-      publication: "Surat Times",
-      date: "",
-      category: "award",
+      title: "Stem Cell Therapy Offers Remarkable Longevity, Patient Experiences Life-Altering Changes after Three Cycles",
+      publication: "The Economic Times",
+      date: "29 Dec 2023",
+      category: "Healthcare / Stem Cell Therapy",
     },
     {
       id: 3,

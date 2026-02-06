@@ -24,38 +24,7 @@ export default async function page() {
                                 imageSrc="Vector-map-gray.svg"
                                 
                               />
-      {/* <SectionBlock>
-        <div className="grid grid-cols-12 gap-6 items-center">
-          <div className="col-span-12 lg:col-span-5 gap-3">
-            <div className="flex flex-col gap-6">
-              <Typography
-                title={"Compare Global Stem Cell Centers with India"}
-                headingLevel="h2"
-                size="xl"
-                color="primary"
-              />
-              <TextDescription
-                className="text-lime-900"
-                text={
-                  "Quickly explore leading stem cell clinics and compare them with India by disease treatment, therapy type, technology, and clinical expertise."
-                }
-              />
-              <div>
-                <Button version="primary" href="https://wa.me/9001290028" icon>
-                 Talk to a Regenerative Specialist
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-12 lg:col-span-7">
-            <img
-              className="w-full"
-              src="Vector-map-gray.svg"
-              alt="Patient Care Illustration"
-            />
-          </div>
-        </div>
-      </SectionBlock> */}
+  
       <SectionBlock>
         <FilterTabs />
         <div className="container p-14 relative bg-linear-to-l from-lime-200 via-stone-100 to-lime-100 rounded-4xl inline-flex justify-start items-start gap-72 overflow-hidden">
@@ -66,7 +35,7 @@ export default async function page() {
             <div className="text-neutral-500 text-base font-normal font-['Roboto'] leading-7 text-center">
               Speak to our medical advisor for personalized guidance.
             </div>
-            <Button icon href="https://wa.me/9001290028">Talk to a Regenerative Specialist</Button>
+            <Button icon href="https://wa.me/919001290028">Talk to a Regenerative Specialist</Button>
           </div>
 
           <img className="absolute z-1 max-w-[1025px]" src="vector-map.svg" />

@@ -42,7 +42,7 @@ export default function Footer() {
         { title: "International Patients", href: "/international-patients" },
         { title: "About", href: "/about-us" },
         { title: "Contact", href: "/contact-us" },
-        { title: "News & Events", href: "/news-events" },
+        // { title: "News & Events", href: "/news-events" },
         { title: "Blogs", href: "/blogs" },
         { title: "Client Stories", href: "/client-stories" },
         { title: "Research & Innovation ", href: "/research-innovation" },
@@ -139,7 +139,7 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="https://wa.me/9001290028"
+                  href="https://wa.me/919001290028"
                   className="p-5 relative bg-green-500 rounded-[10px] flex justify-start items-center gap-5 overflow-hidden group"
                 >
                   <span className="text-white lg:text-xl text-md font-medium font-['Roboto'] leading-8">
@@ -257,7 +257,7 @@ export default function Footer() {
         </div>
       </footer>
       <Link
-        href="https://wa.me/9001290028"
+        href="https://wa.me/919001290028"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

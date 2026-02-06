@@ -124,7 +124,7 @@ export default async function Home() {
           <div className="inline-flex justify-center items-center gap-2.5">
             <a
               className="inline-flex items-center gap-2 font-medium font-['Roboto_Condensed'] underline leading-5 group relative"
-              href="https://wa.me/9001290028"
+              href="https://wa.me/919001290028"
             >
               Request a Personalized Treatment Plan
               <span className="rotate-0 transition-all duration-200 group-hover:-rotate-45">
@@ -264,7 +264,7 @@ export default async function Home() {
                 align="left"
                 className="capitalize leading-8 text-neutral-500"
               />
-              <Button href="https://wa.me/9001290028">
+              <Button href="https://wa.me/919001290028">
                 Plan Treatment Trip
               </Button>
             </div>

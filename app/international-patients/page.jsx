@@ -159,7 +159,7 @@ export default async function InternationalPatientsPage() {
               From booking your trip to guiding your post-procedure rehab, our
               global team ensures a smooth, stress-free experience.
             </TextDescription>
-            <Button icon={true} href="https://wa.me/9001290028">
+            <Button icon={true} href="https://wa.me/919001290028">
               Book Free Virtual Consultation
             </Button>
           </div>
@@ -206,7 +206,7 @@ export default async function InternationalPatientsPage() {
                 align="left"
                 className="capitalize leading-8 text-neutral-500"
               />
-              <Button href="https://wa.me/9001290028">
+              <Button href="https://wa.me/919001290028">
                 Plan Treatment Trip
               </Button>
             </div>
@@ -249,7 +249,7 @@ export default async function InternationalPatientsPage() {
                 align="left"
                 className=" leading-8 text-neutral-500"
               />
-              <Button href="https://wa.me/9001290028">
+              <Button href="https://wa.me/919001290028">
                 Plan Treatment Trip
               </Button>
             </div>

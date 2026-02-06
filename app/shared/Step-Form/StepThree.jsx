@@ -170,7 +170,7 @@ export default function StepThree({
             <Button href="/appointment-booking" size="sm">
               Book Appointment
             </Button>
-            <Button href="https://wa.me/9001290028" target="_blank" size="sm"  variant="outline-primary">
+            <Button href="https://wa.me/919001290028" target="_blank" size="sm"  variant="outline-primary">
               Talk to a Regenerative Specialist
             </Button>
           </div>
