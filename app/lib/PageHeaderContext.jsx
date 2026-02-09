@@ -1,9 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
-
 const PageHeaderContext = createContext();
-
 export function PageHeaderProvider({ children }) {
   const [headerData, setHeaderData] = useState({
     title: "Page",

@@ -1,4 +1,3 @@
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
 import { fetchAPI, getMediaUrl } from "../lib/api";
 import WorkProcess from "../shared/WorkProcess/WorkProcess";
@@ -44,39 +43,14 @@ export default async function PatientCarePage() {
   const title = data?.Title || "Patient Care";
   //const htmlContent = data?.Content || data?.description || null;
   const seo = data?.Seo?.find((b) => b.__component === "shared.seo");
-  console.log(data,'patient care data')
   return (
     <>
-      <PageHeaderSetter title="Patient Care" breadcrumbLast="Patient Care" />
       <HeroSection
         title="Dedicated In patient Care for International Patients"
         description="Viecells provides seamless inpatient care for international patients, offering personalized treatment planning, advanced regenerative therapies, hospital coordination, and end-to-end support—so you can focus on healing with confidence and comfort, far from home."
          imageSrc={data?.Content?.Image?.url}
         // reverse={pageData?.hero?.reverse}
       />
-      {/* <SectionBlock>
-        <div className="grid grid-cols-12 gap-6 items-center">
-          <div className="col-span-12 lg:col-span-4">
-            <Typography
-              title={data?.Content?.Title || "Expert Care, Anytime, Anywhere1"}
-              headingLevel="h2"
-              size="xl"
-              color="primary"
-              LineHeading
-            />
-          </div>
-          <div className="col-span-12 lg:col-span-4 lg:col-start-8 lg:flex justify-end">
-            <TextDescription text={data?.Content?.body} />
-          </div>
-        </div>
-        <div>
-          <img
-            className="w-full"
-            src={getMediaUrl(data?.Content?.Image)}
-            alt="Patient Care Illustration"
-          />
-        </div>
-      </SectionBlock> */}
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6 items-center">
           <div className="col-span-12 lg:col-span-5">

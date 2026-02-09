@@ -248,7 +248,7 @@ export default function FilterTabs() {
                             Feature
                           </div>
                           <div className="px-4">
-                            <ul className="flex flex-col w-full text-xs divide-y divide-dashed divide-gray-300 [&>li]:py-3 [&>li]:cursor-pointer">
+                            <ul className="flex flex-col w-full text-xs divide-y divide-dashed divide-gray-300 [&>li]:py-3">
                               {Object.entries(feature).map(([key, value]) => (
                                 <li
                                   key={key}
@@ -275,7 +275,7 @@ export default function FilterTabs() {
                             {selectedCountry?.name}
                           </div>
                           <div className="px-4">
-                            <ul className="flex flex-col w-full divide-y divide-dashed divide-gray-300 [&>li]:py-3 [&>li]:cursor-pointer text-xs">
+                            <ul className="flex flex-col w-full divide-y divide-dashed divide-gray-300 [&>li]:py-3 text-xs">
                               {Object.entries(feature).map(([key, value]) => (
                                 <li
                                   key={key}
@@ -298,7 +298,7 @@ export default function FilterTabs() {
                      vs. India (VieCell)
                   </div>
                   <div className="px-4">
-                    <ul className="flex flex-col w-full text-xs divide-y divide-dashed divide-gray-300 [&>li]:py-3 [&>li]:cursor-pointer">
+                    <ul className="flex flex-col w-full text-xs divide-y divide-dashed divide-gray-300 [&>li]:py-3">
                       <li>
                         Liver Failure, Kidney Failure, Neurological, Heart
                         Failure, Orthopedic

@@ -29,22 +29,22 @@ const steps = [
 export default function WorkProcess() {
   return (
     <SectionBlock className="bg-[linear-gradient(180deg,#F3F5EC_0%,#FFFFFF_100%)] text-lime-900" rounded>
-      <div className="grid gap-10">
+      <div className="grid gap-4 lg:gap-10">
         <div className="flex flex-col justify-center items-center gap-3">
-          <Typography title="How We Work Process" headingLevel="h2" size="xl" color="primary" />
+          <Typography title="How We Work Process" headingLevel="h2" size="lg" color="primary" />
           <TitleDescription align="center">
             A step-by-step guide to your seamless healthcare journey.
           </TitleDescription>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 mt-6 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-6 gap-4 lg:gap-10">
           {steps.map((step) => (
             <div key={step.number} className="flex-1 flex flex-col items-center gap-6 relative">
               <div className="w-16 h-16 p-8 bg-white rounded-full shadow flex items-center justify-center">
                 <div className="text-stone-500 text-3xl font-semibold">{step.number}</div>
               </div>
               <div className="flex flex-col items-center gap-2.5 text-center">
-                <div className="text-lime-900 text-2xl font-semibold font-['Roboto_Condensed']">
+                <div className="text-lime-900 text-lg  lg:text-2xl font-semibold font-['Roboto_Condensed']">
                   {step.title}
                 </div>
                 <div className="text-neutral-500 text-base">{step.description}</div>

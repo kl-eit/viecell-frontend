@@ -1,4 +1,3 @@
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import Blogs from "../shared/Blogs/Blogs";
 import Button from "../component/Button/Button";
 import SectionBlock from "../shared/Section";
@@ -8,23 +7,21 @@ import FilterTabs from "../shared/FilterTabs/FilterTabs";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import CTASection from "../component/CTASection/CTASection";
 export async function generateMetadata() {
- // const seo = await getPageSEO("treatment-comparison"); // slug of the page
+  // const seo = await getPageSEO("treatment-comparison"); // slug of the page
   return {
     title: "Compare Global Stem Cell Centers with India",
-   // description: "Default description",
+    // description: "Default description",
   };
 }
 export default async function page() {
   return (
     <div>
-  
-          <HeroSection
-                                title="Compare Global Stem Cell Centers with India"
-                                description="Quickly explore leading stem cell clinics and compare them with India by disease treatment, therapy type, technology, and clinical expertise."
-                                imageSrc="Vector-map-gray.svg"
-                                
-                              />
-  
+      <HeroSection
+        title="Compare Global Stem Cell Centers with India"
+        description="Quickly explore leading stem cell clinics and compare them with India by disease treatment, therapy type, technology, and clinical expertise."
+        imageSrc="Vector-map-gray.svg"
+      />
+
       <SectionBlock>
         <FilterTabs />
         <div className="container p-14 relative bg-linear-to-l from-lime-200 via-stone-100 to-lime-100 rounded-4xl inline-flex justify-start items-start gap-72 overflow-hidden">
@@ -35,7 +32,9 @@ export default async function page() {
             <div className="text-neutral-500 text-base font-normal font-['Roboto'] leading-7 text-center">
               Speak to our medical advisor for personalized guidance.
             </div>
-            <Button icon href="https://wa.me/919001290028">Talk to a Regenerative Specialist</Button>
+            <Button icon href="https://wa.me/919001290028">
+              Talk to a Regenerative Specialist
+            </Button>
           </div>
 
           <img className="absolute z-1 max-w-[1025px]" src="vector-map.svg" />
@@ -43,7 +42,7 @@ export default async function page() {
       </SectionBlock>
       <Testimonial />
       <Blogs />
-        <CTASection CTAdata />
+      <CTASection CTAdata />
     </div>
   );
 }

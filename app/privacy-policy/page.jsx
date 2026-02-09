@@ -1,6 +1,5 @@
 import CTASection from "../component/CTASection/CTASection";
 import { fetchAPI } from "../lib/api";
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import BlocksRendererClient from "../shared/BlocksRendererClient";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import SectionBlock from "../shared/Section";
@@ -17,8 +16,6 @@ export default async function Page() {
         // reverse={pageData?.hero?.reverse}
       />
       <SectionBlock>
-        {/* <Typography title={title} headingLevel="h2" size="xl" color="primary" /> */}
-
         <div
           className="prose prose-lg max-w-full text-lime-900 font-['Roboto']"
           data-aos="fade-in"

@@ -196,7 +196,7 @@ export default async function Home() {
             grid gap-5 
             lg:flex lg:justify-start lg:items-start lg:gap-72"
         >
-          <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start gap-7">
+          <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start gap-4 lg:gap-7">
             <Typography
               title=" Seamless Travel & Post-Care Support Worldwide"
               headingLevel="h2"

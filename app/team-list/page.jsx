@@ -1,4 +1,4 @@
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
+
 import SectionBlock from "../shared/Section";
 import { fetchAPI, getMediaUrl } from "../lib/api";
 import Testimonial from "../shared/Testimonial/Testimonial";
@@ -19,7 +19,7 @@ export default async function TeamListPage() {
   const { Title, Description, teams = [] } = teamData || {};
   return (
     <div>
-      <PageHeaderSetter title={pageTitle} breadcrumbLast="Our Specialist" />
+    
       <HeroSection
         title="Our Medical Experts"
         description="The Viecells team brings together specialists from regenerative medicine, ophthalmology, neurology, and internal medicine."

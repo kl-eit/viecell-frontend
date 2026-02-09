@@ -5,7 +5,6 @@ import AOSProvider from "./lib/AOSProvider";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 import BackToTop from "./shared/BackToTop/BackToTop";
-import { PageHeaderProvider } from "./lib/PageHeaderContext";
 import ScrollVelocityText from "./shared/ScrollVelocityText/ScrollVelocityText";
 const roboto = Roboto({
   subsets: ["latin"],
@@ -35,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${robotoCondensed.variable}`}>
-        <PageHeaderProvider>
+       
           <AOSProvider>
             <main className="p-4">
               <Header />
@@ -45,7 +44,7 @@ export default function RootLayout({
                <BackToTop />
             </main>
           </AOSProvider>
-        </PageHeaderProvider>
+       
       </body>
     </html>
   );

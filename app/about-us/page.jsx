@@ -1,6 +1,5 @@
 import { fetchAPI } from "../lib/api";
 import Faqs from "../shared/Faq/Faq";
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
 import TeamMember from "../shared/Team/TeamMember";
 import Testimonial from "../shared/Testimonial/Testimonial";
@@ -44,10 +43,7 @@ export default async function About() {
   //const seo = AboutData?.blocks?.find((b) => b.__component === "shared.seo");
   return (
     <div>
-      <PageHeaderSetter title="About Us" />
-      <div
-      // dangerouslySetInnerHTML={{ __html: AboutData?.AboutSection?.Content }}
-      />
+     
        <HeroSection
               title="About Us"
               description="We work with patients who are seeking options beyond symptom management—while ensuring transparency about what regenerative therapy can and cannot do."

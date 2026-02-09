@@ -1,6 +1,5 @@
 import CTASection from "../component/CTASection/CTASection";
 import { fetchAPI, fetchAPINested } from "../lib/api";
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import SectionBlock from "../shared/Section";
 import Typography, { TextDescription } from "../shared/Typography/Typography";
@@ -14,10 +13,7 @@ export default async function TreatmentsPage() {
     })) || [];
   return (
     <div>
-      <PageHeaderSetter
-        title="Our Treatments"
-        breadcrumbLast="Our Treatments"
-      />
+    
       <HeroSection
         title="Advanced Care. Personalized Approach."
         description="At Viecells, our services are designed to support patients with chronic, degenerative, and complex medical conditions through a combination of conventional evaluation and advanced regenerative approaches."

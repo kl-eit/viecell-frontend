@@ -1,6 +1,4 @@
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
-import { fetchAPI, getMediaUrl } from "../lib/api";
 import WorkProcess from "../shared/WorkProcess/WorkProcess";
 import Typography, {
   TextDescription,
@@ -10,12 +8,8 @@ import Button from "../component/Button/Button";
 import Testimonial from "../shared/Testimonial/Testimonial";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import CTASection from "../component/CTASection/CTASection";
-
+import Image from "next/image";
 export default async function InternationalPatientsPage() {
-  const data = await fetchAPI("international-patient");
-  const title = data?.Title || "For International Patients";
-  const htmlContent = data?.Content || data?.description || null;
-
   const tabContent = [
     {
       id: "upload",
@@ -49,51 +43,13 @@ export default async function InternationalPatientsPage() {
 
   return (
     <div>
-      <PageHeaderSetter
-        title={title}
-        breadcrumbLast="For International Patients"
-      />
+   
       <HeroSection
         title="Your Journey to Regenerative Medicine in India Starts Here"
         description="Safe, advanced, and personalized treatments for international patients."
         imageSrc="Your-Journey.png"
         
       />
-      {/* <SectionBlock>
-        <div className="grid grid-cols-12 gap-6 items-center">
-          <div className="col-span-12 lg:col-span-6 gap-3">
-            <div className="flex flex-col gap-6">
-              <Typography
-                title={
-                  data?.Content?.Title ||
-                  "Your Journey to Regenerative Medicine in India Starts Here"
-                }
-                headingLevel="h2"
-                size="xxl"
-                color="primary"
-              />
-              <TextDescription
-                className="text-lime-900"
-                text={
-                  "Safe, advanced, and personalized treatments for international patients."
-                }
-              />
-              <div>
-                <Button version="primary" href="appointment-booking" icon>
-                  Book Appointment
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-12 lg:col-span-6">
-            <img
-              className="w-full"
-              src="Your-Journey.png"
-              alt="Patient Care Illustration"
-            />
-          </div>
-        </div>
-      </SectionBlock> */}
       <SectionBlock>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-6">
@@ -133,10 +89,13 @@ export default async function InternationalPatientsPage() {
           </div>
           <div className="col-span-12 lg:col-span-6">
             <div className="flex flex-col gap-4">
-              <img
+              <Image
                 className="w-full rounded-[20px]"
-                src="Vector-map.png"
+                src="word-map.svg"
                 alt="Why Choose India"
+                loading="lazy"
+                width="647"
+                height="625"
               />
             </div>
           </div>
@@ -148,7 +107,7 @@ export default async function InternationalPatientsPage() {
             grid gap-5 
             lg:flex lg:justify-start lg:items-start lg:gap-72"
         >
-          <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start gap-7">
+          <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start gap-4 lg:gap-7">
             <Typography
               title="Travel & Visa Assistance"
               headingLevel="h2"

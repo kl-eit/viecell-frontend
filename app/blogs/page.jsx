@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { fetchAPI, getMediaUrl } from "../lib/api";
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import SectionBlock from "../shared/Section";
 import { ReadMore } from "../component/Button/Button";
 import { CalendarIcon, UserIcon } from "../shared/icons/icons";
@@ -11,7 +10,7 @@ export default async function BlogPage() {
   const posts = await fetchAPI("articles?sort=Date:desc");
   return (
     <>
-      <PageHeaderSetter title="Blog" />
+    
       <HeroSection
         title="Our Blog"
         description="Explore expert-written articles covering medical conditions, treatment approaches, patient education, and the evolving science of regenerative therapy."

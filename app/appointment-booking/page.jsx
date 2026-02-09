@@ -1,16 +1,12 @@
 import SectionBlock from "../shared/Section";
 import SideBarHelp from "../shared/SideBarHelp/SideBarHelp";
 import AppointmentForm from "./AppointmentForm";
-import { PageHeaderSetter } from "../lib/PageHeaderContext";
 import HeroSection from "../shared/HeroSection/HeroSection";
 import CTASection from "../component/CTASection/CTASection";
 export default async function AppointmentBookingPage() {
   return (
     <div>
-      <PageHeaderSetter
-        title="Appointment Booking"
-        breadcrumbLast="Appointment Booking"
-      />
+     
       <HeroSection
         title="Appointment Booking"
         description="Book an appointment to discuss your condition, review your medical reports, and understand available treatment options. Our team will guide you through the process and help you take the next step with clarity and confidence."

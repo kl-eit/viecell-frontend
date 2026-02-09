@@ -1,11 +1,10 @@
-import { PageHeaderSetter } from "./lib/PageHeaderContext";
 import Button from "./component/Button/Button";
 import HeroSection from "./shared/HeroSection/HeroSection";
 import CTASection from "./component/CTASection/CTASection";
 export default function NotFound() {
   return (
     <div>
-      <PageHeaderSetter title="Page Not Found" />
+    
       <HeroSection
         title="Page Not Found"
         description="The page may have been moved, renamed, or no longer exists. Don’t worry—let’s help you get back on track."

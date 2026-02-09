@@ -3,7 +3,7 @@ import React from "react";
 const sizeClasses = {
   sm: "text-lg",
   md: "text-xl",
-  lg: "text-2xl",
+  lg: "text-xl lg:text-2xl",
   xl: "text-[1.75rem] lg:text-[2.625rem] leading-[50.40px]",
   xxl: "text-[1.75rem] lg:text-[3.75rem] leading-[1.5]",
 };
@@ -31,7 +31,7 @@ export const TitleDescription = ({
   className = "",
 }) => {
   const descriptionClasses =
-    ` text-neutral-500 text-xl font-normal font-['Roboto'] 
+    ` text-neutral-500 text-lg lg:text-xl font-normal font-['Roboto'] 
     ${alignClasses[align]}
     font-['Roboto']
     leading-7
@@ -151,7 +151,7 @@ export const TypographyList = ({
   ordered = false,
   className = "",
   Icon = CheckIcon,
-  iconClass = "mr-2 text-green-500",
+  iconClass = "mr-2 text-green-500 shrink-0",
 }) => {
   const ListTag = ordered ? "ol" : "ul";
 
