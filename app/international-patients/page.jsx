@@ -107,7 +107,7 @@ export default async function InternationalPatientsPage() {
             grid gap-5 
             lg:flex lg:justify-start lg:items-start lg:gap-72"
         >
-          <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start gap-4 lg:gap-7">
+          <div className="flex-1 self-stretch inline-flex flex-col justify-center items-start gap-4 lg:gap-6">
             <Typography
               title="Travel & Visa Assistance"
               headingLevel="h2"

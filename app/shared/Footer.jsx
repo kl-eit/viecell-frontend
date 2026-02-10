@@ -262,7 +262,7 @@ export default function Footer() {
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
       >
-        <div className="p-4 right-10 bottom-5 fixed bg-[#25D366] rounded-[100px]  outline-offset-[-0.50px] outline-white/80 inline-flex flex-col justify-center items-center gap-2 z-10">
+        <div className="p-3 right-10 bottom-5 fixed bg-[#25D366] rounded-[100px]  inline-flex flex-col justify-center items-center gap-2 z-10  transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
           <svg
             width="16"
             height="16"

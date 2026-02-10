@@ -34,7 +34,7 @@ export default function FaqSection({ faqsData }) {
                     id={`faq-question-${index}`}
                     aria-expanded={isOpen}
                   >
-                    <div className="flex-1 text-lime-900 lg:text-lg text-md font-['Roboto'] text-left">
+                    <div className="flex-1 text-lime-900 lg:text-lg text-md font-['Roboto'] text-left font-medium">
                       {item.question}
                     </div>
                     <div className="w-5 h-5 flex items-center justify-center transition-transform duration-300">

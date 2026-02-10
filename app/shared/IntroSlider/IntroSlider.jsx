@@ -41,7 +41,7 @@ export default function IntroSlider({ Banner }) {
   }, []);
   return (
     <div
-      className={`rounded-[30px] bg-[#F7F9EF] pt-30 pb-5 min-h-[calc(100vh-24px)] flex flex-col items-center justify-center`}
+      className={`rounded-[30px] bg-[#F7F9EF] pt-28 pb-5 min-h-[calc(100vh-24px)] flex flex-col items-center justify-center`}
     >
       <Swiper
         modules={[Pagination, Autoplay, Navigation]}
@@ -95,7 +95,7 @@ export default function IntroSlider({ Banner }) {
                   <Image
                     src={BannerImage}
                     alt={slide?.Title || "Banner"}
-                    className={`object-contain max-h-[calc(100vh-100px)] transition-all duration-700 ease-out ${loadedImages[index] ? "opacity-100 blur-0" : "opacity-0 blur-xl"}`}
+                    className={`object-contain max-h-[calc(100vh-100px)] max-[1536px]:max-h-[calc(100vh-200px)] transition-all duration-700 ease-out ${loadedImages[index] ? "opacity-100 blur-0" : "opacity-0 blur-xl"}`}
                     onLoadingComplete={() => handleImageLoad(index)}
                     property="true"
                     width={slide?.BannerImage?.width}
