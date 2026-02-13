@@ -2,6 +2,7 @@ import Button from "../component/Button/Button";
 import Link from "next/link";
 import { fetchAPI } from "../lib/api";
 import MobileRichNavigationMenu from "./NavigationMenuWithDropdown";
+import Image from "next/image";
 export default function Header() {
   //const data = await fetchAPI("header");
   //const menuData = data?.Navigation || [];
@@ -79,7 +80,15 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <div className="shrink-0">
                 <Link href="/">
-                  <img className="w-[150px]" src="/logo.png" alt="viecellbiotherapeutics" />
+                  {/* <img className="w-[150px]" src="/logo.png" alt="viecellbiotherapeutics" /> */}
+                  <Image
+                    src="/logo.png"
+                    alt="VieCell"
+                    width={150}
+                    height={50}
+                    className="w-[150px]"
+                    loading="lazy"
+                  />
                 </Link>
               </div>
 

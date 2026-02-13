@@ -6,7 +6,6 @@ import CTASection from "../component/CTASection/CTASection";
 export default async function AppointmentBookingPage() {
   return (
     <div>
-     
       <HeroSection
         title="Appointment Booking"
         description="Book an appointment to discuss your condition, review your medical reports, and understand available treatment options. Our team will guide you through the process and help you take the next step with clarity and confidence."

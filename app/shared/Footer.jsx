@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Icon from "./icons/icons";
+import Image from "next/image";
 export default function Footer() {
   const footerData = [
     {
@@ -111,9 +112,10 @@ export default function Footer() {
                         <li key={i}>
                           <Link
                             href={link?.href}
+                            aria-label={link?.title}
                             className="text-lime-900 hover:text-lime-700 font-medium font-['Roboto']"
                           >
-                            {link.title}
+                            {link?.title}
                           </Link>
                         </li>
                       ))}
@@ -125,7 +127,8 @@ export default function Footer() {
             <div>
               <div className="flex flex-col gap-5">
                 <a
-                  href="tel:+91 9001290028"
+                  href="tel:+919001290028"
+                  aria-label="Call us to book a virtual consultation"
                   className="p-5 relative bg-white rounded-[10px] flex justify-start items-center gap-5 overflow-hidden group"
                 >
                   <span className="text-lime-900 lg:text-xl text-md font-medium font-['Roboto'] leading-8">
@@ -141,6 +144,9 @@ export default function Footer() {
                 <a
                   href="https://wa.me/919001290028"
                   className="p-5 relative bg-green-500 rounded-[10px] flex justify-start items-center gap-5 overflow-hidden group"
+                  aria-label="Chat with our specialists on WhatsApp"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="text-white lg:text-xl text-md font-medium font-['Roboto'] leading-8">
                     Talk to Our Specialists on WhatsApp
@@ -180,10 +186,13 @@ export default function Footer() {
             <hr className="border-t border-[#979832]/30" />
           </div>
           <div className="text-center flex flex-col ">
-            <img
-              className="mx-auto max-w-[140px]"
+            <Image
               src="/footer-logo.png"
-              alt="logo"
+              alt="VieCells logo"
+              width={140}
+              height={50}
+              className="mx-auto"
+              loading="lazy"
             />
           </div>
           <div>
@@ -215,10 +224,9 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               <div className="text-[#647252] font-normal">VieCell HQ</div>
               <div className="text-lime-900">
-                  501, Kalp Business Center, Opp. Lavanya Mall, City Light, Surat
-              395007, Gujarat, India
+                501, Kalp Business Center, Opp. Lavanya Mall, City Light, Surat
+                395007, Gujarat, India
               </div>
-            
             </div>
           </div>
           <div>
@@ -231,7 +239,7 @@ export default function Footer() {
             </div>
             <div className="text-center md:text-left"></div>
             <div className="mt-2 md:mt-0 text-center md:text-right flex flex-wrap gap-2 justify-center md:justify-end">
-             Technology Partner -
+              Technology Partner -
               <Link
                 className="hover:text-lime-900 "
                 href="https://engrossinfotech.com/"
@@ -277,7 +285,6 @@ export default function Footer() {
           </svg>
         </div>
       </Link>
-     
     </>
   );
 }

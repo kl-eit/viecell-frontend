@@ -4,6 +4,7 @@ import Button from "../component/Button/Button";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { getNames } from "country-list";
+import Link from "next/link";
 export default function AppointmentForm() {
   const countries = getNames();
 
@@ -215,9 +216,9 @@ export default function AppointmentForm() {
           />
           <span className="text-gray-600 text-sm">
             I agree to the{" "}
-            <a href="#" className="text-lime-800 underline">
+            <Link href="/terms-conditions" className="text-lime-800 underline">
               Terms & Privacy Policy
-            </a>
+            </Link>
           </span>
         </label>
 

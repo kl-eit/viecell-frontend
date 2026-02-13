@@ -44,7 +44,7 @@ function page() {
                   <img src="/Phone-icon.svg" alt="Phone icon" />
                 </div>
                 <div className="justify-start text-neutral-500 font-normal font-['Roboto'] leading-6">
-                  <a href="tel:+919001290028"> +91 9001290028</a>
+                  <a href="tel:+919001290028" aria-label="Call vicells at +91 90012 90028"> +91 9001290028</a>
                 </div>
               </div>
               <div className="inline-flex justify-start items-center gap-2.5">
@@ -52,7 +52,7 @@ function page() {
                   <img src="/Email-icon.svg" alt="Email icon" />
                 </div>
                 <div className="justify-start text-neutral-500 font-normal font-['Roboto'] leading-6">
-                  <a href="mailto:contact@vicells.com">contact@vicells.com</a>
+                  <a href="mailto:contact@vicells.com" aria-label="Email VieCells at contact@vicells.com">contact@vicells.com</a>
                 </div>
               </div>
               <div className="inline-flex justify-start items-center gap-2.5">
