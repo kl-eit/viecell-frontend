@@ -230,8 +230,8 @@ export default function Footer() {
               {new Date().getFullYear()}. All Rights Reserved.
             </div>
             <div className="text-center md:text-left"></div>
-            <div className="mt-2 md:mt-0 text-center md:text-right flex flex-wrap gap-4 justify-center md:justify-end">
-              Designed & Developed by
+            <div className="mt-2 md:mt-0 text-center md:text-right flex flex-wrap gap-2 justify-center md:justify-end">
+             Technology Partner -
               <Link
                 className="hover:text-lime-900 "
                 href="https://engrossinfotech.com/"
