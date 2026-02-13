@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Condensed } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import AOSProvider from "./lib/AOSProvider";
 import Header from "./shared/Header";
@@ -34,17 +35,31 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${robotoCondensed.variable}`}>
-       
-          <AOSProvider>
-            <main className="p-4">
-              <Header />
-              {children}
-              <ScrollVelocityText text="Repair  Regenerate  Rejuvenate" />
-              <Footer />
-               <BackToTop />
-            </main>
-          </AOSProvider>
-       
+        <AOSProvider>
+          <main className="p-4">
+            <Header />
+            {children}
+            <ScrollVelocityText text="Repair  Regenerate  Rejuvenate" />
+            <Footer />
+            <BackToTop />
+          </main>
+        </AOSProvider>
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-SHNDEE57N6"
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SHNDEE57N6');
+      `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );
