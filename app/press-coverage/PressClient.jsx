@@ -139,8 +139,7 @@ export default function PressClient({ PageData }) {
                    
                     </>
                   )}
-
-                  {/* Category Badge */}
+{/*               
                   <div className="absolute top-3 left-3">
                     <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/95 text-gray-800">
                       {item?.category === "Awards"
@@ -151,7 +150,7 @@ export default function PressClient({ PageData }) {
                             ? "🎬 Video"
                             : "📰 News"}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="p-5">
                   <h3 className="font-semibold text-md mb-2 line-clamp-2 transition-colors">

@@ -74,7 +74,7 @@ export default function FilterTabs() {
 
   const isMobile = useIsMobile();
   const pathname = usePathname();
-  const isHome  = pathname === "/";
+  const isHome = pathname === "/";
   return (
     <>
       {!isHome ? (
@@ -271,7 +271,6 @@ export default function FilterTabs() {
                       Object.entries(feature).length > 0 && (
                         <div key={idx}>
                           <div className="px-4 py-3 border-b border-black/10 text-lime-900 text-sm font-semibold font-['Roboto_Condensed'] capitalize leading-6">
-                          
                             {selectedCountry?.name}
                           </div>
                           <div className="px-4">
@@ -295,7 +294,7 @@ export default function FilterTabs() {
                   )}
                 <div className="bg-[#F4F8F4]/60">
                   <div className="px-4 py-3 border-b border-black/10 text-lime-900 text-sm font-semibold font-['Roboto_Condensed'] capitalize leading-6">
-                     vs. India (VieCell)
+                    vs. India (VieCell)
                   </div>
                   <div className="px-4">
                     <ul className="flex flex-col w-full text-xs divide-y divide-dashed divide-gray-300 [&>li]:py-3">
@@ -317,6 +316,26 @@ export default function FilterTabs() {
           </div>
         </div>
       </div>
+      <div className="text-sm text-[#2D4213]">
+        <strong>Disclaimer:</strong>
+
+        <p className="mb-3">
+          This section is an informative effort by Viecell to provide data
+          regarding regenerative (stem cell) medicine hospitals and service
+          providers globally. Please note that all medical information,
+          including the list of treatable diseases and conditions, must be
+          independently verified by the user on the respective hospital’s
+          official website.
+        </p>
+        <p>
+          The treatment costs provided are estimations only and do not represent
+          the final or exact price of any specific medical procedure. To obtain
+          an accurate price, users must request a formal quotation directly from
+          the respective hospital or institution. A final treatment plan and
+          cost can only be determined after a thorough consultation with the
+          treating doctors and medical staff at that specific facility.
+        </p>
+      </div>
       {!isHome ? (
         <div className="text-sm text-center bg-[#F4F8F4] py-2 px-10 rounded-[30px]  text-[#2D4213] font-normal">
           This comparison is for informational purposes and helps you evaluate
@@ -324,8 +343,8 @@ export default function FilterTabs() {
         </div>
       ) : (
         <div
-          className="flex flex-col md:flex-row justify-center items-center gap-2.5 
-            bg-[#F4F8F4] p-2.5 md:p-5 rounded-[30px] 
+          className="text-sm flex flex-col md:flex-row justify-center items-center gap-2.5 
+            bg-[#F4F8F4]  py-2 px-10  rounded-[30px] 
             text-[#2D4213] font-normal leading-6 text-center"
         >
           Experience world-class quality at globally affordable costs

@@ -2,9 +2,6 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   try {
-    console.log("Received POST request to /api/appointments");
-
-    // Parse JSON
     let formData;
     try {
       formData = await request.json();
@@ -28,7 +25,6 @@ export async function POST(request) {
       );
     }
 
-    // Check environment variables
     const { EMAIL_HOST, EMAIL_PORT, EMAIL_USER, EMAIL_PASSWORD, ADMIN_EMAIL } = process.env;
     if (!EMAIL_HOST || !EMAIL_PORT || !EMAIL_USER || !EMAIL_PASSWORD || !ADMIN_EMAIL) {
       console.error("Missing environment variables:", {
@@ -44,7 +40,6 @@ export async function POST(request) {
       );
     }
 
-    // Setup transporter
     const transporter = nodemailer.createTransport({
       host: EMAIL_HOST,
       port: Number(EMAIL_PORT),
@@ -55,7 +50,6 @@ export async function POST(request) {
       },
     });
 
-    // Verify transporter connection
     try {
       await transporter.verify();
       console.log("SMTP transporter verified ✅");
@@ -67,7 +61,6 @@ export async function POST(request) {
       );
     }
 
-    // Prepare email contents
     const adminMailOptions = {
       from: EMAIL_USER,
       to: ADMIN_EMAIL,
@@ -94,7 +87,6 @@ export async function POST(request) {
       `,
     };
 
-    // Send emails and log info
     let infoAdmin, infoUser;
     try {
       infoAdmin = await transporter.sendMail(adminMailOptions);
@@ -109,7 +101,6 @@ export async function POST(request) {
       );
     }
 
-    // Success response
     return new Response(
       JSON.stringify({ success: true, message: "Appointment request sent successfully" }),
       { status: 200, headers: { "Content-Type": "application/json" } }
