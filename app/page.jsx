@@ -1,11 +1,12 @@
-import IntroSlider from "./shared/IntroSlider/IntroSlider";
+import dynamic from "next/dynamic";
+//import IntroSlider from "./shared/IntroSlider/IntroSlider";
 import ThemeCard from "./component/card/card";
 import Faqs from "./shared/Faq/Faq";
 import Blogs from "./shared/Blogs/Blogs";
 import { fetchAPINested, getMediaUrl } from "./lib/api";
-import Testimonial from "./shared/Testimonial/Testimonial";
+//import Testimonial from "./shared/Testimonial/Testimonial";
 import TeamMemberSection from "./shared/Team/TeamMember";
-import FilterTabs from "./shared/FilterTabs/FilterTabs";
+//import FilterTabs from "./shared/FilterTabs/FilterTabs";
 import SectionBlock from "./shared/Section";
 import CTASection from "./component/CTASection/CTASection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,6 +19,15 @@ import Typography, {
 import { ArrowRightIcon } from "./shared/icons/icons";
 import Link from "next/link";
 // import TestimonialsMarquee from "./shared/TestimonialsMarquee/TestimonialsMarquee";
+const IntroSlider = dynamic(() =>
+  import("./shared/IntroSlider/IntroSlider")
+);
+const FilterTabs = dynamic(() =>
+  import("./shared/FilterTabs/FilterTabs")
+);
+const Testimonial = dynamic(() =>
+  import("./shared/Testimonial/Testimonial")
+);
 export default async function Home() {
   const HomeData = await fetchAPINested("home", {
     Banner: { populate: "BannerImage" },

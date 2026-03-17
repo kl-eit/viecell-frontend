@@ -48,6 +48,8 @@ export default function Footer() {
         { title: "Client Stories", href: "/client-stories" },
         { title: "Research & Innovation ", href: "/research-innovation" },
         { title: "Press Coverage", href: "/press-coverage" },
+        { title: "Regulatory Disclaimer", href: "/regulatory-disclaimer" },
+        { title: "Marketing Disclaimer", href: "/marketing-disclaimer" },
         { title: "Privacy Policy", href: "/privacy-policy" },
         { title: "Terms & Conditions", href: "/terms-conditions" },
       ],

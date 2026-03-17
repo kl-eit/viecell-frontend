@@ -23,6 +23,8 @@ export async function GET() {
       { url: "blogs", priority: 0.8 },
       { url: "services", priority: 0.9 },
       { url: "contact-us", priority: 0.6 },
+      { url: "regulatory-disclaimer", priority: 0.3 },
+      { url: "marketing-disclaimer", priority: 0.3 },
       { url: "privacy-policy", priority: 0.3 },
       { url: "terms-conditions", priority: 0.3 },
       { url: "client-stories", priority: 0.6 },

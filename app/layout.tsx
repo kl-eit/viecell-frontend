@@ -7,6 +7,7 @@ import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 import BackToTop from "./shared/BackToTop/BackToTop";
 import ScrollVelocityText from "./shared/ScrollVelocityText/ScrollVelocityText";
+import DisclaimerPopup from "./component/DisclaimerPopup/DisclaimerPopup";
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700"],
@@ -42,6 +43,7 @@ export default function RootLayout({
             <ScrollVelocityText text="Repair  Regenerate  Rejuvenate" />
             <Footer />
             <BackToTop />
+            <DisclaimerPopup />
           </main>
         </AOSProvider>
         {process.env.NODE_ENV === "production" && (

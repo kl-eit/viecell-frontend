@@ -6,39 +6,11 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { getMediaUrl } from "../../lib/api";
 import Button from "../../component/Button/Button";
 import CarouselNav from "../../shared/CarouselNav/CarouselNav";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 export default function IntroSlider({ Banner }) {
   const paginationRef = useRef(null);
-  const slideRefs = useRef([]);
-  const animateSlide = (index) => {
-    const slide = slideRefs.current[index];
-    if (!slide) return;
-  };
-  const [pageLoaded, setPageLoaded] = useState(false);
-  const [loadedImages, setLoadedImages] = useState({});
-  const handleImageLoad = (index) => {
-    setLoadedImages((prev) => ({
-      ...prev,
-      [index]: true,
-    }));
-  };
-  useEffect(() => {
-    const handleLoad = () => {
-      setPageLoaded(true);
-    };
-
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
-
-    return () => window.removeEventListener("load", handleLoad);
-  }, []);
-
-  useEffect(() => {
-    animateSlide(0);
-  }, []);
+  // Progressive load: show Strapi small format first, then swap to full.
+  const [imageStage, setImageStage] = useState({});
   return (
     <div
       className={`rounded-[30px] bg-[#F7F9EF] pt-28 pb-5 min-h-[calc(100vh-24px)] flex flex-col items-center justify-center`}
@@ -55,7 +27,6 @@ export default function IntroSlider({ Banner }) {
         fadeEffect={{ crossFade: true }}
         loop
         className="container my-auto"
-        onInit={() => setPageLoaded(false)}
         onBeforeInit={(swiper) => {
           swiper.params.navigation.prevEl = ".custom-prev";
           swiper.params.navigation.nextEl = ".custom-next";
@@ -63,12 +34,20 @@ export default function IntroSlider({ Banner }) {
         }}
       >
         {Banner?.map((slide, index) => {
-          const BannerImage = getMediaUrl(slide?.BannerImage);
+          const bannerMedia = slide?.BannerImage;
+          const fullSrc = getMediaUrl(bannerMedia);
+
+          const lowResMedia =
+            bannerMedia?.formats?.thumbnail ||
+            bannerMedia?.formats?.small ||
+            bannerMedia?.formats?.medium ||
+            bannerMedia;
+          const lowSrc = getMediaUrl(lowResMedia);
+
+          const stage = imageStage[index] || "low";
+          const bannerSrc = stage === "full" ? fullSrc : lowSrc || fullSrc;
           return (
-            <SwiperSlide
-              key={index}
-              ref={(el) => (slideRefs.current[index] = el)}
-            >
+            <SwiperSlide key={index}>
               <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-15 justify-center items-center">
                 <div className="flex flex-col px-4 sm:px-6 gap-4 lg:gap-6 max-w-[500px]">
                   <div className="slide-title text-lime-900 text-2xl lg:text-5xl font-extrabold font-['Roboto_Condensed'] uppercase leading-none">
@@ -93,14 +72,18 @@ export default function IntroSlider({ Banner }) {
                 </div>
                 <div className="px-4 lg:p-0 relative">
                   <Image
-                    src={BannerImage}
+                    src={bannerSrc}
                     alt={slide?.Title || "Banner"}
-                    className={`object-contain max-h-[calc(100vh-100px)] max-[1536px]:max-h-[calc(100vh-200px)] transition-all duration-700 ease-out ${loadedImages[index] ? "opacity-100 blur-0" : "opacity-0 blur-xl"}`}
-                    onLoadingComplete={() => handleImageLoad(index)}
-                    property="true"
-                    width={slide?.BannerImage?.width}
-                    height={slide?.BannerImage?.height}
-                    unoptimized
+                    className="object-contain max-h-[calc(100vh-100px)] max-[1536px]:max-h-[calc(100vh-200px)]"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority={index === 0}
+                    onLoadingComplete={() => {
+                      if ((imageStage[index] || "low") === "low" && fullSrc) {
+                        setImageStage((prev) => ({ ...prev, [index]: "full" }));
+                      }
+                    }}
+                    width={bannerMedia?.width || 1200}
+                    height={bannerMedia?.height || 800}
                   />
                 </div>
               </div>
