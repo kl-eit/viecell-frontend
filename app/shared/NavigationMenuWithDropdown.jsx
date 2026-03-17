@@ -27,6 +27,7 @@ export default function MobileRichNavigationMenu({ menuData }) {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="focus:outline-none"
+          aria-label="Toggle navigation menu"
         >
           <svg
             className="w-6 h-6"

@@ -325,7 +325,7 @@ export default async function ResearchInnovationPage() {
             <div className="grid sm:grid-cols-2 gap-4">
               {/* Card 1 */}
               <div
-                className="rounded-lg text-card-foreground shadow-sm p-5 border-0 shadow-card bg-card hover:shadow-lg transition-shadow duration-300 group bg-white"
+                className="rounded-lg text-card-foreground shadow-sm p-5 border-0 shadow-card bg-card hover:shadow-lg transition-shadow duration-300 group bg-white text-left"
                 style={{ animationDelay: "0s" }}
               >
                 <div className="w-12 h-12 rounded-xl bg-[#F3F5EC] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -355,7 +355,7 @@ export default async function ResearchInnovationPage() {
 
               {/* Card 2 */}
               <div
-                className="rounded-lg text-card-foreground shadow-sm p-5 border-0 shadow-card bg-card hover:shadow-lg transition-shadow duration-300 group bg-white"
+                className="rounded-lg text-card-foreground shadow-sm p-5 border-0 shadow-card bg-card hover:shadow-lg transition-shadow duration-300 group bg-white text-left"
                 style={{ animationDelay: "0.1s" }}
               >
                 <div className="w-12 h-12 rounded-xl bg-[#F3F5EC] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -393,7 +393,7 @@ export default async function ResearchInnovationPage() {
 
               {/* Card 3 */}
               <div
-                className="rounded-lg text-card-foreground shadow-sm p-5 border-0 shadow-card bg-card hover:shadow-lg transition-shadow duration-300 group bg-white"
+                className="rounded-lg text-card-foreground shadow-sm p-5 border-0 shadow-card bg-card hover:shadow-lg transition-shadow duration-300 group bg-white text-left"
                 style={{ animationDelay: "0.2s" }}
               >
                 <div className="w-12 h-12 rounded-xl bg-[#F3F5EC] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -421,7 +421,7 @@ export default async function ResearchInnovationPage() {
 
               {/* Card 4 */}
               <div
-                className="rounded-lg text-card-foreground shadow-sm p-5 border-0 shadow-card bg-card hover:shadow-lg transition-shadow duration-300 group bg-white"
+                className="rounded-lg text-card-foreground shadow-sm p-5 border-0 shadow-card bg-card hover:shadow-lg transition-shadow duration-300 group bg-white text-left"
                 style={{ animationDelay: "0.3s" }}
               >
                 <div className="w-12 h-12 rounded-xl bg-[#F3F5EC] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">

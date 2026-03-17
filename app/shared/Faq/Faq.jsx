@@ -103,6 +103,8 @@ export default function Faqs() {
             className="self-stretch rounded-[20px]"
             src={getMediaUrl(faqsData?.FaqImg)}
             alt="FAQ Illustration"
+            width="640"
+            height="464"
           />
         </div>
       </div>

@@ -226,6 +226,8 @@ export default async function Home() {
               className="w-full rounded-[20px]"
               src="/CTA-banner.png"
               alt="CTA banner"
+              width="433"
+              height="433"
             />
           </div>
         </div>
@@ -241,6 +243,8 @@ export default async function Home() {
               className="w-full self-stretch rounded-[20px]"
               src="/Travel-Support-Services.png"
               alt="Support-Services"
+              width="473"
+              height="338"
             />
           </div>
           <div className="w-full md:w-[60%]">
